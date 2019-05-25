@@ -5,6 +5,7 @@ enemies[0] = ds_map_create();
 enemies[1] = ds_map_create();
 enemies[2] = ds_map_create();
 enemies[3] = ds_map_create();
+ds_map_add(enemies[3], "sprite", sMoon2VeryA);
 enemies[4] = ds_map_create();
 
 

@@ -106,7 +106,7 @@
             "Key": "3c771f5c-a66b-4a40-8023-64f3ee52e034",
             "Value": {
                 "id": "6e6fd189-d888-4d97-b443-a9cd244a5a12",
-                "resourcePath": "sprites\\smoon2veryA_atk\\smoon2veryA_atk.yy",
+                "resourcePath": "sprites\\sMoon2VeryA_atk\\sMoon2VeryA_atk.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -351,6 +351,14 @@
             }
         },
         {
+            "Key": "ca17c0ac-ecf7-4706-b290-a1624897336a",
+            "Value": {
+                "id": "ad35b24f-16ec-44c0-835a-99141fac7515",
+                "resourcePath": "sprites\\sAniki_atk\\sAniki_atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cb68af49-5941-44af-9108-e5adce6281a6",
             "Value": {
                 "id": "e0dc96ca-ddd3-4a37-8558-cbcb08b3bb2d",
@@ -418,7 +426,7 @@
             "Key": "f8f45022-1187-4f43-acff-52dcdff87936",
             "Value": {
                 "id": "7282c679-f951-4d7b-97c9-fbbd584a8efb",
-                "resourcePath": "sprites\\sMoon2veryA\\sMoon2veryA.yy",
+                "resourcePath": "sprites\\sMoon2VeryA\\sMoon2VeryA.yy",
                 "resourceType": "GMSprite"
             }
         },

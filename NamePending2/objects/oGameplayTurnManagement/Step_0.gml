@@ -2,10 +2,10 @@
 // You can write your code in this editor
 
 var mouse = mouse_check_button_pressed(mb_left);
-var esc = (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_pause));
+var esc = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_pause));
 
 // If they click on nothing, deselect all
-if (mouse and !position_meeting(mouse_x, mouse_y, all)) {
+if (mouse && !position_meeting(mouse_x, mouse_y, oCharacter) && !position_meeting(mouse_x, mouse_y, oEnemy) && !position_meeting(mouse_x, mouse_y, oAttack)) {
 	show_debug_message("I'm deselecting!");
 	global.attackSelected = -1;
 	global.enemySelected = -1;
