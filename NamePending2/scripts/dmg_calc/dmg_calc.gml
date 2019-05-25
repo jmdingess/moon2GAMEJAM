@@ -19,7 +19,7 @@ randomize();
 
 if(hit_calc(hit_chance))
 {
-	total_dmg = random((atk_max - atk_min) + 1) + atk_min;
+	total_dmg = irandom_range(atk_min,atk_max);
 	//this is just to debug for now
 	show_message("Did " + total_dmg + " damage");
 	return total_dmg;

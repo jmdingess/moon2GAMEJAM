@@ -17,8 +17,8 @@ randomize()
 
 hit_chance = argument0;
 max_chance = 1.0 / hit_chance;
-
-if(random(1.0) < 0.5)
+var rand = random(1.0)
+if(abs(rand - 0.5) <= 0.1)
 {
 	hit_score = (1.0 - random(1.0)) * (max_chance - 1.0) + 1.0;
 }
@@ -28,7 +28,8 @@ else
 }
 
 //this might be buggy, I'm not sure how DM handles float/double comparison - frostbyt
-if(floor((1.0/hit_score) - hit_chance) == 0)
+//loose threshold for now
+if(abs((1.0/hit_score) - hit_chance) <= 0.1)
 {
 	return true;	
 }
