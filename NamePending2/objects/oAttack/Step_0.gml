@@ -22,6 +22,12 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 	
 	// Highlight possible targets
 	var possibleTargets = attackMap[? "targetPosition"]
-	
-}
+	var i;
+	for (i=0; i < array_length_1d(enemies) && i < array_length_1d(possibleTargets); i++) {
+		// if enemy is alive (decided by their sprite existing)
+		if (enemies.sprite_index != -1 && possibleTargets[i] == 1) {
+			// Highlight this enemy
+		}
+	}
 
+}

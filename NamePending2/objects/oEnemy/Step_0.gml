@@ -14,7 +14,12 @@ if (global.attackSelected = -1 && global.enemySelected != id && mouse && positio
 	selectionBar = instance_find(oSelectionBar, 0)
 	if (selectionBar != noone) {
 		selectionBar.x = self.x;
-		selectionBar.y = self.y;
 		selectionBar.visible = true; 
 	}
+}
+
+if  (MAXDRIFT < abs(y - origin)) {
+	driftDirection = -driftDirection;
+	y = origin - sign(driftDirection)*MAXDRIFT;
+	vspeed = driftDirection;
 }

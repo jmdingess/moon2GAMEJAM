@@ -55,6 +55,22 @@
             }
         },
         {
+            "Key": "1656de20-b7a4-4603-848c-85f0f3f232b1",
+            "Value": {
+                "id": "e99e594a-c78a-4f98-bcf4-3ead7b4560eb",
+                "resourcePath": "sprites\\sPossibleTarget\\sPossibleTarget.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "251bbd58-1841-4d2d-8ef6-d1f03c038b63",
+            "Value": {
+                "id": "1333baec-8f5c-4c8e-bae1-22b102cde932",
+                "resourcePath": "objects\\oGameplayTurnManagement\\oGameplayTurnManagement.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "399915f9-2311-4c95-9b75-fccd69cb9c17",
             "Value": {
                 "id": "f8fcd90a-47a8-41c6-871b-b1cc429b90ee",

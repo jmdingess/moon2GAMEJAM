@@ -14,7 +14,6 @@ if (global.selected != id && mouse && position_meeting(mouse_x, mouse_y, id))
 	selectionBar = instance_find(oSelectionBar, 0)
 	if (selectionBar != noone) {
 		selectionBar.x = self.x;
-		selectionBar.y = self.y;
 		selectionBar.visible = true; 
 	}
 	

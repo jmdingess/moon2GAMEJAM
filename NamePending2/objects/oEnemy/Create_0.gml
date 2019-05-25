@@ -18,3 +18,9 @@ while (instance_find(oEnemy, i) != self.id)
 }
 myID = i;
 enemyMap = enemies[global.enemyOrder[myID]];
+
+// Drift up and down
+MAXDRIFT = 5;
+origin = y;
+driftDirection = random_range(-1, 1);
+vspeed = driftDirection;
