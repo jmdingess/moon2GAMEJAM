@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// ID is set by the oCharacter code
+// Set by the oCharacter code
+charID = -1;
 myID = -1;
-timeout = 0;
+attackMap = -1;

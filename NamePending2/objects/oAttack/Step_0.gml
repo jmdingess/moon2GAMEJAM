@@ -18,5 +18,9 @@ if (global.attackSelected != id && mouse && position_meeting(mouse_x, mouse_y, s
 	}
 	
 	show_debug_message(myID);
+	show_debug_message(charID);
+	
+	// Highlight possible targets
+	
 }
 

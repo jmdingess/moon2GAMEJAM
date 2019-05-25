@@ -20,11 +20,14 @@ if (global.selected != id && mouse && position_meeting(mouse_x, mouse_y, id))
 	
 	// Make the attack buttons visible and change them to the right sprites
 	// Also, add the ID of the attack; the attack button will use this to decide what to do.
-	myAttacks = myCharacter[? "attacks"];
+	var myAttacks = myCharacter[? "attacks"];
 	var i = -1;
-	for (i = 0; i < array_length_1d(attackButtons); i++) { 
-		attackButtons[i].myID = ds_map_find_value(myAttacks[i], "id");
-		attackButtons[i].sprite_index = ds_map_find_value(myAttacks[i], "sprite");
+	for (i = 0; i < array_length_1d(attackButtons); i++) {
+		show_debug_message(myAttacks);
+		var theirMap = myAttacks[| i];
+		attackButtons[i].sprite_index = ds_map_find_value(theirMap, "sprite");
+		attackButtons[i].charID = myID;
+		attackButtons[i].attackMap = theirMap;
 		attackButtons[i].visible = true;
 	}
 }
