@@ -6,6 +6,7 @@ var esc = (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_pause)
 
 // If they click on nothing, deselect all
 if (mouse and !position_meeting(mouse_x, mouse_y, all)) {
+	show_debug_message("I'm deselecting!");
 	global.attackSelected = -1;
 	global.enemySelected = -1;
 	global.selected = -1;
