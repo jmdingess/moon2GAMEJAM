@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "3d929b83-c1eb-411d-ae3f-bab571885d29",
+            "Value": {
+                "id": "4a50f96d-cd75-43e9-b1bc-d5a4987bb330",
+                "resourcePath": "sprites\\sTesla\\sTesla.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4c980e63-7f90-4eb7-a77e-df130f25893f",
             "Value": {
                 "id": "18243ab5-764d-411b-b04c-e1922dc29526",
@@ -87,10 +95,26 @@
             }
         },
         {
+            "Key": "59cfb66d-165b-42df-82ed-c85ce7af9ab8",
+            "Value": {
+                "id": "93d205e4-0e32-4c43-92d7-330061d881a4",
+                "resourcePath": "sprites\\sAniki\\sAniki.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5cb11e48-4198-4b8d-8ad3-8f7df82cd6ae",
             "Value": {
                 "id": "e05988e3-7fec-4fa3-a737-2583fb7093c2",
                 "resourcePath": "sprites\\sUnclickedButton\\sUnclickedButton.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5e4018e3-5da3-446e-8cfb-37b6a5576249",
+            "Value": {
+                "id": "90093f5e-b1e6-4744-b558-533a86aeef8e",
+                "resourcePath": "sprites\\sPurple\\sPurple.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -223,6 +247,14 @@
             }
         },
         {
+            "Key": "aaa8a8f2-24cd-4b91-ac14-381acbb7bf18",
+            "Value": {
+                "id": "3bed0623-a1cc-40c1-9dcd-d2e81f1baa5e",
+                "resourcePath": "sprites\\sEddie\\sEddie.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ad3195c1-5f50-4949-bd4a-29e069988f84",
             "Value": {
                 "id": "04e1ef7b-343b-4f6c-957f-74fefc84c9a0",
@@ -234,7 +266,7 @@
             "Key": "b146e66b-9c5e-4c10-9d3a-5696099cedf0",
             "Value": {
                 "id": "f650346e-9e61-4bc1-a353-461c8bdc931b",
-                "resourcePath": "objects\\opAttackButton\\opAttackButton.yy",
+                "resourcePath": "objects\\oAttack\\oAttack.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -244,6 +276,14 @@
                 "id": "77787eb1-d28c-4b9b-9d40-f06a975e36d4",
                 "resourcePath": "views\\b351a5b6-d666-4acc-bb50-f859adbf16e0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c092759b-7c5e-42c5-8cd9-c02d827de58f",
+            "Value": {
+                "id": "c35452bb-eb8b-4f02-ac58-0484427d29c5",
+                "resourcePath": "sprites\\sGaybriel\\sGaybriel.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -279,19 +319,19 @@
             }
         },
         {
-            "Key": "d4572641-5946-4e52-a38b-9679688e1d12",
-            "Value": {
-                "id": "5035305a-0e0c-4925-9947-20370bf8fb4f",
-                "resourcePath": "objects\\oAttack\\oAttack.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "e34baac0-fb8c-4dba-a509-215e9b9d7ebe",
             "Value": {
                 "id": "a9395c62-5463-4150-b124-8ade1206b254",
                 "resourcePath": "views\\e34baac0-fb8c-4dba-a509-215e9b9d7ebe.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e369fb1b-69da-45ff-8a3e-f8455fd32a13",
+            "Value": {
+                "id": "2bf17769-e117-48b6-9bfa-3754b0686eb6",
+                "resourcePath": "sprites\\sSuzuki\\sSuzuki.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
