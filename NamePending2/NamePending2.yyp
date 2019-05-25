@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "c5b7163e-975c-4346-8100-39948d5de925",
+            "Value": {
+                "id": "086490b1-dd4c-4a76-b9bd-b94c37fc207e",
+                "resourcePath": "sprites\\sSelectionBox\\sSelectionBox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c7a3cbe8-18cf-4e1c-a896-e5251f041e4b",
             "Value": {
                 "id": "6427bdee-12ec-43d1-bedb-da98f2ae79c1",
