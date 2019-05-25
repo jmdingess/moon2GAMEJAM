@@ -22,9 +22,9 @@ if (global.selected != myID && mouse && position_meeting(mouse_x, mouse_y, id))
 	// Also, add the ID of the attack; the attack button will use this to decide what to do.
 	myAttacks = myCharacter[? "attacks"];
 	var i = -1;
-	for (i = 0; i < array_length_1d(attackButtons); i++) { // DEBUG: These next two lines weren't working and I wanted to push		
-		//attackButtons[i].ID = myAttacks[i][? "id"];
-		//attackButtons[i].sprite_index = myAttacks[i][? "sprite"];
+	for (i = 0; i < array_length_1d(attackButtons); i++) { 
+		attackButtons[i].myID = ds_map_find_value(myAttacks[i], "id");
+		attackButtons[i].sprite_index = ds_map_find_value(myAttacks[i], "sprite");
 		attackButtons[i].visible = true;
 	}
 }
