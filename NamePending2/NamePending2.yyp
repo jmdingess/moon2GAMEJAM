@@ -311,6 +311,14 @@
             }
         },
         {
+            "Key": "cdbc2d00-2acb-408b-91d5-e18ebf058341",
+            "Value": {
+                "id": "5091fff9-038a-4321-b7d4-3739a25469d8",
+                "resourcePath": "objects\\oSelectionBox\\oSelectionBox.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ce444327-9c70-4e70-96ac-8f65e1f940d1",
             "Value": {
                 "id": "9871e65c-32da-4cc6-99df-8828d28d425e",
@@ -364,6 +372,14 @@
                 "id": "171c5325-3db9-4c11-8721-756cfc14a89c",
                 "resourcePath": "rooms\\room0\\room0.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "ffca0a19-15e8-49e5-afc9-74a33110fae5",
+            "Value": {
+                "id": "ffcf6a57-5972-4fe2-9ec3-c231fb290276",
+                "resourcePath": "sprites\\sPlaceholderAttack\\sPlaceholderAttack.yy",
+                "resourceType": "GMSprite"
             }
         }
     ],

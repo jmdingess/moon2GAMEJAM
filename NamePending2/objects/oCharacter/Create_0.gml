@@ -2,10 +2,10 @@
 // You can write your code in this editor
 
 // Find my ID by order in which we are listed in room
-var i = 0;
-while (instance_find(oCharacter, i) != self.id)
+var i = instance_number(oCharacter) - 1;
+while (instance_find(oCharacter, i) != self.id && 0 < i)
 {
-	i++;
+	i--;
 }
 myID = i;
 myCharacter = global.characters[global.order[myID]];

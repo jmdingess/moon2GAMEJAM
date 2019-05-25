@@ -6,9 +6,9 @@ var mouse;
 mouse = mouse_check_button_pressed(mb_left);
 
 // If not selected and mouse clicked and mouse is over us; i.e. If they clicked us
-if (global.selected != myID && mouse && position_meeting(mouse_x, mouse_y, id))
+if (global.selected != id && mouse && position_meeting(mouse_x, mouse_y, id))
 {
-	global.selected = myID;
+	global.selected = id;
 	// Put the selection bar over us
 	var selectionBar;
 	selectionBar = instance_find(oSelectionBar, 0)
