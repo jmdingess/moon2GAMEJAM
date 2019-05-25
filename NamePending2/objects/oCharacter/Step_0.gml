@@ -24,10 +24,32 @@ if (global.selected != id && mouse && position_meeting(mouse_x, mouse_y, id))
 	var i = -1;
 	for (i = 0; i < array_length_1d(attackButtons); i++) {
 		show_debug_message(myAttacks);
-		var theirMap = myAttacks[| i];
-		attackButtons[i].sprite_index = ds_map_find_value(theirMap, "sprite");
+		var attackMap = myAttacks[| i];
+		var charPosition = attackMap[? "charPosition"]
+		if (charPosition[3-myID] != 1) {
+			// Invalid
+			invalidAttackOverlays[i].visible = true;
+			attackButtons[i].invalid = true;
+		}
+		else {
+			// Valid
+			invalidAttackOverlays[i].visible = false;
+			attackButtons[i].invalid = false;
+		}
+		attackButtons[i].sprite_index = ds_map_find_value(attackMap, "sprite");
 		attackButtons[i].charID = myID;
-		attackButtons[i].attackMap = theirMap;
+		attackButtons[i].attackMap = attackMap;
 		attackButtons[i].visible = true;
 	}
+	// Deselect selected attack
+	var selectionBox = instance_find(oSelectionBox, 0);
+	selectionBox.visible = false
+	global.attackSelected = -1
+	global.enemySelected = -1
+}
+
+if  (MAXDRIFT < abs(y - origin)) {
+	driftDirection = -driftDirection;
+	y = origin - sign(driftDirection)*MAXDRIFT;
+	vspeed = driftDirection;
 }

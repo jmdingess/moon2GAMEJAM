@@ -295,11 +295,27 @@
             }
         },
         {
+            "Key": "c6f5ac21-e603-412c-8331-9ae77dc1438a",
+            "Value": {
+                "id": "c538f799-c406-461d-838d-0477a398e32a",
+                "resourcePath": "sprites\\sInvalidAttack\\sInvalidAttack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c7a3cbe8-18cf-4e1c-a896-e5251f041e4b",
             "Value": {
                 "id": "6427bdee-12ec-43d1-bedb-da98f2ae79c1",
                 "resourcePath": "views\\c7a3cbe8-18cf-4e1c-a896-e5251f041e4b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "cb68af49-5941-44af-9108-e5adce6281a6",
+            "Value": {
+                "id": "e0dc96ca-ddd3-4a37-8558-cbcb08b3bb2d",
+                "resourcePath": "objects\\oInvalidAttack\\oInvalidAttack.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -370,7 +386,7 @@
             "Key": "ff8513a2-54b8-4426-b23b-8b8a023bf900",
             "Value": {
                 "id": "171c5325-3db9-4c11-8721-756cfc14a89c",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\battleRoom\\battleRoom.yy",
                 "resourceType": "GMRoom"
             }
         },

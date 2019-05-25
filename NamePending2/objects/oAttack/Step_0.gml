@@ -5,7 +5,7 @@ var mouse;
 mouse = mouse_check_button_pressed(mb_left);
 
 // If we aren't selected and the mouse clicks and the mouse is over us
-if (global.attackSelected != id && mouse && position_meeting(mouse_x, mouse_y, self.id))
+if (invalid == false && global.attackSelected != id && mouse && position_meeting(mouse_x, mouse_y, self.id))
 {
 	global.attackSelected = id;
 	// Put the selection box over us
@@ -21,6 +21,7 @@ if (global.attackSelected != id && mouse && position_meeting(mouse_x, mouse_y, s
 	show_debug_message(charID);
 	
 	// Highlight possible targets
+	var possibleTargets = attackMap[? "targetPosition"]
 	
 }
 

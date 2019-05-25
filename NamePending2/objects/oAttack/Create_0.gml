@@ -5,3 +5,4 @@
 charID = -1;
 myID = -1;
 attackMap = -1;
+invalid = true;
