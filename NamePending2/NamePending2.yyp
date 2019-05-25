@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "145b7a22-5b58-464b-9af0-480c6b00cdfc",
+            "Value": {
+                "id": "f148b484-7da2-43d4-a22e-3cf085c5e4a0",
+                "resourcePath": "sprites\\sEnemyA\\sEnemyA.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "399915f9-2311-4c95-9b75-fccd69cb9c17",
             "Value": {
                 "id": "f8fcd90a-47a8-41c6-871b-b1cc429b90ee",
@@ -100,6 +108,14 @@
                 "id": "ca8fdd21-1cd8-4a4f-aec8-2d1592786455",
                 "resourcePath": "views\\666b6b05-bd90-4c5a-b6b2-ca9dc3112d26.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6c8ee4e2-af4c-4e6d-adf0-3c022dad3cd5",
+            "Value": {
+                "id": "7b052f25-3098-42be-920e-197046e593e0",
+                "resourcePath": "sprites\\sEnemyB\\sEnemyB.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -164,6 +180,14 @@
                 "id": "cd59fd5c-4484-4364-b731-9c107c40c918",
                 "resourcePath": "sprites\\sAlchemist\\sAlchemist.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7fc65647-b01d-45f4-b335-8f6e8d31887e",
+            "Value": {
+                "id": "15d81680-3496-4e74-bf6c-212f4739a5bc",
+                "resourcePath": "objects\\oEnemy\\oEnemy.yy",
+                "resourceType": "GMObject"
             }
         },
         {
