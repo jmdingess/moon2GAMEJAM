@@ -23,7 +23,6 @@ if (global.selected = id && global.newSelect == true)
 	var myAttacks = myCharacter[? "attacks"];
 	var i = -1;
 	for (i = 0; i < array_length_1d(attackButtons); i++) {
-		show_debug_message(myAttacks);
 		var attackMap = myAttacks[| i];
 		var charPosition = attackMap[? "charPosition"]
 		if (charPosition[3-myID] != 1) {
@@ -41,14 +40,23 @@ if (global.selected = id && global.newSelect == true)
 		attackButtons[i].attackMap = attackMap;
 		attackButtons[i].visible = true;
 	}
+	moveButton.invalid = false;
+	moveButton.charID = myID;
+	moveButton.attackMap = global.movementMap;
+	moveButton.visible = true;
 	// Deselect selected attack
 	var selectionBox = instance_find(oSelectionBox, 0);
 	selectionBox.visible = false;
 	global.attackSelected = -1;
-	global.enemySelected = -1;
 	for (i = 0; i < array_length_1d(possibleTargets); i++) {
 		possibleTargets[i].visible = false;
 	}
+}
+
+// When we are selected as the target of an attack
+if (global.attackSelected != -1 && isTargetable == true && mouse && position_meeting(mouse_x, mouse_y, id)) {
+	global.attackSelected.doAttack = true;
+	global.attackSelected.target = id;
 }
 
 if  (MAXDRIFT < abs(y - origin)) {

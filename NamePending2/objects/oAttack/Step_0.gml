@@ -18,14 +18,41 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 	}
 	
 	// Highlight possible targets
+	
 	var enemyTargets = attackMap[? "targetPosition"];
 	if is_undefined(enemyTargets) {
 		enemyTargets = [0, 0, 0, 0];
 	}
+	var allyTargets = attackMap[? "targetAllyPosition"];
+	if is_undefined(allyTargets) {
+		allyTargets = [0, 0, 0, 0];
+	}
+	var targettingType = attackMap[? "type"];
+	if (is_undefined(targettingType)) {
+		targettingType = targetting.TARGET;
+	}
+	var targetDead = attackMap[? "targetDead"];
+	if (is_undefined(targetDead)) {
+		targetDead = false;
+	}
+	var position = global.selected.myID;
 	var i;
+	
+	if targettingType == targetting.TARGETNEIGHBORS {
+		targettingType = targetting.TARGET;
+		for (i=0; i < 4; i++) {
+			if (i == position +1 or i == position-1) {
+				allyTargets[i] = 1;
+			}
+			else {
+				allyTargets[i] = 0;
+			}
+		}
+	}
+	
 	for (i=0; i < array_length_1d(enemies) && i < array_length_1d(enemyTargets); i++) {
 		// if enemy is alive (decided by their sprite existing)
-		if (enemies[i].sprite_index != -1 && enemyTargets[i] == 1) {
+		if ((targetDead || (enemies[i].sprite_index != -1 && enemies[i].sprite_index != sEmptyChar) ) && enemyTargets[i] == 1) {
 			// Highlight this enemy
 			possibleTargets[i].visible = true;
 			enemies[i].isTargetable = true;
@@ -35,13 +62,9 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 			enemies[i].isTargetable = false;
 		}
 	}
-	var allyTargets = attackMap[? "targetAllyPosition"];
-	if is_undefined(allyTargets) {
-		allyTargets = [0, 0, 0, 0];
-	}
 	for (i=0; i < array_length_1d(characters) && i < array_length_1d(allyTargets); i++) {
 		// if character is alive (decided by their sprite existing)
-		if (characters[i].sprite_index != -1 && allyTargets[i] == 1) {
+		if ((targetDead || (characters[i].sprite_index != -1 && characters[i].sprite_index != sEmptyChar) ) && allyTargets[i] == 1) {
 			// Highlight this enemy
 			possibleTargets[4 + i].visible = true;
 			characters[i].isTargetable = true;
@@ -60,12 +83,17 @@ if (doAttack == true && global.attackSelected == id) {
 	
 	var character = global.selected.myCharacter;
 	if is_undefined(character) {
-		doAttack = false;
 		show_error("Could not find character", true);
 	}
 	
 	// do attack
 	show_debug_message(attackMap[? "displayName"]);
+	attackID = attackMap[? "id"];
+	if (is_undefined(attackID)) {
+		show_error("Could not find attackID", true);
+	}
+	
+	do_attack(character, target, attackID);
 	
 	// Pass turn
 	global.turn++;

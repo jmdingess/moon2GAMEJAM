@@ -3,7 +3,12 @@
 
 // Draw our sprite if we have one
 var mySprite = myCharacter[? "sprite"];
-sprite_index = mySprite;
+if is_undefined(mySprite) {
+	sprite_index = sEmptyChar;
+}
+else {
+	sprite_index = mySprite;
+}
 if (mySprite != -1)
 {
 	draw_self();

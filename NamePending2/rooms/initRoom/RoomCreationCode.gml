@@ -1,7 +1,24 @@
 // Initialization of Global Variables
 
+enum targetting {
+	TARGET = 0,
+	TARGETNEIGHBORS = 1,
+	TARGETSELF = 2,
+	TARGETANY = 3,
+	TARGETALL = 4,
+	TARGETTWO = 5,
+	TARGETTHREE = 6
+};
 
-
+// map for movement command
+global.movementMap = ds_map_create();
+ds_map_add(global.movementMap, "id", -1);
+ds_map_add(global.movementMap, "type", targetting.TARGETNEIGHBORS);
+ds_map_add(global.movementMap, "targetDead", true);
+ds_map_add(global.movementMap, "sprite", sPlaceholderAttack);
+ds_map_add(global.movementMap, "displayName", "Move");
+ds_map_add(global.movementMap, "desc", "Move forward or backward.");
+ds_map_add(global.movementMap, "charPosition", [1, 1, 1, 1]);
 
 // Create stats definitions and sprites
 //stats values:
@@ -63,15 +80,16 @@ ds_map_add(global.stats[8], "displayName", "Accuracy");
 // Initialize Characters
 
 var attacks;
-// empty position; placeholder character.
+// empty position; 
 global.characters[0] = ds_map_create();
 ds_map_add(global.characters[0], "type", "empty");
-ds_map_add(global.characters[0], "displayName", "If you see this something went wrong")
-ds_map_add(global.characters[0], "sprite", -1);
+ds_map_add(global.characters[0], "displayName", "Empty Space")
+ds_map_add(global.characters[0], "sprite", sEmptyChar);
 attacks = ds_list_create()
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
 ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "type", targetting.TARGET);
 ds_map_add(attacks[|0], "displayName", "Placeholder attack");
 ds_map_add(attacks[|0], "desc", "placeholder description");
 ds_map_add(attacks[|0], "charPosition", [0, 0, 0, 0]);
@@ -79,14 +97,17 @@ ds_map_add(attacks[|0], "targetPosition", [0, 0, 0, 0]);
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "type", targetting.TARGET);
 ds_map_add(attacks[|1], "displayName", "Placeholder attack");
 attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "type", targetting.TARGET);
 ds_map_add(attacks[|2], "displayName", "Placeholder attack");
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|3], "type", targetting.TARGET);
 ds_map_add(attacks[|3], "displayName", "Placeholder attack");
 ds_map_add(global.characters[0], "attacks", attacks);
 ds_map_add(global.characters[0], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -100,6 +121,7 @@ attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
 ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "type", targetting.TARGET);
 ds_map_add(attacks[|0], "displayName", "Ban Hammer");
 ds_map_add(attacks[|0], "desc", "Attack an enemy with the power of chat moderation.");
 ds_map_add(attacks[|0], "charPosition", [0, 0, 1, 1]);
@@ -107,6 +129,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]);
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "type", targetting.TARGET);
 ds_map_add(attacks[|1], "displayName", "Suck my Dick");
 ds_map_add(attacks[|1], "desc", "Attack an distant target with chance to stun.");
 ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
@@ -114,6 +137,7 @@ ds_map_add(attacks[|1], "targetPosition", [0, 1, 1, 1]);
 attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "type", targetting.TARGET);
 ds_map_add(attacks[|2], "displayName", "ShaShaa");
 ds_map_add(attacks[|2], "desc", "Attack an enemy; gain riposte.");
 ds_map_add(attacks[|2], "charPosition", [0, 0, 1, 1]);
@@ -121,6 +145,7 @@ ds_map_add(attacks[|2], "targetPosition", [1, 1, 0, 0]);
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|3], "type", targetting.TARGETANY);
 ds_map_add(attacks[|3], "displayName", "BlapBlapp");
 ds_map_add(attacks[|3], "desc", "Attack 2 random targets with a gat.");
 ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 0]);
@@ -128,6 +153,7 @@ ds_map_add(attacks[|3], "targetPosition", [0, 1, 1, 1]);
 attacks[|4] = ds_map_create();
 ds_map_add(attacks[|4], "id", 4);
 ds_map_add(attacks[|4], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|4], "type", targetting.TARGETALL);
 ds_map_add(attacks[|4], "displayName", "Variety Stream");
 ds_map_add(attacks[|4], "desc", "Attack all enemies, Random debuff for all enemies.");
 ds_map_add(attacks[|4], "charPosition", [0, 1, 1, 0]);
@@ -146,6 +172,7 @@ attacks = ds_list_create()
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
 ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "type", targetting.TARGETTWO);
 ds_map_add(attacks[|0], "displayName", "RP spew");
 ds_map_add(attacks[|0], "desc", "Targets 2 enemies with useless rant, lowers accuracy with chance to sleep");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 0]);
@@ -153,6 +180,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 0]);
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "type", targetting.TARGET);
 ds_map_add(attacks[|1], "displayName", "Confusing backstory");
 ds_map_add(attacks[|1], "desc", "Make no sense, cause confusion to target enemy.");
 ds_map_add(attacks[|1], "charPosition", [1, 1, 0, 0]);
@@ -160,6 +188,7 @@ ds_map_add(attacks[|1], "targetPosition", [1, 1, 1, 1]);
 attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "type", targetting.TARGET);
 ds_map_add(attacks[|2], "displayName", "Self Destruction");
 ds_map_add(attacks[|2], "desc", "Gaybriels ulimate sacrifice, deals alot of damage at the cost of Gaybriel");
 ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 0]);
@@ -167,6 +196,7 @@ ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|3], "type", targetting.TARGETALL);
 ds_map_add(attacks[|3], "displayName", "LARP death blossom");
 ds_map_add(attacks[|3], "desc", "Attacks all enemies with rubbet bullets, does minor damage.");
 ds_map_add(attacks[|3], "charPosition", [0, 0, 1, 1]);
@@ -174,6 +204,7 @@ ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
 attacks[|4] = ds_map_create();
 ds_map_add(attacks[|4], "id", 4);
 ds_map_add(attacks[|4], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "type", targetting.TARGET);
 ds_map_add(attacks[|4], "displayName", "Life Steal");
 ds_map_add(attacks[|4], "desc", "Target enemy, deals damage and heals Gaybriel.");
 ds_map_add(attacks[|4], "charPosition", [0, 1, 1, 0]);
@@ -322,6 +353,7 @@ attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
 ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "type", targetting.TARGET);
 ds_map_add(attacks[|0], "displayName", "Lash of the Spanking");
 ds_map_add(attacks[|0], "desc", "Attack an enemy for 2-5 hits");
 ds_map_add(attacks[|0], "charPosition", [0, 0, 1, 1]);
@@ -329,6 +361,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]);
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "type", targetting.TARGETALL);
 ds_map_add(attacks[|1], "displayName", "Ass we can");
 ds_map_add(attacks[|1], "desc", "Team Defense buff");
 ds_map_add(attacks[|1], "charPosition", [0, 0, 1, 1]);
@@ -336,6 +369,7 @@ ds_map_add(attacks[|1], "targetAllyPosition", [1, 1, 1, 1]);
 attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "type", targetting.TARGET);
 ds_map_add(attacks[|2], "displayName", "Inferal Yukipo");
 ds_map_add(attacks[|2], "desc", "Attack an enemy, chance to stun.");
 ds_map_add(attacks[|2], "charPosition", [0, 0, 1, 1]);
@@ -343,6 +377,7 @@ ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|3], "type", targetting.TARGET);
 ds_map_add(attacks[|3], "displayName", "Get your ass back here!");
 ds_map_add(attacks[|3], "desc", "Attack a rear enemy, pull them to the front");
 ds_map_add(attacks[|3], "charPosition", [0, 0, 1, 1]);
@@ -350,6 +385,7 @@ ds_map_add(attacks[|3], "targetPosition", [0, 0, 1, 1]);
 attacks[|4] = ds_map_create();
 ds_map_add(attacks[|4], "id", 4);
 ds_map_add(attacks[|4], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "type", targetting.TARGETSELF);
 ds_map_add(attacks[|4], "displayName", "WOOP");
 ds_map_add(attacks[|4], "desc", "Let out a woop for incease attack, and an extra turn");
 ds_map_add(attacks[|4], "charPosition", [0, 0, 1, 1]);

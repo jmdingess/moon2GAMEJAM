@@ -15,8 +15,16 @@ myCharacter = global.characters[global.order[myID]];
 
 // Create an array listing the attack buttons for use later
 var i = -1;
+var numButtons = 0;
 for (i = 0; i < instance_number(oAttack); i++) {
-	attackButtons[i] = instance_find(oAttack, i);
+	var button = instance_find(oAttack, i);
+	if button.object_index != oMove {
+		attackButtons[numButtons] = button;
+		numButtons++;
+	}
+	else {
+		moveButton = button;
+	}
 }
 
 // Create an array listing the attack invalid overlays for use later
