@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// This code was written at 2 AM and we're low on time so I can't rewrite it
+// It finds turn order
 var characterInits;
 var enemyInits;
-
 
 var i;
 for (i = 0; i < array_length_1d(global.order); i++) {
@@ -23,3 +24,28 @@ for (i = 0; i < array_length_1d(global.order); i++) {
 	var enemyStats = enemyMap[? "stats"];
 	enemyInits[i] = turn_calc(enemyStats[7], enemyStats[6]);
 }
+
+turnOrderSize = 0;
+global.turnOrder = [];
+
+highestInit = 40;
+while highestInit >= 0 {
+	//highestInit = max(max(characterInits), max(enemyInits), -1);
+	highestInit = -1;
+	for (i=0; i < array_length_1d(characterInits); i++) {
+		if characterInits[i] == highestInit {
+			global.turnOrder[turnOrderSize] = instance_find(oCharacter, i);
+			turnOrderSize++;
+			characterInits[i] = -1;
+		}
+	}
+	for (i=0; i < array_length_1d(enemyInits); i++) {
+		if enemyInits[i] == highestInit {
+			global.turnOrder[turnOrderSize] = instance_find(oEnemy, i);
+			turnOrderSize++;
+			enemyInits[i] = -1;
+		}
+	}
+}
+
+show_debug_message(global.turnOrder);
