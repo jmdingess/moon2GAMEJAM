@@ -370,7 +370,7 @@ attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|2], "type", targetting.TARGET);
-ds_map_add(attacks[|2], "displayName", "Inferal Yukipo");
+ds_map_add(attacks[|2], "displayName", "Infernal Yukipo");
 ds_map_add(attacks[|2], "desc", "Attack an enemy, chance to stun.");
 ds_map_add(attacks[|2], "charPosition", [0, 0, 1, 1]);
 ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
@@ -438,10 +438,10 @@ ds_map_add(global.characters[7], "attacks", attacks);
 ds_map_add(global.characters[7], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // Lord Barwick
-global.characters[15] = ds_map_create();
-ds_map_add(global.characters[15], "type", "Party Member");
-ds_map_add(global.characters[15], "displayName", "Eddie");
-ds_map_add(global.characters[15], "sprite", sEddie);
+global.characters[8] = ds_map_create();
+ds_map_add(global.characters[8], "type", "Party Member");
+ds_map_add(global.characters[8], "displayName", "Eddie");
+ds_map_add(global.characters[8], "sprite", sEddie);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -478,14 +478,14 @@ ds_map_add(attacks[|4], "displayName", "Scratching post");
 ds_map_add(attacks[|4], "desc", "Unless a fury of attacks like they were moons arm, move back 2 spaces.");
 ds_map_add(attacks[|4], "charPosition", [0, 0, 0, 1]);
 ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 0]);
-ds_map_add(global.characters[15], "attacks", attacks);
-ds_map_add(global.characters[15], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.characters[8], "attacks", attacks);
+ds_map_add(global.characters[8], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // moon2VeryA
-global.characters[8] = ds_map_create();
-ds_map_add(global.characters[8], "type", "Mob");
-ds_map_add(global.characters[8], "displayName", "moon2A");
-ds_map_add(global.characters[8], "sprite", sMoon2VeryA);
+global.enemies[0] = ds_map_create();
+ds_map_add(global.enemies[0], "type", "Mob");
+ds_map_add(global.enemies[0], "displayName", "moon2A");
+ds_map_add(global.enemies[0], "sprite", sMoon2VeryA);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -501,14 +501,14 @@ ds_map_add(attacks[|1], "displayName", "Angry Slap");
 ds_map_add(attacks[|1], "desc", "Attack an Enemy");
 ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]);
 ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(global.characters[8], "attacks", attacks);
-ds_map_add(global.characters[8], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[0], "attacks", attacks);
+ds_map_add(global.enemies[0], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // moon2S
-global.characters[9] = ds_map_create();
-ds_map_add(global.characters[9], "type", "Mob");
-ds_map_add(global.characters[9], "displayName", "moon2S");
-ds_map_add(global.characters[9], "sprite", smoon2S);
+global.enemies[1] = ds_map_create();
+ds_map_add(global.enemies[1], "type", "Mob");
+ds_map_add(global.enemies[1], "displayName", "moon2S");
+ds_map_add(global.enemies[1], "sprite", smoon2S);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -524,14 +524,14 @@ ds_map_add(attacks[|1], "displayName", "Smile Stomp");
 ds_map_add(attacks[|1], "desc", "Attack an Enemy"); 
 ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); 
 ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(global.characters[9], "attacks", attacks);
-ds_map_add(global.characters[9], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[1], "attacks", attacks);
+ds_map_add(global.enemies[1], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // Prime Pleb
-global.characters[10] = ds_map_create();
-ds_map_add(global.characters[10], "type", "Mob");
-ds_map_add(global.characters[10], "displayName", "Prime Pleb");
-ds_map_add(global.characters[10], "sprite", sPrimePleb);
+global.enemies[2] = ds_map_create();
+ds_map_add(global.enemies[2], "type", "Mob");
+ds_map_add(global.enemies[2], "displayName", "Prime Pleb");
+ds_map_add(global.enemies[2], "sprite", sPrimePleb);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -547,14 +547,14 @@ ds_map_add(attacks[|1], "displayName", "Shitpost");
 ds_map_add(attacks[|1], "desc", "Says something insulting to target/ damages target"); 
 ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); 
 ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(global.characters[10], "attacks", attacks);
-ds_map_add(global.characters[10], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[2], "attacks", attacks);
+ds_map_add(global.enemies[2], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // NaM
-global.characters[11] = ds_map_create();
-ds_map_add(global.characters[11], "type", "Mob");
-ds_map_add(global.characters[11], "displayName", "NaM");
-ds_map_add(global.characters[11], "sprite", sNaM);
+global.enemies[3] = ds_map_create();
+ds_map_add(global.enemies[3], "type", "Mob");
+ds_map_add(global.enemies[3], "displayName", "NaM");
+ds_map_add(global.enemies[3], "sprite", sNaM);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -563,14 +563,14 @@ ds_map_add(attacks[|0], "displayName", "Suicide");
 ds_map_add(attacks[|0], "desc", "Blows up");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]); 
-ds_map_add(global.characters[11], "attacks", attacks);
-ds_map_add(global.characters[11], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[3], "attacks", attacks);
+ds_map_add(global.enemies[3], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // moon2N
-global.characters[12] = ds_map_create();
-ds_map_add(global.characters[12], "type", "Mob");
-ds_map_add(global.characters[12], "displayName", "moon2N");
-ds_map_add(global.characters[12], "sprite", sMoon2N);
+global.enemies[4] = ds_map_create();
+ds_map_add(global.enemies[4], "type", "Mob");
+ds_map_add(global.enemies[4], "displayName", "moon2N");
+ds_map_add(global.enemies[4], "sprite", sMoon2N);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -586,14 +586,14 @@ ds_map_add(attacks[|1], "displayName", "True Nuetral");
 ds_map_add(attacks[|1], "desc", "Removes all buffs and debuffs from all characters.");
 ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(global.characters[12], "attacks", attacks);
-ds_map_add(global.characters[12], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[4], "attacks", attacks);
+ds_map_add(global.enemies[4], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // Weeb
-global.characters[13] = ds_map_create();
-ds_map_add(global.characters[13], "type", "Mob");
-ds_map_add(global.characters[13], "displayName", "Weeb");
-ds_map_add(global.characters[13], "sprite", -1);
+global.enemies[5] = ds_map_create();
+ds_map_add(global.enemies[5], "type", "Mob");
+ds_map_add(global.enemies[5], "displayName", "Weeb");
+ds_map_add(global.enemies[5], "sprite", -1);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -609,14 +609,14 @@ ds_map_add(attacks[|1], "displayName", "Get out of my room mom REEEE");
 ds_map_add(attacks[|1], "desc", "Attacks a target for large damage.");
 ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|1], "targetPosition", [1, 1, 1, 1]);
-ds_map_add(global.characters[13], "attacks", attacks);
-ds_map_add(global.characters[13], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[5], "attacks", attacks);
+ds_map_add(global.enemies[5], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 //Troglodyte
-global.characters[14] = ds_map_create();
-ds_map_add(global.characters[14], "type", "Mob");
-ds_map_add(global.characters[14], "displayName", "Troglodyte");
-ds_map_add(global.characters[14], "sprite", sPlaceholderChar);
+global.enemies[6] = ds_map_create();
+ds_map_add(global.enemies[6], "type", "Mob");
+ds_map_add(global.enemies[6], "displayName", "Troglodyte");
+ds_map_add(global.enemies[6], "sprite", sPlaceholderChar);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -639,14 +639,14 @@ ds_map_add(attacks[|2], "displayName", "Witch Hunt");
 ds_map_add(attacks[|2], "desc", "Attack, lower DEF and ACC");
 ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 1]);
 ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
-ds_map_add(global.characters[14], "attacks", attacks);
-ds_map_add(global.characters[14], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[6], "attacks", attacks);
+ds_map_add(global.enemies[6], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 //Corporate , boss 1
-global.characters[16] = ds_map_create();
-ds_map_add(global.characters[16], "type", "Boss");
-ds_map_add(global.characters[16], "displayName", "Corporation");
-ds_map_add(global.characters[16], "sprite", sPlaceholderChar);
+global.enemies[7] = ds_map_create();
+ds_map_add(global.enemies[7], "type", "Boss");
+ds_map_add(global.enemies[7], "displayName", "Corporation");
+ds_map_add(global.enemies[7], "sprite", sPlaceholderChar);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -677,14 +677,14 @@ ds_map_add(attacks[|3], "displayName", "Early Access!");
 ds_map_add(attacks[|3], "desc", "Attack all enemies for minor damage, increases team speed");
 ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
-ds_map_add(global.characters[16], "attacks", attacks);
-ds_map_add(global.characters[16], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[7], "attacks", attacks);
+ds_map_add(global.enemies[7], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 //Ricardo Milos, boss 2
-global.characters[17] = ds_map_create();
-ds_map_add(global.characters[17], "type", "Boss");
-ds_map_add(global.characters[17], "displayName", "Ricardo Milos");
-ds_map_add(global.characters[17], "sprite", sPlaceholderChar);
+global.enemies[8] = ds_map_create();
+ds_map_add(global.enemies[8], "type", "Boss");
+ds_map_add(global.enemies[8], "displayName", "Ricardo Milos");
+ds_map_add(global.enemies[8], "sprite", sPlaceholderChar);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -716,14 +716,14 @@ ds_map_add(attacks[|3], "displayName", "Dance of demons");
 ds_map_add(attacks[|3], "desc", "Increase SPD,ATK,STR,DEX, does not fall off");
 ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|3], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(global.characters[17], "attacks", attacks);
-ds_map_add(global.characters[17], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[8], "attacks", attacks);
+ds_map_add(global.enemies[8], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 //Old Moon, boss 3, Phase 1
-global.characters[18] = ds_map_create();
-ds_map_add(global.characters[18], "type", "Boss");
-ds_map_add(global.characters[18], "displayName", "The Old Moon");
-ds_map_add(global.characters[18], "sprite", sPlaceholderChar);
+global.enemies[9] = ds_map_create();
+ds_map_add(global.enemies[9], "type", "Boss");
+ds_map_add(global.enemies[9], "displayName", "The Old Moon");
+ds_map_add(global.enemies[9], "sprite", sPlaceholderChar);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -746,15 +746,15 @@ ds_map_add(attacks[|2], "displayName", "Cresent Moon");
 ds_map_add(attacks[|2], "desc", "Chance to bleed all enemies");
 ds_map_add(attacks[|2], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|2], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(global.characters[18], "attacks", attacks);
-ds_map_add(global.characters[18], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[9], "attacks", attacks);
+ds_map_add(global.enemies[9], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 //Pit lord,moon2H , boss 3, phase 2
 //This boss should take 2 turns every turn.
-global.characters[19] = ds_map_create();
-ds_map_add(global.characters[19], "type", "Boss");
-ds_map_add(global.characters[19], "displayName", "The true pit");
-ds_map_add(global.characters[19], "sprite", sPlaceholderChar);
+global.enemies[10] = ds_map_create();
+ds_map_add(global.enemies[10], "type", "Boss");
+ds_map_add(global.enemies[10], "displayName", "The true pit");
+ds_map_add(global.enemies[10], "sprite", sPlaceholderChar);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -784,12 +784,15 @@ ds_map_add(attacks[|3], "displayName", "The one true gamer");
 ds_map_add(attacks[|3], "desc", "Cleave all units, chance to lower DEX");
 ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
-ds_map_add(global.characters[19], "attacks", attacks);
-ds_map_add(global.characters[19], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.enemies[10], "attacks", attacks);
+ds_map_add(global.enemies[10], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 var i;
 for (i=0; i < array_length_1d(global.characters); i++) {
 	ds_map_add(global.characters[i], "id", i);
+}
+for (i=0; i < array_length_1d(global.enemies); i++) {
+	ds_map_add(global.enemies[i], "id", i);
 }
 
 global.order = [1, 6, 0, 6];

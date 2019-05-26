@@ -20,7 +20,7 @@ for (i = 0; i < array_length_1d(global.order); i++) {
 		enemyInits[i] = -1;
 		continue;
 	}
-	var enemyMap = global.characters[global.enemyOrder[i]];
+	var enemyMap = global.enemies[global.enemyOrder[i]];
 	var enemyStats = enemyMap[? "stats"];
 	enemyInits[i] = turn_calc(enemyStats[7], enemyStats[6]);
 }
