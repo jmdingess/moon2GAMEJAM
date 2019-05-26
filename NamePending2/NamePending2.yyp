@@ -231,6 +231,14 @@
             }
         },
         {
+            "Key": "68a99052-65c6-45fd-9f10-0d45869ceb0d",
+            "Value": {
+                "id": "76aaa24c-ea6e-4ed8-af57-ba6f606b3c29",
+                "resourcePath": "sprites\\sOld_moon\\sOld_moon.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6cd7f768-f11f-447a-9bff-ee93d8b9b030",
             "Value": {
                 "id": "b5a54700-87a8-4ed8-8144-df1b3b2a93a1",
@@ -348,14 +356,6 @@
                 "id": "cb361f00-1817-4419-acb9-85cb5ce8b5b2",
                 "resourcePath": "sprites\\sNaM\\sNaM.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
-            "Value": {
-                "id": "cb2ee840-f3e5-49f8-9fe8-238929bc4d28",
-                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
-                "resourceType": "GMAmazonFireOptions"
             }
         },
         {
