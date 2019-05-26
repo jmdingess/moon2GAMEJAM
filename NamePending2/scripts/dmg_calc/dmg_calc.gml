@@ -21,7 +21,7 @@ if(hit_calc(hit_chance))
 {
 	total_dmg = irandom_range(atk_min,atk_max);
 	//this is just to debug for now
-	show_message("Did " + total_dmg + " damage");
+	show_message("Did " + string(total_dmg) + " damage");
 	return total_dmg;
 }
 else
