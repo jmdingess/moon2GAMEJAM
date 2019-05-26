@@ -207,14 +207,14 @@ ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|2], "displayName", "Autopilot Assistance");
 ds_map_add(attacks[|2], "desc", "Team evasion buff, insuring a safe drive in a Tesla");
 ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 1]);
-ds_map_add(attacks[|2], "targetAllyPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|2], "targetAllyposition", [1, 1, 1, 1]);
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|3], "displayName", "Fully Retractable Sunroof");
 ds_map_add(attacks[|3], "desc", "Increases style, which isn't a mechanic in our game, but also gives the parties accuracy.");
 ds_map_add(attacks[|3], "charPosition", [0, 1, 0, 1]);
-ds_map_add(attacks[|3], "targetAllyPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|3], "targetAllyposition", [1, 1, 1, 1]);
 attacks[|4] = ds_map_create();
 ds_map_add(attacks[|4], "id", 4);
 ds_map_add(attacks[|4], "sprite", sPlaceholderAttack);
@@ -332,7 +332,7 @@ ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|1], "displayName", "Ass we can");
 ds_map_add(attacks[|1], "desc", "Team Defense buff");
 ds_map_add(attacks[|1], "charPosition", [0, 0, 1, 1]);
-ds_map_add(attacks[|1], "targetAllyPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetAllyposition", [1, 1, 1, 1]);
 attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
@@ -401,6 +401,49 @@ ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 0]);
 ds_map_add(global.characters[7], "attacks", attacks);
 ds_map_add(global.characters[7], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
+// Lord Barwick
+global.characters[15] = ds_map_create();
+ds_map_add(global.characters[15], "type", "Party Member");
+ds_map_add(global.characters[15], "displayName", "Eddie");
+ds_map_add(global.characters[15], "sprite", sEddie);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "displayName", "Claw Strike");
+ds_map_add(attacks[|0], "desc", "Attack an enemy, move forward.");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]);
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "displayName", "Lick wounds");
+ds_map_add(attacks[|1], "desc", "Heal self");
+ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+attacks[|2] = ds_map_create();
+ds_map_add(attacks[|2], "id", 2);
+ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "displayName", "Sharpen claws");
+ds_map_add(attacks[|2], "desc", "Attack buff for self.");
+ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 1]);
+ds_map_add(attacks[|2], "targetPosition", [0, 0, 0, 0]);
+attacks[|3] = ds_map_create();
+ds_map_add(attacks[|3], "id", 3);
+ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|3], "displayName", "Bite");
+ds_map_add(attacks[|3], "desc", "Bite an enemy, cause bleed.");
+ds_map_add(attacks[|3], "charPosition", [0, 0, 1, 1]);
+ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 0]);
+attacks[|4] = ds_map_create();
+ds_map_add(attacks[|4], "id", 4);
+ds_map_add(attacks[|4], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|4], "displayName", "Scratching post");
+ds_map_add(attacks[|4], "desc", "Unless a fury of attacks like they were moons arm, move back 2 spaces.");
+ds_map_add(attacks[|4], "charPosition", [0, 0, 0, 1]);
+ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 0]);
+ds_map_add(global.characters[15], "attacks", attacks);
+ds_map_add(global.characters[15], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 // moon2VeryA
 global.characters[8] = ds_map_create();
@@ -414,13 +457,13 @@ ds_map_add(attacks[|0], "sprite", sMoon2VeryA_atk);
 ds_map_add(attacks[|0], "displayName", "Angry Lunge");
 ds_map_add(attacks[|0], "desc", "Attack an enemy, move forward.");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
-ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); //Unsure how to edit position for mobs on other side
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); 
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", sMoon2VeryA_atk);
 ds_map_add(attacks[|1], "displayName", "Angry Slap");
-ds_map_add(attacks[|1], "desc", "Attack an Enemy"); //I think this move should only work when in 
-ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); // the first two enemy slots
+ds_map_add(attacks[|1], "desc", "Attack an Enemy");
+ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]);
 ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
 ds_map_add(global.characters[8], "attacks", attacks);
 ds_map_add(global.characters[8], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -471,35 +514,97 @@ ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
 ds_map_add(global.characters[10], "attacks", attacks);
 ds_map_add(global.characters[10], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
-// Prime Pleb
+// NaM
 global.characters[11] = ds_map_create();
 ds_map_add(global.characters[11], "type", "Mob");
-ds_map_add(global.characters[11], "displayName", "Prime Pleb");
-ds_map_add(global.characters[11], "sprite", sPrimePleb);
+ds_map_add(global.characters[11], "displayName", "NaM");
+ds_map_add(global.characters[11], "sprite", sNaM);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
 ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
-ds_map_add(attacks[|0], "displayName", "What does OW stand for?");
-ds_map_add(attacks[|0], "desc", "Damages two targets");
+ds_map_add(attacks[|0], "displayName", "Suicide");
+ds_map_add(attacks[|0], "desc", "Blows up");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
-ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); //don't want to mess with the values
-attacks[|1] = ds_map_create();
-ds_map_add(attacks[|1], "id", 1);
-ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
-ds_map_add(attacks[|1], "displayName", "Shitpost");
-ds_map_add(attacks[|1], "desc", "Stuns Target"); 
-ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); 
-ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);//don't want to mess with the values
-attacks[|2] = ds_map_create();
-ds_map_add(attacks[|2], "id", 1);
-ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
-ds_map_add(attacks[|2], "displayName", "Why'd you quit RP");
-ds_map_add(attacks[|2], "desc", "Inflicts damage to target"); 
-ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 1]); 
-ds_map_add(attacks[|2], "targetPosition", [0, 0, 0, 0]);//don't want to mess with the values
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]); 
 ds_map_add(global.characters[11], "attacks", attacks);
 ds_map_add(global.characters[11], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+// moon2N
+global.characters[12] = ds_map_create();
+ds_map_add(global.characters[12], "type", "Mob");
+ds_map_add(global.characters[12], "displayName", "moon2N");
+ds_map_add(global.characters[12], "sprite", sMoon2N);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sMoon2N_atk);
+ds_map_add(attacks[|0], "displayName", "Undecided");
+ds_map_add(attacks[|0], "desc", "Nothing, skip turn");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); 
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sMoon2N_atk);
+ds_map_add(attacks[|1], "displayName", "True Nuetral");
+ds_map_add(attacks[|1], "desc", "Removes all buffs and debuffs from all characters.");
+ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+ds_map_add(global.characters[12], "attacks", attacks);
+ds_map_add(global.characters[12], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+// Weeb
+global.characters[13] = ds_map_create();
+ds_map_add(global.characters[13], "type", "Mob");
+ds_map_add(global.characters[13], "displayName", "Weeb");
+ds_map_add(global.characters[13], "sprite", sWeeb);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sWeeb_atk);
+ds_map_add(attacks[|0], "displayName", "I must protect my Sakura-Chan!");
+ds_map_add(attacks[|0], "desc", "Guard a unit, increase defense");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 0]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); 
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sWeeb_atk);
+ds_map_add(attacks[|1], "displayName", "Get out of my room mom REEEE");
+ds_map_add(attacks[|1], "desc", "Attacks a target for large damage.");
+ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetPosition", [1, 1, 1, 1]);
+ds_map_add(global.characters[13], "attacks", attacks);
+ds_map_add(global.characters[13], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+// Not done moon2S
+global.characters[14] = ds_map_create();
+ds_map_add(global.characters[14], "type", "Mob");
+ds_map_add(global.characters[14], "displayName", "Troglodyte");
+ds_map_add(global.characters[14], "sprite", sTrog);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sTrog_atk);
+ds_map_add(attacks[|0], "displayName", "Normie Following");
+ds_map_add(attacks[|0], "desc", "Buff friendly with attack boost.");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]); 
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sTrog_atk);
+ds_map_add(attacks[|1], "displayName", "IMO");
+ds_map_add(attacks[|1], "desc", "Attack target, chance to cause confusion");
+ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 1, 1]);
+attacks[|2] = ds_map_create();
+ds_map_add(attacks[|2], "id", 2);
+ds_map_add(attacks[|2], "sprite", sTrog_atk);
+ds_map_add(attacks[|2], "displayName", "Witch Hunt");
+ds_map_add(attacks[|2], "desc", "Attack, lower DEF and ACC");
+ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 1]);
+ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
+ds_map_add(global.characters[14], "attacks", attacks);
+ds_map_add(global.characters[14], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 
 global.order = [1, 6, 0, 6];
