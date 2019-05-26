@@ -2,7 +2,7 @@
     "id": "3b05ef59-b112-47e5-ae8f-cbb245090dd9",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "smoon2S",
+    "name": "sMoon2S",
     "For3D": false,
     "HTile": false,
     "VTile": false,

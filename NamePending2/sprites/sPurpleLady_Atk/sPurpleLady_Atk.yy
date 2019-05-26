@@ -2,7 +2,7 @@
     "id": "5c07d97f-b513-4850-a883-876a21b9e04a",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sPurpleLady_Atk",
+    "name": "sPurpleLady_atk",
     "For3D": false,
     "HTile": false,
     "VTile": false,
