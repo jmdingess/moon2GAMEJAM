@@ -3,10 +3,14 @@
 
 if is_undefined(enemyMap[? "sprite"])  {
 	sprite_index = sEmptyChar;
+	dead = true;
 }
 else {
 	sprite_index = enemyMap[? "sprite"];
 }
 if (sprite_index != -1) {
 	draw_self()
+}
+else {
+	dead = true;
 }

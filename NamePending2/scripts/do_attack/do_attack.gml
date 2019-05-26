@@ -1,6 +1,6 @@
 // PG-13 Username, <your name here>
 // @desc do_attack(character, target, attackID)
-// Does attack. Called from oAttack->Step
+// Does attack. Called from oAttack->Step and oEnemy->Step
 
 // charMap is the map of the character that called it. Should be same as global.selected.myCharacter
 // target is the instance (oCharacter or oEnemy) that was clicked on to confirm this attack. Not used for every attack

@@ -527,7 +527,7 @@ ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|1], "displayName", "Smile Stomp");
 ds_map_add(attacks[|1], "desc", "Attack an Enemy"); 
 ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); 
-ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+ds_map_add(attacks[|1], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|1], "weight", 2);
 ds_map_add(global.enemies[1], "attacks", attacks);
 ds_map_add(global.enemies[1], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -709,7 +709,7 @@ ds_map_add(global.enemies[7], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 global.enemies[8] = ds_map_create();
 ds_map_add(global.enemies[8], "type", "Boss");
 ds_map_add(global.enemies[8], "displayName", "Ricardo Milos");
-ds_map_add(global.enemies[8], "sprite", sPlaceholderChar);
+ds_map_add(global.enemies[8], "sprite", sRicardo);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -839,10 +839,13 @@ for (i=0; i < array_length_1d(global.enemies); i++) {
 }
 
 global.order = [1, 6, 0, 6];
-global.enemyOrder = [1, 3, 3, 1];
+global.enemyOrder = [1, 4, 4, 1];
 global.selected = -1;
 global.attackSelected = -1;
 global.newSelect = false;
+
+// Set random seed
+randomize();
 
 show_debug_message("Hello, world!")
 room_goto_next();

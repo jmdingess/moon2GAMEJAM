@@ -69,6 +69,7 @@ if (global.attackSelected != -1 and (position_meeting(mouse_x, mouse_y, oEnemy) 
 	switch (targetType) {
 	case targetting.TARGETANY:
 	case targetting.TARGETALL:
+	case targetting.SPECIAL:
 		var i;
 		for (i=0; i < array_length_1d(possibleTargets); i++) {
 			possibleTargets[i].sprite_index = sPossibleTargetHighlight;

@@ -5,10 +5,6 @@
 //
 var initiative, char_speed, char_luck;
 
-randomize()
-
-
-
 char_speed = argument0;
 char_luck = argument1;
 initiative  = (char_speed * char_luck) + random_range(1,20);

@@ -5,6 +5,7 @@
 var mySprite = myCharacter[? "sprite"];
 if is_undefined(mySprite) {
 	sprite_index = sEmptyChar;
+	dead = true;
 }
 else {
 	sprite_index = mySprite;
@@ -12,4 +13,7 @@ else {
 if (mySprite != -1)
 {
 	draw_self();
+}
+else {
+	dead = true;
 }
