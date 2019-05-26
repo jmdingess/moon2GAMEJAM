@@ -398,6 +398,77 @@ ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 0]);
 ds_map_add(global.characters[7], "attacks", attacks);
 ds_map_add(global.characters[7], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
+
+// moon2VeryA
+global.characters[8] = ds_map_create();
+ds_map_add(global.characters[8], "type", "Mob");
+ds_map_add(global.characters[8], "displayName", "moon2A");
+ds_map_add(global.characters[8], "sprite", sMoon2VeryA);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sMoon2VeryA_atk);
+ds_map_add(attacks[|0], "displayName", "Angry Lunge");
+ds_map_add(attacks[|0], "desc", "Attack an enemy, move forward.");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); //Unsure how to edit position for mobs on other side
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sMoon2VeryA_atk);
+ds_map_add(attacks[|1], "displayName", "Angry Slap");
+ds_map_add(attacks[|1], "desc", "Attack an Enemy"); //I think this move should only work when in 
+ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); // the first two enemy slots
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+ds_map_add(global.characters[8], "attacks", attacks);
+ds_map_add(global.characters[8], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+// moon2S
+global.characters[9] = ds_map_create();
+ds_map_add(global.characters[9], "type", "Mob");
+ds_map_add(global.characters[9], "displayName", "moon2S");
+ds_map_add(global.characters[9], "sprite", smoon2S);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "displayName", "Angry Lunge");
+ds_map_add(attacks[|0], "desc", "Attack an enemy, move forward.");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); 
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "displayName", "Smile Stomp");
+ds_map_add(attacks[|1], "desc", "Attack an Enemy"); 
+ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); 
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+ds_map_add(global.characters[9], "attacks", attacks);
+ds_map_add(global.characters[9], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+// Prime Pleb
+global.characters[10] = ds_map_create();
+ds_map_add(global.characters[10], "type", "Mob");
+ds_map_add(global.characters[10], "displayName", "Prime Pleb");
+ds_map_add(global.characters[10], "sprite", sPrimePleb);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "displayName", "Ask Dumb Question");
+ds_map_add(attacks[|0], "desc", "Asks the streamer what OW stands for, stuns the target");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); //don't want to mess with the values
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "displayName", "Shitpost");
+ds_map_add(attacks[|1], "desc", "Says something insulting to target/ damages target"); 
+ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); 
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+ds_map_add(global.characters[10], "attacks", attacks);
+ds_map_add(global.characters[10], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+
 global.order = [1, 6, 0, 6];
 global.enemyOrder = [1, 3, 3, 1];
 global.selected = -1;
