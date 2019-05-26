@@ -37,3 +37,54 @@ if (esc) {
 	game_end();
 }
 
+// Highlight Target arrows on mouse over
+if (global.attackSelected != -1 and (position_meeting(mouse_x, mouse_y, oEnemy) or position_meeting(mouse_x, mouse_y, oCharacter) or position_meeting(mouse_x, mouse_y, oPossibleTarget)) ) {
+	var targetType = global.attackSelected.targettingType;
+	
+	var i;
+	for (i=0; i < array_length_1d(possibleTargets); i++) {
+		possibleTargets[i].sprite_index = sPossibleTarget;
+	}
+	
+	var inst = instance_position(mouse_x, mouse_y, oEnemy);
+	var pos = -1;
+	if (inst != noone) {
+		pos = inst.myID;
+	}
+	else {
+		inst = instance_position(mouse_x, mouse_y, oCharacter);
+		if (inst != noone) {
+			pos = inst.myID + 4;
+		}
+		else {
+			inst = instance_position(mouse_x, mouse_y, oPossibleTarget);
+			for (i = 0; i < array_length_1d(possibleTargets); i++) {
+				if (inst == possibleTargets[i]) {
+					pos = i;
+				}
+			}
+		}
+	}
+	
+	switch (targetType) {
+	case targetting.TARGETANY:
+	case targetting.TARGETALL:
+		var i;
+		for (i=0; i < array_length_1d(possibleTargets); i++) {
+			possibleTargets[i].sprite_index = sPossibleTargetHighlight;
+		}
+		break;
+	case targetting.TARGETTHREE:
+		if (pos+2 % 4 != 1 and pos+2 % 4 != 0) {
+			possibleTargets[pos+2].sprite_index = sPossibleTargetHighlight;
+		}
+	case targetting.TARGETTWO:
+		if (pos+1 % 4 != 0) {
+			possibleTargets[pos+1].sprite_index = sPossibleTargetHighlight;
+		}
+	case targetting.TARGET:
+	case targetting.TARGETSELF:
+	case targetting.TARGETNEIGHBORS:
+		possibleTargets[pos].sprite_index = sPossibleTargetHighlight;
+	}
+}

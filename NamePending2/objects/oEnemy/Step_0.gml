@@ -36,6 +36,7 @@ if (global.attackSelected != -1 && isTargetable == true && mouse && position_mee
 	global.attackSelected.target = id;
 }
 
+
 if  (MAXDRIFT < abs(y - origin)) {
 	driftDirection = -driftDirection;
 	y = origin - sign(driftDirection)*MAXDRIFT;

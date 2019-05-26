@@ -439,6 +439,14 @@
             }
         },
         {
+            "Key": "ad37c0dc-f23e-4182-aa97-a175e2cce228",
+            "Value": {
+                "id": "ff230213-2d70-43e6-ab03-ccffe7ac9800",
+                "resourcePath": "sprites\\sPossibleTargetHighlight\\sPossibleTargetHighlight.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "adb59070-f9f1-4f89-9ea5-1b19add4828e",
             "Value": {
                 "id": "27c8ffc1-8eba-4643-a57a-36e7ca6cff50",

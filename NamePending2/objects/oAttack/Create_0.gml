@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+targettingType = -1;
+
 // Set by the oCharacter code
 charID = -1;
 myID = -1;

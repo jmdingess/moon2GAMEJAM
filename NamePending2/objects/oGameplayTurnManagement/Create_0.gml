@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Create an array listing the possible target arrows for use later
+for (i = 0; i < instance_number(oPossibleTarget); i++) {
+	possibleTargets[i] = instance_find(oPossibleTarget, i);
+}
+
 // This code was written at 2 AM and we're low on time so I can't rewrite it
 // It finds turn order
 var characterInits;

@@ -27,7 +27,7 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 	if is_undefined(allyTargets) {
 		allyTargets = [0, 0, 0, 0];
 	}
-	var targettingType = attackMap[? "type"];
+	targettingType = attackMap[? "type"];
 	if (is_undefined(targettingType)) {
 		targettingType = targetting.TARGET;
 	}
@@ -55,22 +55,26 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 		if ((targetDead || (enemies[i].sprite_index != -1 && enemies[i].sprite_index != sEmptyChar) ) && enemyTargets[i] == 1) {
 			// Highlight this enemy
 			possibleTargets[i].visible = true;
+			possibleTargets[i].sprite_index = sPossibleTarget;
 			enemies[i].isTargetable = true;
 		}
 		else {
 			possibleTargets[i].visible = false;
+			possibleTargets[i].sprite_index = sPossibleTarget;
 			enemies[i].isTargetable = false;
 		}
 	}
 	for (i=0; i < array_length_1d(characters) && i < array_length_1d(allyTargets); i++) {
 		// if character is alive (decided by their sprite existing)
 		if ((targetDead || (characters[i].sprite_index != -1 && characters[i].sprite_index != sEmptyChar) ) && allyTargets[i] == 1) {
-			// Highlight this enemy
+			// Highlight this character
 			possibleTargets[4 + i].visible = true;
+			possibleTargets[4 + i].sprite_index = sPossibleTarget;
 			characters[i].isTargetable = true;
 		}
 		else {
 			possibleTargets[4 + i].visible = false;
+			possibleTargets[4 + i].sprite_index = sPossibleTarget;
 			characters[i].isTargetable = false;
 		}
 	}
@@ -86,13 +90,13 @@ if (doAttack == true && global.attackSelected == id) {
 		show_error("Could not find character", true);
 	}
 	
-	// do attack
 	show_debug_message(attackMap[? "displayName"]);
 	attackID = attackMap[? "id"];
 	if (is_undefined(attackID)) {
 		show_error("Could not find attackID", true);
 	}
 	
+	// do Attack
 	do_attack(character, target, attackID);
 	
 	// Pass turn
