@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "4d88fbd6-91bd-48b6-a800-1647872099ef",
+            "Value": {
+                "id": "a0adee8d-e2ae-4a84-8f3b-d63377989c34",
+                "resourcePath": "sprites\\smoon2SAttack\\smoon2SAttack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5357d86d-38e9-4eae-b6d5-eeec70169967",
             "Value": {
                 "id": "2be132ac-4ecb-4979-97d6-5d471b01a528",
@@ -287,11 +295,35 @@
             }
         },
         {
+            "Key": "7fc68c76-0f82-467c-bb2d-a8a45f515f35",
+            "Value": {
+                "id": "ba278a19-21fe-40b4-b823-def970b257c4",
+                "resourcePath": "sprites\\sPoop_snail\\sPoop_snail.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "810b33a2-735f-4b1c-92eb-b13434ba48a8",
+            "Value": {
+                "id": "f7d72718-a9c2-45ca-8c57-44be510f87f1",
+                "resourcePath": "sprites\\sStar_Background\\sStar_Background.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8441b430-13e5-4aae-ab37-9683d2e3d0e3",
             "Value": {
                 "id": "24c05d53-2b94-4901-b9e0-82790c9a7ba8",
                 "resourcePath": "views\\8441b430-13e5-4aae-ab37-9683d2e3d0e3.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8a1dbfe7-cf7c-4ded-af63-6d2c63b8d642",
+            "Value": {
+                "id": "27fa77fb-db89-46cd-91c7-37830797e9e3",
+                "resourcePath": "sprites\\smoonS_GettingHit\\smoonS_GettingHit.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -308,14 +340,6 @@
                 "id": "e113bca6-3ab3-4b1e-bc2b-8f5749da34b0",
                 "resourcePath": "views\\9cb60c80-c317-4b5b-a535-cbf7996a1b4c.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
-            "Value": {
-                "id": "f0cde086-0f5d-4f62-b1cc-2e1a9b14bbf1",
-                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
-                "resourceType": "GMAmazonFireOptions"
             }
         },
         {
@@ -468,6 +492,14 @@
                 "id": "4b43229c-f519-4638-b3c8-09995119c920",
                 "resourcePath": "views\\ef37d8f9-637b-413f-896f-73ff3a64f984.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f1355429-0c60-4af8-9ea4-ab96de1ff880",
+            "Value": {
+                "id": "f3e3531a-2786-4233-8a07-3b76896eadc4",
+                "resourcePath": "sprites\\smoonS_Item\\smoonS_Item.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
