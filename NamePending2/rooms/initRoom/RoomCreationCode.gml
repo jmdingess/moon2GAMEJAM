@@ -644,7 +644,7 @@ ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(global.characters[16], "attacks", attacks);
 ds_map_add(global.characters[16], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
-//Ricardo Milos
+//Ricardo Milos, boss 2
 global.characters[17] = ds_map_create();
 ds_map_add(global.characters[17], "type", "Boss");
 ds_map_add(global.characters[17], "displayName", "Ricardo Milos");
@@ -680,6 +680,74 @@ ds_map_add(attacks[|3], "displayName", "Dance of demons");
 ds_map_add(attacks[|3], "desc", "Increase SPD,ATK,STR,DEX, does not fall off");
 ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|3], "targetPosition", [0, 0, 0, 0]);
+ds_map_add(global.characters[17], "attacks", attacks);
+ds_map_add(global.characters[17], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+//Old Moon, boss 3, Phase 1
+global.characters[18] = ds_map_create();
+ds_map_add(global.characters[18], "type", "Boss");
+ds_map_add(global.characters[18], "displayName", "The Old Moon");
+ds_map_add(global.characters[18], "sprite", sOldmoon);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "displayName", "The true ban hammer");
+ds_map_add(attacks[|0], "desc", "Hit front target, chance to stun");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [0, 0, 0, 1]);
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "displayName", "Howl into the void");
+ds_map_add(attacks[|1], "desc", "Lower all enemy SPD,ATK");
+ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+attacks[|2] = ds_map_create();
+ds_map_add(attacks[|2], "id", 2);
+ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "displayName", "Cresent Moon");
+ds_map_add(attacks[|2], "desc", "Chance to bleed all enemies");
+ds_map_add(attacks[|2], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|2], "targetPosition", [0, 0, 0, 0]);
+ds_map_add(global.characters[18], "attacks", attacks);
+ds_map_add(global.characters[18], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+//Pit lord,moon2H , boss 3, phase 2
+//This boss should take 2 turns every turn.
+global.characters[17] = ds_map_create();
+ds_map_add(global.characters[17], "type", "Boss");
+ds_map_add(global.characters[17], "displayName", "The true pit");
+ds_map_add(global.characters[17], "sprite", soldmoon2);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "displayName", "Eye of the maw");
+ds_map_add(attacks[|0], "desc", "SPEED DOWN");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]);
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "displayName", "From the void it hungers");
+ds_map_add(attacks[|1], "desc", "Spawn a single tentacle");
+ds_map_add(attacks[|1], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
+attacks[|2] = ds_map_create();
+ds_map_add(attacks[|2], "id", 2);
+ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "displayName", "Rend of the cosmic god");
+ds_map_add(attacks[|2], "desc", "attack random target 1-3 times");
+ds_map_add(attacks[|2], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
+attacks[|3] = ds_map_create();
+ds_map_add(attacks[|3], "id", 3);
+ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|3], "displayName", "The one true gamer");
+ds_map_add(attacks[|3], "desc", "Cleave all units, chance to lower DEX");
+ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(global.characters[17], "attacks", attacks);
 ds_map_add(global.characters[17], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
