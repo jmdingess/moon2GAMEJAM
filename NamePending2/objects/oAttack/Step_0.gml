@@ -19,7 +19,7 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 	
 	// Highlight possible targets
 	var enemyTargets = attackMap[? "targetPosition"];
-	if enemyTargets <= 0 {
+	if is_undefined(enemyTargets) {
 		enemyTargets = [0, 0, 0, 0];
 	}
 	var i;
@@ -28,13 +28,15 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 		if (enemies[i].sprite_index != -1 && enemyTargets[i] == 1) {
 			// Highlight this enemy
 			possibleTargets[i].visible = true;
+			enemies[i].isTargetable = true;
 		}
 		else {
 			possibleTargets[i].visible = false;
+			enemies[i].isTargetable = false;
 		}
 	}
 	var allyTargets = attackMap[? "targetAllyPosition"];
-	if allyTargets <= 0 {
+	if is_undefined(allyTargets) {
 		allyTargets = [0, 0, 0, 0];
 	}
 	for (i=0; i < array_length_1d(characters) && i < array_length_1d(allyTargets); i++) {
@@ -42,9 +44,11 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 		if (characters[i].sprite_index != -1 && allyTargets[i] == 1) {
 			// Highlight this enemy
 			possibleTargets[4 + i].visible = true;
+			characters[i].isTargetable = true;
 		}
 		else {
 			possibleTargets[4 + i].visible = false;
+			characters[i].isTargetable = false;
 		}
 	}
 	

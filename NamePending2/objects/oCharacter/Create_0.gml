@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Set by oAttack
+isTargetable = false;
+
 // Find my position by order in which we are listed in room
 var i = instance_number(oCharacter) - 1;
 while (instance_find(oCharacter, i) != self.id && 0 < i)

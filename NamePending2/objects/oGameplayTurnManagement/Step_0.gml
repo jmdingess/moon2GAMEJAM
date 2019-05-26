@@ -37,3 +37,4 @@ if (esc) {
 	// Should pause, but...
 	game_end();
 }
+

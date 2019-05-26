@@ -8,8 +8,8 @@ enemies[3] = ds_map_create();
 ds_map_add(enemies[3], "sprite", sMoon2VeryA);
 enemies[4] = ds_map_create();
 
-
-
+// set my oAttack
+isTargetable = false;
 
 // Find my ID by order in which we are listed in room
 var i = 0;

@@ -239,18 +239,10 @@
             }
         },
         {
-            "Key": "70220ab3-dfe0-47f1-90fc-0a84207bd96e",
-            "Value": {
-                "id": "579900b5-b2fb-44d8-badf-723548ab14a6",
-                "resourcePath": "sounds\\soAttack\\soAttack.yy",
-                "resourceType": "GMSound"
-            }
-        },
-        {
             "Key": "753603ee-7f3a-4747-b5a8-b75e1441f37d",
             "Value": {
                 "id": "8255b04a-96d7-4303-a52e-7a78b923521e",
-                "resourcePath": "sprites\\smoon2N\\smoon2N.yy",
+                "resourcePath": "sprites\\sMoon2N\\sMoon2N.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -356,6 +348,14 @@
                 "id": "cb361f00-1817-4419-acb9-85cb5ce8b5b2",
                 "resourcePath": "sprites\\sNaM\\sNaM.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
+            "Value": {
+                "id": "cb2ee840-f3e5-49f8-9fe8-238929bc4d28",
+                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
+                "resourceType": "GMAmazonFireOptions"
             }
         },
         {
