@@ -787,6 +787,11 @@ ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(global.characters[19], "attacks", attacks);
 ds_map_add(global.characters[19], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
+var i;
+for (i=0; i < array_length_1d(global.characters); i++) {
+	ds_map_add(global.characters[i], "id", i);
+}
+
 global.order = [1, 6, 0, 6];
 global.enemyOrder = [1, 3, 3, 1];
 global.selected = -1;
