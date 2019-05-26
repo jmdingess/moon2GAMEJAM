@@ -351,6 +351,22 @@
             }
         },
         {
+            "Key": "9d220bac-1abe-4e32-8ea4-762bfcdcd56b",
+            "Value": {
+                "id": "cb361f00-1817-4419-acb9-85cb5ce8b5b2",
+                "resourcePath": "sprites\\sNaM\\sNaM.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a5ddc6a2-c30c-4738-8ba8-afc0a5d59cc1",
+            "Value": {
+                "id": "28250507-520c-4aa8-b284-9f57994ea2d6",
+                "resourcePath": "sprites\\sNaMa\\sNaMa.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "aaa8a8f2-24cd-4b91-ac14-381acbb7bf18",
             "Value": {
                 "id": "3bed0623-a1cc-40c1-9dcd-d2e81f1baa5e",
