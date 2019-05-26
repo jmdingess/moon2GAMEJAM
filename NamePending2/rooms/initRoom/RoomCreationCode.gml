@@ -715,10 +715,10 @@ ds_map_add(global.characters[18], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 //Pit lord,moon2H , boss 3, phase 2
 //This boss should take 2 turns every turn.
-global.characters[17] = ds_map_create();
-ds_map_add(global.characters[17], "type", "Boss");
-ds_map_add(global.characters[17], "displayName", "The true pit");
-ds_map_add(global.characters[17], "sprite", soldmoon2);
+global.characters[19] = ds_map_create();
+ds_map_add(global.characters[19], "type", "Boss");
+ds_map_add(global.characters[19], "displayName", "The true pit");
+ds_map_add(global.characters[19], "sprite", soldmoon2);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -748,8 +748,8 @@ ds_map_add(attacks[|3], "displayName", "The one true gamer");
 ds_map_add(attacks[|3], "desc", "Cleave all units, chance to lower DEX");
 ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
-ds_map_add(global.characters[17], "attacks", attacks);
-ds_map_add(global.characters[17], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+ds_map_add(global.characters[19], "attacks", attacks);
+ds_map_add(global.characters[19], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 global.order = [1, 6, 0, 6];
 global.enemyOrder = [1, 3, 3, 1];
