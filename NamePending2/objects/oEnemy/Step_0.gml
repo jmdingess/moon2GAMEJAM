@@ -5,10 +5,11 @@
 var mouse;
 mouse = mouse_check_button_pressed(mb_left);
 
-// If not prepping an attack and not selected and mouse clicked and mouse is over us; i.e. If they clicked us
-if (global.attackSelected = -1 && global.enemySelected != id && mouse && position_meeting(mouse_x, mouse_y, id))
+// On our turn
+if (global.selected == id && global.newSelect == true)
 {
-	global.enemySelected = id;
+	global.newSelect = false;
+	
 	// Put the selection bar over us
 	var selectionBar;
 	selectionBar = instance_find(oSelectionBar, 0)
@@ -16,6 +17,23 @@ if (global.attackSelected = -1 && global.enemySelected != id && mouse && positio
 		selectionBar.x = self.x;
 		selectionBar.visible = true; 
 	}
+	
+	// Take Action
+	show_debug_message("I growl menacingly!");
+	
+	// Pass turn
+	global.turn++;
+	if global.turn >= array_length_1d(global.turnOrder) {
+		global.turn = 0;
+	}
+	global.selected = global.turnOrder[global.turn];
+	global.newSelect = true;
+}
+
+// If we get clicked on while we are a valid target for an attack; i.e. they attack us.
+if (global.attackSelected != -1 && isTargetable == true && mouse && position_meeting(mouse_x, mouse_y, id)) {
+	global.attackSelected.doAttack = true;
+	global.attackSelected.target = id;
 }
 
 if  (MAXDRIFT < abs(y - origin)) {

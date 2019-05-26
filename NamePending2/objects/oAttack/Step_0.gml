@@ -53,3 +53,25 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 	}
 	
 }
+
+// Once the target has been chosen, do attack
+if (doAttack == true && global.attackSelected == id) {
+	doAttack = false;
+	
+	var character = global.selected.myCharacter;
+	if is_undefined(character) {
+		doAttack = false;
+		show_error("Could not find character", true);
+	}
+	
+	// do attack
+	show_debug_message(attackMap[? "displayName"]);
+	
+	// Pass turn
+	global.turn++;
+	if global.turn >= array_length_1d(global.turnOrder) {
+		global.turn = 0;
+	}
+	global.selected = global.turnOrder[global.turn];
+	global.newSelect = true;
+}

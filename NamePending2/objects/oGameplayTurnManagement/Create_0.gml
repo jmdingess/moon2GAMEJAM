@@ -28,10 +28,8 @@ for (i = 0; i < array_length_1d(global.order); i++) {
 turnOrderSize = 0;
 global.turnOrder = [];
 
-highestInit = 40;
+highestInit = max(arr_max(characterInits), arr_max(enemyInits), -1);
 while highestInit >= 0 {
-	//highestInit = max(max(characterInits), max(enemyInits), -1);
-	highestInit = -1;
 	for (i=0; i < array_length_1d(characterInits); i++) {
 		if characterInits[i] == highestInit {
 			global.turnOrder[turnOrderSize] = instance_find(oCharacter, i);
@@ -46,6 +44,10 @@ while highestInit >= 0 {
 			enemyInits[i] = -1;
 		}
 	}
+	highestInit = max(arr_max(characterInits), arr_max(enemyInits), -1);
 }
 
-show_debug_message(global.turnOrder);
+// Select whoever goes first, have them take a turn
+global.selected = global.turnOrder[0];
+global.turn = 0;
+global.newSelect = true;

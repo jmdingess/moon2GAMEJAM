@@ -7,6 +7,10 @@ myID = -1;
 attackMap = -1;
 invalid = true;
 
+// Set by oEnemy
+doAttack = false;
+target = -1;
+
 // Create an array listing the characters for use later
 var i = -1;
 for (i = 0; i < instance_number(oCharacter); i++) {
