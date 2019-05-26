@@ -1,5 +1,5 @@
 // Initialization of Global Variables
-turn_order = ds_list_create();
+
 
 
 
@@ -136,7 +136,7 @@ ds_map_add(global.characters[1], "attacks", attacks);
 // 50 HP; 20 SP; 0 limit; 5 STR; 10 DEX; 200 INT high IQ gamer; 20 LUK; 7 SPE; 10 ACC
 // These are just proof of concept values and should be changed later
 ds_map_add(global.characters[1], "stats", [50, 20, 0, 5, 10, 200, 20, 7, 10]);
-ds_list_add(turn_order, turn_calc() )
+
 // Gaybriel
 global.characters[2] = ds_map_create();
 ds_map_add(global.characters[2], "type", "Party Member");
