@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "5efdee99-b8de-40cd-8c11-23c3853eb55d",
+            "Value": {
+                "id": "87c1c04c-06e0-4cb0-93a3-5ecd28fee198",
+                "resourcePath": "sprites\\sRicardo\\sRicardo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6075a7e1-bb86-4217-9c0c-984b912b4784",
             "Value": {
                 "id": "20d1acc6-bda5-4360-9562-89e35441bb4e",
@@ -364,6 +372,14 @@
                 "id": "04e1ef7b-343b-4f6c-957f-74fefc84c9a0",
                 "resourcePath": "rooms\\initRoom\\initRoom.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "adb59070-f9f1-4f89-9ea5-1b19add4828e",
+            "Value": {
+                "id": "27c8ffc1-8eba-4643-a57a-36e7ca6cff50",
+                "resourcePath": "sprites\\sRicardo_Attack\\sRicardo_Attack.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
