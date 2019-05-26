@@ -11,9 +11,19 @@ var pos2 = inst2.myID;
 var turn1 = arr_find(global.turnOrder, inst1);
 var turn2 = arr_find(global.turnOrder, inst2);
 
-// Swap turn order
-global.turnOrder[turn1] = inst2;
-global.turnOrder[turn2] = inst1;
+// Swap turn order of the instances so the same characters have the same turn (characters != instances)
+if (turn1 != -1 and turn2 != -1) {
+	global.turnOrder[turn1] = inst2;
+	global.turnOrder[turn2] = inst1;
+}
+else {
+	if (turn1 == -1) {
+		global.turnOrder[turn2] = inst1;
+	}
+	else {
+		global.turnOrder[turn1] = inst2;
+	}
+}
 
 if (inst1.object_index == oCharacter) {
 	// Character swapping
@@ -44,9 +54,5 @@ else {
 	ds_map_copy(inst2.enemyMap, tmp);
 	
 }
-
-// Swap their local tracking of position
-inst1.myID = pos2;
-inst2.myID = pos1;
 
 // TODO: Swap any conditions (poisoned, etc) that we apply

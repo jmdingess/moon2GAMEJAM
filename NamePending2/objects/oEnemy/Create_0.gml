@@ -11,7 +11,8 @@ while (instance_find(oEnemy, i) != self.id)
 	i++;
 }
 myID = i;
-enemyMap = global.enemies[global.enemyOrder[myID]];
+enemyMap = ds_map_create();
+ds_map_copy(enemyMap, global.enemies[global.enemyOrder[myID]]);
 
 // Drift up and down
 MAXDRIFT = 5;

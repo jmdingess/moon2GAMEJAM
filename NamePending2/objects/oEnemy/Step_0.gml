@@ -20,6 +20,13 @@ if (global.selected == id && global.newSelect == true)
 	
 	// Take Action
 	show_debug_message("I growl menacingly!");
+	var possibleAttacks = enemyMap[? "attacks"];
+	var numAttacks = ds_list_size(possibleAttacks);
+	var totalWeight;
+	var i;
+	for (i = 0; i < numAttacks; i++) {
+		
+	}
 	
 	// Pass turn
 	global.turn++;

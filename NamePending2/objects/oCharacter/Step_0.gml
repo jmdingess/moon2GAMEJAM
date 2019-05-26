@@ -25,6 +25,10 @@ if (global.selected = id && global.newSelect == true)
 	for (i = 0; i < array_length_1d(attackButtons); i++) {
 		var attackMap = myAttacks[| i];
 		var charPosition = attackMap[? "charPosition"]
+		if (is_undefined(charPosition)) {
+			show_debug_message("Something has gone wrong - charPosition doesn't exist")
+			charPosition = [1, 1, 1, 1] // Let them do it
+		}
 		if (charPosition[3-myID] != 1) {
 			// Invalid
 			invalidAttackOverlays[i].visible = true;

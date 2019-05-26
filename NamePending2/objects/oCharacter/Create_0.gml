@@ -11,7 +11,8 @@ while (instance_find(oCharacter, i) != self.id && 0 < i)
 	i--;
 }
 myID = i;
-myCharacter = global.characters[global.order[myID]];
+myCharacter = ds_map_create();
+ds_map_copy(myCharacter, global.characters[global.order[myID]])
 
 // Create an array listing the attack buttons for use later
 var i = -1;
