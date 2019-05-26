@@ -25,8 +25,11 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 	var i;
 	for (i=0; i < array_length_1d(enemies) && i < array_length_1d(possibleTargets); i++) {
 		// if enemy is alive (decided by their sprite existing)
-		if (enemies.sprite_index != -1 && possibleTargets[i] == 1) {
+		//remove the enemies.sprite_index != -1 because I think that was the culprit
+		//the dmg_calc call is just for debugging right now
+		if (possibleTargets[i] == 1) {
 			// Highlight this enemy
+			dmg_calc(0.5, 1, 10);
 		}
 	}
 
