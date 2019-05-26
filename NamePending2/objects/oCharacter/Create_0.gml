@@ -22,6 +22,12 @@ for (i = 0; i < instance_number(oInvalidAttack); i++) {
 	invalidAttackOverlays[i] = instance_find(oInvalidAttack, i);
 }
 
+// Create an array listing the possible target icons for use later
+var i = -1;
+for (i = 0; i < instance_number(oPossibleTarget); i++) {
+	possibleTargets[i] = instance_find(oPossibleTarget, i);
+}
+
 // Drift up and down
 MAXDRIFT = 5;
 origin = y;

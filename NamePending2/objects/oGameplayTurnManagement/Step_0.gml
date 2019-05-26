@@ -23,6 +23,14 @@ if (mouse && !position_meeting(mouse_x, mouse_y, oCharacter) && !position_meetin
 		var invalidAttack = instance_find(oInvalidAttack, i);
 		invalidAttack.visible = false;
 	}
+	for (i = 0; i < instance_number(oAttack); i++) {
+		var invalidAttack = instance_find(oAttack, i);
+		invalidAttack.visible = false;
+	}
+	for (i = 0; i < instance_number(oPossibleTarget); i++) {
+		var possibleTarget = instance_find(oPossibleTarget, i);
+		possibleTarget.visible = false;
+	}
 }
 
 if (esc) {

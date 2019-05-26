@@ -111,14 +111,6 @@
             }
         },
         {
-            "Key": "399c492a-384d-4ed4-a222-aa4efc553163",
-            "Value": {
-                "id": "50f72394-e72c-423b-885b-99da2a0b1e1c",
-                "resourcePath": "sprites\\sClickedButton\\sClickedButton.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "3b05ef59-b112-47e5-ae8f-cbb245090dd9",
             "Value": {
                 "id": "6ed5dd0a-c1d1-415c-9465-95b26f178057",
@@ -183,14 +175,6 @@
             }
         },
         {
-            "Key": "5cb11e48-4198-4b8d-8ad3-8f7df82cd6ae",
-            "Value": {
-                "id": "e05988e3-7fec-4fa3-a737-2583fb7093c2",
-                "resourcePath": "sprites\\sUnclickedButton\\sUnclickedButton.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "5e4018e3-5da3-446e-8cfb-37b6a5576249",
             "Value": {
                 "id": "90093f5e-b1e6-4744-b558-533a86aeef8e",
@@ -228,14 +212,6 @@
                 "id": "ca8fdd21-1cd8-4a4f-aec8-2d1592786455",
                 "resourcePath": "views\\666b6b05-bd90-4c5a-b6b2-ca9dc3112d26.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "6c8ee4e2-af4c-4e6d-adf0-3c022dad3cd5",
-            "Value": {
-                "id": "7b052f25-3098-42be-920e-197046e593e0",
-                "resourcePath": "sprites\\sEnemyB\\sEnemyB.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -303,14 +279,6 @@
             }
         },
         {
-            "Key": "7ead0def-b1f0-453b-9b07-e5d2c42cc90e",
-            "Value": {
-                "id": "cd59fd5c-4484-4364-b731-9c107c40c918",
-                "resourcePath": "sprites\\sAlchemist\\sAlchemist.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "7fc65647-b01d-45f4-b335-8f6e8d31887e",
             "Value": {
                 "id": "15d81680-3496-4e74-bf6c-212f4739a5bc",
@@ -345,7 +313,7 @@
         {
             "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
             "Value": {
-                "id": "ee3bc13e-0a7c-469d-8989-4c5b6be4692a",
+                "id": "f0cde086-0f5d-4f62-b1cc-2e1a9b14bbf1",
                 "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
                 "resourceType": "GMAmazonFireOptions"
             }

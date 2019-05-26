@@ -207,14 +207,14 @@ ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|2], "displayName", "Autopilot Assistance");
 ds_map_add(attacks[|2], "desc", "Team evasion buff, insuring a safe drive in a Tesla");
 ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 1]);
-ds_map_add(attacks[|2], "targetAllyposition", [1, 1, 1, 1]);
+ds_map_add(attacks[|2], "targetAllyPosition", [1, 1, 1, 1]);
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|3], "displayName", "Fully Retractable Sunroof");
 ds_map_add(attacks[|3], "desc", "Increases style, which isn't a mechanic in our game, but also gives the parties accuracy.");
 ds_map_add(attacks[|3], "charPosition", [0, 1, 0, 1]);
-ds_map_add(attacks[|3], "targetAllyposition", [1, 1, 1, 1]);
+ds_map_add(attacks[|3], "targetAllyPosition", [1, 1, 1, 1]);
 attacks[|4] = ds_map_create();
 ds_map_add(attacks[|4], "id", 4);
 ds_map_add(attacks[|4], "sprite", sPlaceholderAttack);
@@ -332,7 +332,7 @@ ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
 ds_map_add(attacks[|1], "displayName", "Ass we can");
 ds_map_add(attacks[|1], "desc", "Team Defense buff");
 ds_map_add(attacks[|1], "charPosition", [0, 0, 1, 1]);
-ds_map_add(attacks[|1], "targetAllyposition", [1, 1, 1, 1]);
+ds_map_add(attacks[|1], "targetAllyPosition", [1, 1, 1, 1]);
 attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
@@ -470,6 +470,36 @@ ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]);
 ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
 ds_map_add(global.characters[10], "attacks", attacks);
 ds_map_add(global.characters[10], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+// Prime Pleb
+global.characters[11] = ds_map_create();
+ds_map_add(global.characters[11], "type", "Mob");
+ds_map_add(global.characters[11], "displayName", "Prime Pleb");
+ds_map_add(global.characters[11], "sprite", sPrimePleb);
+attacks = ds_list_create();
+attacks[|0] = ds_map_create();
+ds_map_add(attacks[|0], "id", 0);
+ds_map_add(attacks[|0], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|0], "displayName", "What does OW stand for?");
+ds_map_add(attacks[|0], "desc", "Damages two targets");
+ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
+ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); //don't want to mess with the values
+attacks[|1] = ds_map_create();
+ds_map_add(attacks[|1], "id", 1);
+ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|1], "displayName", "Shitpost");
+ds_map_add(attacks[|1], "desc", "Stuns Target"); 
+ds_map_add(attacks[|1], "charPosition", [0, 1, 1, 1]); 
+ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);//don't want to mess with the values
+attacks[|2] = ds_map_create();
+ds_map_add(attacks[|2], "id", 1);
+ds_map_add(attacks[|2], "sprite", sPlaceholderAttack);
+ds_map_add(attacks[|2], "displayName", "Why'd you quit RP");
+ds_map_add(attacks[|2], "desc", "Inflicts damage to target"); 
+ds_map_add(attacks[|2], "charPosition", [0, 1, 1, 1]); 
+ds_map_add(attacks[|2], "targetPosition", [0, 0, 0, 0]);//don't want to mess with the values
+ds_map_add(global.characters[11], "attacks", attacks);
+ds_map_add(global.characters[11], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 
 global.order = [1, 6, 0, 6];

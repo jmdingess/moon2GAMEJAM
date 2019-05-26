@@ -42,9 +42,12 @@ if (global.selected != id && mouse && position_meeting(mouse_x, mouse_y, id))
 	}
 	// Deselect selected attack
 	var selectionBox = instance_find(oSelectionBox, 0);
-	selectionBox.visible = false
-	global.attackSelected = -1
-	global.enemySelected = -1
+	selectionBox.visible = false;
+	global.attackSelected = -1;
+	global.enemySelected = -1;
+	for (i = 0; i < array_length_1d(possibleTargets); i++) {
+		possibleTargets[i].visible = false;
+	}
 }
 
 if  (MAXDRIFT < abs(y - origin)) {

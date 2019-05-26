@@ -17,20 +17,35 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 		selectionBox.visible = true; 
 	}
 	
-	show_debug_message(myID);
-	show_debug_message(charID);
-	
 	// Highlight possible targets
-	var possibleTargets = attackMap[? "targetPosition"]
+	var enemyTargets = attackMap[? "targetPosition"];
+	if enemyTargets <= 0 {
+		enemyTargets = [0, 0, 0, 0];
+	}
 	var i;
-	for (i=0; i < array_length_1d(enemies) && i < array_length_1d(possibleTargets); i++) {
+	for (i=0; i < array_length_1d(enemies) && i < array_length_1d(enemyTargets); i++) {
 		// if enemy is alive (decided by their sprite existing)
-		//remove the enemies.sprite_index != -1 because I think that was the culprit
-		//the dmg_calc call is just for debugging right now
-		if (possibleTargets[i] == 1) {
+		if (enemies[i].sprite_index != -1 && enemyTargets[i] == 1) {
 			// Highlight this enemy
-			dmg_calc(0.5, 1, 10);
+			possibleTargets[i].visible = true;
+		}
+		else {
+			possibleTargets[i].visible = false;
 		}
 	}
-
+	var allyTargets = attackMap[? "targetAllyPosition"];
+	if allyTargets <= 0 {
+		allyTargets = [0, 0, 0, 0];
+	}
+	for (i=0; i < array_length_1d(characters) && i < array_length_1d(allyTargets); i++) {
+		// if character is alive (decided by their sprite existing)
+		if (characters[i].sprite_index != -1 && allyTargets[i] == 1) {
+			// Highlight this enemy
+			possibleTargets[4 + i].visible = true;
+		}
+		else {
+			possibleTargets[4 + i].visible = false;
+		}
+	}
+	
 }
