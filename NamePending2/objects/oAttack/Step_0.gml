@@ -49,6 +49,11 @@ if (invalid == false && global.attackSelected != id && mouse && position_meeting
 			}
 		}
 	}
+	if targettingType == targetting.TARGETSELF {
+		targettingType = targetting.TARGET;
+		allyTargets = [0, 0, 0, 0];
+		allyTargets[position] = 1;
+	}
 	
 	for (i=0; i < array_length_1d(enemies) && i < array_length_1d(enemyTargets); i++) {
 		// if enemy is alive (decided by their sprite existing)
