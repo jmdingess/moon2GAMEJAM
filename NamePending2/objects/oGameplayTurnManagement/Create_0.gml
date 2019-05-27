@@ -13,7 +13,7 @@ var enemyInits;
 
 var i;
 for (i = 0; i < array_length_1d(global.order); i++) {
-	if (global.order[i] == 0) {
+	if (global.order[i] <= 0) {
 		characterInits[i] = -1;
 		continue;
 	}
@@ -21,7 +21,7 @@ for (i = 0; i < array_length_1d(global.order); i++) {
 	var charStats = charMap[? "stats"];
 	characterInits[i] = turn_calc(charStats[7], charStats[6]);
 	
-	if (global.enemyOrder[i] == 0) {
+	if (global.enemyOrder[i] <= 0) {
 		enemyInits[i] = -1;
 		continue;
 	}

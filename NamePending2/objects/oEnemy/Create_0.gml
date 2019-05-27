@@ -22,9 +22,29 @@ while (instance_find(oEnemy, i) != self.id)
 {
 	i++;
 }
-myID = i;
+myID = i; // better name for this is myPos
+occupiedBy = -1; // -1 = no one is occupying this square by being wide
 enemyMap = ds_map_create();
-ds_map_copy(enemyMap, global.enemies[global.enemyOrder[myID]]);
+if (global.enemyOrder[myID] == -1) {
+	// -1 denotes another character is big and 'sitting' in this slot
+	ds_map_copy(enemyMap, global.enemies[0]);
+	i = 0;
+	while (0 <= myID - i and global.enemyOrder[myID-i] == -1) {
+		i++;
+	}
+	if (myID - i) > 0 {
+		occupiedBy = instance_find(oEnemy, myID - i);
+	}
+	else {
+		// This is a pretty huge error and shouldn't happen
+		show_debug_message("Initialization of character with -1 value can't continue");
+		// Use empty instead; could cause glitches though
+		occupiedBy = -1;
+	}
+}
+else {
+	ds_map_copy(enemyMap, global.enemies[global.enemyOrder[myID]]);
+}
 dead = false;
 
 // Drift up and down
