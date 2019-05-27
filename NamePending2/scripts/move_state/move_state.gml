@@ -43,6 +43,15 @@ if (place_meeting(x, y+vspd, oWall1)){
 }
 y+= vspd;
 //Enemy Collision
-if (place_meeting(x, y+vspd, oMap_enemy) && (place_meeting(x+hspd, y, oMap_enemy))){
-	room_goto(4);
+if (place_meeting(x, y+vspd, oMap_enemy)){
+	if(!place_meeting(x, y+sign(vspd), oMap_enemy)){
+		room_goto_previous();
+	}
 }
+if (place_meeting(x+hspd, y, oMap_enemy)){
+	if(!place_meeting(x+sign(hspd), y, oMap_enemy)){
+		room_goto_previous();
+	}
+}
+
+	
