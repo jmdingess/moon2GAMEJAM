@@ -56,3 +56,14 @@ else {
 }
 
 // TODO: Swap any conditions (poisoned, etc) that we apply
+var tmp = inst1.dead;
+inst1.dead = inst2.dead;
+inst2.dead = tmp;
+
+var tmp = inst1.current_hp;
+inst1.current_hp = inst2.current_hp;
+inst2.current_hp = tmp;
+
+var tmp = inst1.charge;
+inst1.charge = inst2.charge;
+inst2.charge = tmp;

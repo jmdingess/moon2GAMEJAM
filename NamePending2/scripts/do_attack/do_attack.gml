@@ -1,10 +1,11 @@
 // PG-13 Username, <your name here>
-// @desc do_attack(character, target, attackID)
+// @desc do_attack(character, target, attackID, attackPower)
 // Does attack. Called from oAttack->Step and oEnemy->Step
 
 // charMap is the map of the character that called it. Should be same as global.selected.myCharacter
 // target is the instance (oCharacter or oEnemy) that was clicked on to confirm this attack. Not used for every attack
 // attackID is the ID value of this attack. -1 for move.
+// attackPower is a multiplier to be added to this attack's damage
 
 // with charMap[? "id"] you can get the character's ID.
 // with this and attackID you can find the specific attack being performed. 
@@ -26,6 +27,7 @@ var charMap = argument0;
 var character = global.selected;
 var target = argument1;
 var attackID = argument2;
+var attackPower = argument3;
 
 // Move
 if attackID == -1 {
@@ -48,6 +50,18 @@ if(is_undefined(charAttacks))
 //get this character's stats
 var charStats = charMap[? "stats"];
 
+// for readability/sanity
+var max_hp = charStats[0];
+var curr_hp = character.current_hp;
+var sp = charStats[1];
+var limit = charStats[2];
+var str = charStats[3];
+var dex = charStats[4];
+var int = charStats[5];
+var luck = charStats[6];
+var spd = charStats[7]; // speed is a game keyword ;_;
+var acc = charStats[8];
+
 //get the stats of the target
 //just for debuggin
 // PG-13: Both enemies and characters use do_attack. This next statement forces target to be an enemy
@@ -65,6 +79,8 @@ if (is_undefined(targMap) or targMap == -1) {
 }
 var targStats = targMap[? "stats"];
 
+var target_luck = targStats[6];
+
 if(charMap[? "type"] == "Party Member")
 {
 	switch (charID) {
@@ -77,34 +93,19 @@ if(charMap[? "type"] == "Party Member")
 		switch (attackID) {
 		case 0:
 			// Ban Hammer
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, str, dex, attackPower, target_luck, target);	
 			break;
 		case 1:
 			// Suck my dick
 			//Needs stun chance
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			var dmgDealt = standard_attack(acc, int, dex, attackPower, target_luck, target);
+			if (dmgDealt != 0) {
+				// If we hit, 40% chance to stun
+				if (random(1.0) <= 0.4) {
+					target.stun += 1;
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmgDealt;
 			break;
 		
 		case 2:
@@ -421,18 +422,7 @@ if(charMap[? "type"] == "Party Member")
 		switch (attackID) {
 		case 0:
 			// Claw Strike
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, dex, str, attackPower, target_luck, target);
 			break;
 		case 1:
 			// Happy Eddie soothes the pain.
@@ -446,18 +436,7 @@ if(charMap[? "type"] == "Party Member")
 		
 		case 3:
 			//Bite
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, str, dex, attackPower, target_luck, target);
 			break;
 		
 		case 4:
@@ -545,35 +524,12 @@ else { // ENEMIES
 		case 0:
 			// Angry Lunge
 			//Needs to move forward
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			move(target, 1);
+			return standard_attack(acc, dex, str, attackPower, target_luck, target);
 			break;
 		case 1:
 			// Smile Stomp
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
-			break;
-				
+			return standard_attack(acc, str, dex, attackPower, target_luck, target);
 		}
 		break;
 				
@@ -583,33 +539,16 @@ else { // ENEMIES
 		case 0:
 			// Ask Dumb Question
 			//Needs to text box question, needs to stun
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			attack_message("Dumb Question", character.x + 32, character.y+32);
+			if (hit_calc_2(acc, target_luck)) {
+				target.stun += 1;
+				return 1; // we didn't actually do any damage but return nonzero so it knows to display hit
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return 0; // missed
 			break;
 		case 1:
 			// Shitpost
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, int, dex, attackPower, target_luck, target);
 			break;
 				
 		}
@@ -861,19 +800,9 @@ else { // ENEMIES
 					
 		case 2:
 			//Under the corporate thumb
-			//needs to 100% stun
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			// stuns for two turns
+			target.stun += 2;
+			
 			break;
 					
 		case 3:

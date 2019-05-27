@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "36722c68-2e25-4058-b954-638b83fefcfe",
+            "Value": {
+                "id": "b20a4b1d-a5c4-4b34-9ea0-0f792d0ddb8b",
+                "resourcePath": "scripts\\standard_attack\\standard_attack.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "37927c46-57d1-4876-b6dc-9e09305ca14a",
             "Value": {
                 "id": "980bc9c7-7bd4-4f32-8c0f-07ecf35d6080",
@@ -655,6 +663,14 @@
             }
         },
         {
+            "Key": "8bafeb85-717b-4fa1-9d1f-bafe1b5f81b6",
+            "Value": {
+                "id": "d7cc15f4-67ce-4c6b-a1cc-862524d1fd77",
+                "resourcePath": "scripts\\move\\move.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8d1746c5-6751-4231-aa25-ca3983d092eb",
             "Value": {
                 "id": "18692111-aed0-42a7-bb1a-a240794a43ca",
@@ -839,6 +855,14 @@
             }
         },
         {
+            "Key": "ac55e7be-d7de-4dc6-9025-ddb0cc1a4273",
+            "Value": {
+                "id": "261f1dc4-9ea3-41b9-9321-2b273f86c6e2",
+                "resourcePath": "scripts\\attack_message\\attack_message.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ac67fcf4-58d3-43fa-93d3-1d3efd43bc92",
             "Value": {
                 "id": "d9107197-bb26-4876-82e8-1c78f19b58c7",
@@ -940,6 +964,14 @@
                 "id": "58ee3b2b-a333-4054-8fea-83508ff3a2a6",
                 "resourcePath": "sprites\\sAniki_buttonGet\\sAniki_buttonGet.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bd7a89b6-dd97-48e2-a933-40bb78b19111",
+            "Value": {
+                "id": "1bb1c567-9c3c-45be-abb9-75fbcf9a9ac9",
+                "resourcePath": "fonts\\fRooters\\fRooters.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1047,6 +1079,14 @@
             }
         },
         {
+            "Key": "d06733b4-94c0-4b35-a41e-6182af19e74b",
+            "Value": {
+                "id": "0833e6d6-ac8d-42e7-98f7-3f15ae74afb4",
+                "resourcePath": "scripts\\hit_calc_2\\hit_calc_2.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d265df8d-81fa-4422-a12b-dcfaec78832b",
             "Value": {
                 "id": "486060db-1bdb-4a41-824b-5fcab71fa50b",
@@ -1071,11 +1111,27 @@
             }
         },
         {
+            "Key": "d9c8e633-ada4-4b20-85a1-d954244b765e",
+            "Value": {
+                "id": "2a8afeea-b339-454f-b765-8bbd8166bfbd",
+                "resourcePath": "datafiles_yy\\Rooters.otf.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "dc21ab7b-5a0e-4615-9146-ac04766bdaee",
             "Value": {
                 "id": "464356e2-cc63-4b77-957d-bdab5684e65e",
                 "resourcePath": "sprites\\sTesla_atk\\sTesla_atk.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e08d590f-cc21-456b-8efa-f3870a0867ee",
+            "Value": {
+                "id": "60024ee0-3bdd-4309-a142-aa9659046672",
+                "resourcePath": "objects\\oPointMarker\\oPointMarker.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1217,16 +1273,20 @@
     ],
     "script_order": [
         "656ed45a-9dce-4624-9860-4d2317aa42d3",
+        "d06733b4-94c0-4b35-a41e-6182af19e74b",
         "652a7264-7ebe-4853-9bae-f48bc02eba2c",
         "ad1fff62-91ad-4dfd-84fa-2961f4539643",
         "8d1746c5-6751-4231-aa25-ca3983d092eb",
         "cdc5db09-3ea8-4c96-9dd7-10486279de25",
         "797766fa-d7d7-47e2-9020-d2ef8c76fe43",
         "70a6d26a-2fc1-4d06-a4d7-cdc181a0ac8e",
+        "8bafeb85-717b-4fa1-9d1f-bafe1b5f81b6",
         "0263da1e-9dbf-4928-b0c7-3e5a913c4fed",
         "8a394c0d-fd87-4f07-95f7-a09e9519a16b",
         "53317671-dc90-409b-bb9d-e9f85d033e5a",
-        "37927c46-57d1-4876-b6dc-9e09305ca14a"
+        "37927c46-57d1-4876-b6dc-9e09305ca14a",
+        "36722c68-2e25-4058-b954-638b83fefcfe",
+        "ac55e7be-d7de-4dc6-9025-ddb0cc1a4273"
     ],
     "tutorial": ""
 }

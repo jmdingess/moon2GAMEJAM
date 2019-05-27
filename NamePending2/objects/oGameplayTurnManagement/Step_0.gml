@@ -80,7 +80,7 @@ if (showAttack) {
 	}
 	
 	// Display name of attack at top of screen; see draw code
-	drawTopText = true;
+	drawText = true;
 	
 	// Wait 0.8 seconds; continue at alarm 0 code
 	alarm[0] = 0.8*room_speed;

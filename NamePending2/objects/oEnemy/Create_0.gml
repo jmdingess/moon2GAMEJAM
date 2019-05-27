@@ -45,6 +45,12 @@ if (global.enemyOrder[myID] == -1) {
 else {
 	ds_map_copy(enemyMap, global.enemies[global.enemyOrder[myID]]);
 }
+myStats = enemyMap[? "stats"];
+
+// Attributes
+stun = 0;
+charge = 0;
+current_hp = myStats[0];
 dead = false;
 
 // Drift up and down

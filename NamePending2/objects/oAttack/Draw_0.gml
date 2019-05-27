@@ -29,9 +29,7 @@ if (invalid == false && position_meeting(mouse_x, mouse_y, id) && attackMap != -
 			i = j + MAXLINELENGTH + 1;
 		}
 	    draw_set_colour(c_white);
-	    draw_rectangle(mouse_x + 8, mouse_y - 128, mouse_x + 512, mouse_y - 128 + (64*lines), false);
-	    draw_set_colour(c_black);
-		draw_text_transformed(mouse_x + 18, mouse_y - 118, name, 2, 2, 0);
-	    draw_text_transformed(mouse_x + 18, mouse_y - 54, desc, 2, 2, 0);
+		draw_text(pointMarkers[0].x, pointMarkers[0].y, name);
+	    draw_text(pointMarkers[1].x, pointMarkers[1].y, desc);
 	}
 }

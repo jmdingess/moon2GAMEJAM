@@ -13,8 +13,11 @@ atkSprite = -1;
 target = -1;
 targetMap = -1;
 atkName = "";
-drawTopText = false;
+drawText = false;
 showAttack = false;
+attackMessage = "";
+attackMessage_x = -1;
+attackMessage_y = -1;
 
 // This code was written at 2 AM and we're low on time so I can't rewrite it
 // It finds turn order
