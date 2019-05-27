@@ -1,1 +1,1 @@
-audio_play_sound(soMenu, 1, true);
+audio_play_sound(soAltmenu, 1, true);

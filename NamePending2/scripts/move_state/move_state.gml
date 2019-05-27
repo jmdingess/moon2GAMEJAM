@@ -14,8 +14,14 @@ hspd = lengthdir_x(len, dir);
 vspd = lengthdir_y(len, dir);
 
 //horizontal collisions
-if (!place_meeting(x+hspd, y, oWall)){
-	while(place_meeting(x+sign(hspd), y, oWall)){
+if (place_meeting(x+hspd, y, oWall)){
+	while(!place_meeting(x+sign(hspd), y, oWall)){
+		x+= sign(hspd);
+	}
+	hspd = 0;
+}
+if (place_meeting(x+hspd, y, oWall1)){
+	while(!place_meeting(x+sign(hspd), y, oWall1)){
 		x+= sign(hspd);
 	}
 	hspd = 0;
@@ -23,10 +29,20 @@ if (!place_meeting(x+hspd, y, oWall)){
 x+= hspd;
 
 //vertical collisions
-if (!place_meeting(x, y+vspd, oWall)){
-	while(place_meeting(x, y+sign(vspd), oWall)){
+if (place_meeting(x, y+vspd, oWall)){
+	while(!place_meeting(x, y+sign(vspd), oWall)){
+		y+= sign(vspd);
+	}
+	vspd = 0;
+}
+if (place_meeting(x, y+vspd, oWall1)){
+	while(!place_meeting(x, y+sign(vspd), oWall1)){
 		y+= sign(vspd);
 	}
 	vspd = 0;
 }
 y+= vspd;
+//Enemy Collision
+if (place_meeting(x, y+vspd, oMap_enemy) && (place_meeting(x+hspd, y, oMap_enemy))){
+	room_goto(4);
+}

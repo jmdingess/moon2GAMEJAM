@@ -1,21 +1,12 @@
 {
-    "id": "6c3f51c8-66a1-4432-87b6-6ddbd72ee0f8",
+    "id": "02c44c70-ffa8-4b7e-94c5-fc7e475bbace",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oStart_game",
+    "name": "oWall1",
     "eventList": [
-        {
-            "id": "d41f824d-2ebb-480b-8627-3d874d510a00",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "6c3f51c8-66a1-4432-87b6-6ddbd72ee0f8"
-        }
+        
     ],
-    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "maskSpriteId": "70968b72-2bab-4b6e-99cc-f5336f7d588f",
     "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
@@ -33,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "af5dcaf5-308e-4931-a0d9-118903b6ab95",
+    "spriteId": "70968b72-2bab-4b6e-99cc-f5336f7d588f",
     "visible": true
 }
