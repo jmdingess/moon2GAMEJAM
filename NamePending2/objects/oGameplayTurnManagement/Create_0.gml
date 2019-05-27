@@ -6,6 +6,16 @@ for (i = 0; i < instance_number(oPossibleTarget); i++) {
 	possibleTargets[i] = instance_find(oPossibleTarget, i);
 }
 
+// For showing attacks off
+oldSprite = -1;
+oldTargetSprite = -1;
+atkSprite = -1;
+target = -1;
+targetMap = -1;
+atkName = "";
+drawTopText = false;
+showAttack = false;
+
 // This code was written at 2 AM and we're low on time so I can't rewrite it
 // It finds turn order
 var characterInits;
