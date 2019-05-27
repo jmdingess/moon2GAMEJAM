@@ -8,6 +8,31 @@ var esc = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_pause)
 if (showAttack) {
 	showAttack = false;
 	
+	// Deselect attack and remove buttons
+	global.attackSelected = -1;
+	//global.selected = -1;
+	var selectionBox = instance_find(oSelectionBox, 0);
+	if (selectionBox != noone) {
+		selectionBox.visible = false;
+	}
+	var selectionBar = instance_find(oSelectionBar, 0);
+	if (selectionBar != noone) {
+		selectionBar.visible = false;
+	}
+	var i;
+	for (i = 0; i < instance_number(oInvalidAttack); i++) {
+		var invalidAttack = instance_find(oInvalidAttack, i);
+		invalidAttack.visible = false;
+	}
+	for (i = 0; i < instance_number(oAttack); i++) {
+		var invalidAttack = instance_find(oAttack, i);
+		invalidAttack.visible = false;
+	}
+	for (i = 0; i < instance_number(oPossibleTarget); i++) {
+		var possibleTarget = instance_find(oPossibleTarget, i);
+		possibleTarget.visible = false;
+	}
+	
 	if (!is_undefined(atkSprite) and atkSprite != -1) {
 		var charMap = -1;
 		if (global.selected.object_index = oCharacter) {
