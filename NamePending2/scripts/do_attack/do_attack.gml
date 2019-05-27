@@ -32,6 +32,22 @@ var charID = charMap[? "id"];
 if (is_undefined(charID)) {
 	show_error("Couldn't get charID", true);
 }
+
+//get the attacks for this character
+var charAttacks = charMap[? "attacks"];
+if(is_undefined(charAttacks))
+{
+	show_error("No attacks defined for this character", true);
+}
+
+//get this character's stats
+var charStats = charMap[? "stats"];
+
+//get the stats of the target
+//just for debuggin
+var targTemp = global.enemies[global.enemyOrder[target.myID]]; //may not be needed
+var targStats = targTemp[? "stats"]; //may not be needed
+
 switch (charID) {
 case 0:
 	// Shouldn't be possible. Throw error?
@@ -42,6 +58,8 @@ case 1:
 	switch (attackID) {
 	case 0:
 		// Ban Hammer
+		targStats[@ 0] -= dmg_calc(charStats[8]/10.0,1,10); //just for debugging right now
+		show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
 		break;
 		
 	case 1:
