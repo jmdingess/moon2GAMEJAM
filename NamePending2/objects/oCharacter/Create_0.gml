@@ -13,6 +13,9 @@ while (instance_find(oCharacter, i) != self.id && 0 < i)
 myID = i;
 myCharacter = ds_map_create();
 ds_map_copy(myCharacter, global.characters[global.order[myID]])
+
+// attributes
+charge = 0;
 dead = false;
 
 // Create an array listing the attack buttons for use later
