@@ -255,6 +255,14 @@
             }
         },
         {
+            "Key": "29ed24ad-1413-4861-92eb-c4af12b2388c",
+            "Value": {
+                "id": "09d8553f-f8e1-4ff1-85cb-93886fe20856",
+                "resourcePath": "objects\\oCharacterSelectorMenu\\oCharacterSelectorMenu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "35b38506-edff-4ee0-8704-ebf4728be630",
             "Value": {
                 "id": "bf0ed89e-9a50-4046-b7c7-7116ddf48663",

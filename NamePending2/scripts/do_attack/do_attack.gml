@@ -111,7 +111,7 @@ if(charMap[? "type"] == "Party Member")
 		case 2:
 			//shashaa
 			//Needs Riposte
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -127,7 +127,7 @@ if(charMap[? "type"] == "Party Member")
 		
 		case 3:
 			//Blap Blap
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -143,7 +143,7 @@ if(charMap[? "type"] == "Party Member")
 		
 		case 4:
 			//Variety Stream
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -165,7 +165,7 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Hit N Run
 			// Needs Chance to bleed
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -195,7 +195,7 @@ if(charMap[? "type"] == "Party Member")
 		
 		case 4:
 			//Overdrive
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -217,7 +217,7 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Sword Slash
 			//Needs to move unit foward
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -233,7 +233,7 @@ if(charMap[? "type"] == "Party Member")
 		case 1:
 			// Gun shoot
 			// needs to move unit backwards
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -250,7 +250,7 @@ if(charMap[? "type"] == "Party Member")
 		case 2:
 			//Body Pillow
 			//Needs Stun Chance
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -271,7 +271,7 @@ if(charMap[? "type"] == "Party Member")
 		
 		case 4:
 			//Full On AYAYA
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]+5);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex+5);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -293,7 +293,7 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Smug Face
 			// Needs Int up
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -309,7 +309,7 @@ if(charMap[? "type"] == "Party Member")
 		case 1:
 			// Toxic Spam
 			// Needs Bleed Chance
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -346,7 +346,7 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Lashing
 			//Needs multiple attack generator
-			var dmg = dmg_calc(charStats[8]/10.0,1,3);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,3);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -367,7 +367,7 @@ if(charMap[? "type"] == "Party Member")
 		case 2:
 			//Infernal Yukipo
 			//Needs chance to stun
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -384,7 +384,7 @@ if(charMap[? "type"] == "Party Member")
 		case 3:
 			//Get your ass back here!
 			//Needs enemy movement force to front
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -401,7 +401,7 @@ if(charMap[? "type"] == "Party Member")
 		case 4:
 			//WOOP
 			//Needs lifesteal heal
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -442,7 +442,7 @@ if(charMap[? "type"] == "Party Member")
 		case 4:
 			//Scratching Post
 			//needs to move eddie 2 spaces back
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]+3);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex+3);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -478,7 +478,7 @@ if(charMap[? "type"] == "Party Member")
 		case 3:
 			//Rushdown
 			//Needs to move forward 2 spaces
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -495,7 +495,7 @@ if(charMap[? "type"] == "Party Member")
 		case 4:
 			//Spinning Top
 			//Needs to stun
-			var dmg = dmg_calc(charStats[8]/10.0,2,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -560,7 +560,7 @@ else { // ENEMIES
 		case 0:
 			// Explode
 			// Needs to die
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -601,7 +601,7 @@ else { // ENEMIES
 			break;
 		case 1:
 			// Get out MOM REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex+1);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -628,7 +628,7 @@ else { // ENEMIES
 		case 1:
 			// IMO
 			// Needs to lower Speed
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -644,7 +644,7 @@ else { // ENEMIES
 		case 2:
 			// Witch Hunt
 			// Needs to lower attack and defense
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -666,7 +666,7 @@ else { // ENEMIES
 		case 0:
 			// Angry Lunge
 			// Needs to move forward
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -681,7 +681,7 @@ else { // ENEMIES
 			break;
 		case 1:
 			// Angry Slap
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex+1);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -703,7 +703,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Poop Fling
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -725,7 +725,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Attack
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -747,7 +747,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Attack
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -769,7 +769,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Attack
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -807,7 +807,7 @@ else { // ENEMIES
 					
 		case 3:
 			//Early Access!
-			var dmg = dmg_calc(charStats[8]/10.0,3,4);
+			var dmg = dmg_calc((acc - target_luck)/20.0,3,4);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -829,7 +829,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// The Flick
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]-2);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex-2);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -844,7 +844,7 @@ else { // ENEMIES
 			break;
 		case 1:
 			// Coconut Bash
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -861,7 +861,7 @@ else { // ENEMIES
 		case 2:
 			//You Got That
 			//Needs to heal based on damage dealt
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]-2);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex-2);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -888,7 +888,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// The True Ban Hammer
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -919,7 +919,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Eye of the maw
-			var dmg = dmg_calc(charStats[8]/10.0,1,15);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,15);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -939,7 +939,7 @@ else { // ENEMIES
 					
 		case 2:
 			//Rend of the cosmic gods
-			var dmg = dmg_calc(charStats[8]/10.0,8,16);
+			var dmg = dmg_calc((acc - target_luck)/20.0,8,16);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -956,7 +956,7 @@ else { // ENEMIES
 		case 3:
 			//The false gamer god
 			// Needs to lower dex
-			var dmg = dmg_calc(charStats[8]/10.0,2,4);
+			var dmg = dmg_calc((acc - target_luck)/20.0,2,4);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;
@@ -978,7 +978,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Attack
-			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;

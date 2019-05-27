@@ -5,6 +5,14 @@
 var mouse;
 mouse = mouse_check_button_pressed(mb_left);
 
+//if we are in party selection room
+//add us to global.order
+if(mouse && room == selectRoom && position_meeting(mouse_x, mouse_y, self.id))
+{
+	//if charList has an open slot
+	
+}
+
 // When our turn begins
 if (global.selected = id && global.newSelect == true)
 {
