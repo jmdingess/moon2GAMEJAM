@@ -823,7 +823,7 @@ attacks[|2] = ds_map_create();
 ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sEsports_atk);
 ds_map_add(attacks[|2], "displayName", "Under the corporate thumb");
-ds_map_add(attacks[|2], "desc", "attack, Target skips their next turn");
+ds_map_add(attacks[|2], "desc", "attack, Target skips their next two turns");
 ds_map_add(attacks[|2], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|2], "weight", 1);
@@ -1008,6 +1008,8 @@ global.enemyOrder = [1, 4, 4, 1];
 global.selected = -1;
 global.attackSelected = -1;
 global.newSelect = false;
+
+draw_set_font(fRooters);
 
 // Set random seed
 randomize();

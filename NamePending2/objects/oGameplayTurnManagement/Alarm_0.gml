@@ -1,8 +1,11 @@
 /// @description Handle AttackAnimation
 // You can write your code in this editor
 
-drawTopText = false;
+drawText = false;
 atkName = "";
+attackMessage = "";
+attackMessage_x = -1;
+attackMessage_y = -1;
 
 if (!is_undefined(oldSprite) and oldSprite != -1) {
 	var charMap = -1;

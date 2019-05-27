@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if is_undefined(enemyMap[? "sprite"])  {
+if dead or is_undefined(enemyMap[? "sprite"])  {
 	sprite_index = sEmptyChar;
 	dead = true;
 }

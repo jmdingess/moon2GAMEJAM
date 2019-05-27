@@ -28,3 +28,9 @@ for (i = 0; i < instance_number(oEnemy); i++) {
 for (i = 0; i < instance_number(oPossibleTarget); i++) {
 	possibleTargets[i] = instance_find(oPossibleTarget, i);
 }
+
+// Create an array listing the point markers for use later
+var i = -1;
+for (i = 0; i < instance_number(oPointMarker); i++) {
+	pointMarkers[i] = instance_find(oPointMarker, i);
+}

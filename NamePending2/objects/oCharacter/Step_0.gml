@@ -18,6 +18,23 @@ if (global.selected = id && global.newSelect == true)
 		selectionBar.visible = true; 
 	}
 	
+	if (stun != 0) {
+		// Stunned
+		stun -= 1;
+		
+		// show attack; will pass turn for us
+		var gameManager = instance_find(oGameplayTurnManagement, 0)
+		if (is_undefined(gameManager)) {
+			show_error("Could not get game manager", true);
+		}
+		else {
+			gameManager.target = id;
+			gameManager.atkSprite = -1;
+			gameManager.atkName = "Stunned"
+			gameManager.showAttack = true;
+		}
+	}
+	
 	// Make the attack buttons visible and change them to the right sprites
 	// Also, add the ID of the attack; the attack button will use this to decide what to do.
 	var myAttacks = myCharacter[? "attacks"];

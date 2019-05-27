@@ -96,13 +96,18 @@ if (doAttack == true && global.attackSelected == id) {
 	}
 	
 	show_debug_message(attackMap[? "displayName"]);
-	attackID = attackMap[? "id"];
+	var attackID = attackMap[? "id"];
 	if (is_undefined(attackID)) {
 		show_error("Could not find attackID", true);
 	}
 	
+	var attackPower = attackMap[? "power"];
+	if (is_undefined(attackPower)) {
+		attackPower = 1;
+	}
+	
 	// do Attack
-	do_attack(character, target, attackID);
+	do_attack(character, target, attackID, attackPower);
 	
 	// show attack; will pass turn for us
 	var gameManager = instance_find(oGameplayTurnManagement, 0)
@@ -112,6 +117,7 @@ if (doAttack == true && global.attackSelected == id) {
 	else {
 		gameManager.target = target;
 		gameManager.atkSprite = attackMap[? "atksprite"];
+		gameManager.atkName = attackMap[? "displayName"];
 		gameManager.showAttack = true;
 	}
 }

@@ -12,10 +12,10 @@ var target = argument1;
 var attack_id = argument2;
 
 // if the character is a player
-if(character.sprite_index == oCharacter)
+if(character.object_index == oCharacter)
 {
 	// if target is a player
-	if(target.sprite_index == oCharacter)
+	if(target.object_index == oCharacter)
 	{
 		
 	}
@@ -26,7 +26,7 @@ if(character.sprite_index == oCharacter)
 }
 else
 {
-	if(character.sprite_index == oEnemy)
+	if(character.object_index == oEnemy)
 	{
 		
 	}
