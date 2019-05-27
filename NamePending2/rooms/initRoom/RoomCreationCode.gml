@@ -593,7 +593,7 @@ ds_map_add(attacks[|0], "desc", "Blows up");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]); 
 ds_map_add(attacks[|0], "weight", 1);
-ds_map_add(attacks[|0], "atksprite", sPlaceholder_atk);
+ds_map_add(attacks[|0], "atksprite", sExplosion_Atk);
 ds_map_add(global.enemies[3], "attacks", attacks);
 ds_map_add(global.enemies[3], "stats", [9, 0, 0, 1, 1, 1, 1, 0, 10]);
 

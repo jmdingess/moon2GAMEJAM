@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "137a5bc0-967f-41ef-8be7-e1777f660b43",
+            "Value": {
+                "id": "da5c32ad-29ab-4e2a-b5ea-8ee21a0818ef",
+                "resourcePath": "sprites\\sExplosion_Atk\\sExplosion_Atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "145cfcf2-f7e6-4738-95b3-eb43d0dc4171",
             "Value": {
                 "id": "9e1590ea-5968-4f5d-8b55-2d7025f331b2",
@@ -252,6 +260,14 @@
                 "id": "adcd3e20-7e04-4985-80f0-a1cae535e411",
                 "resourcePath": "sprites\\sTesla_buttonHitNRun\\sTesla_buttonHitNRun.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "42aec04f-e6d7-46f2-9f06-1335d3d345eb",
+            "Value": {
+                "id": "86cff5d2-d096-492f-89fd-3eb2c8a9b4fe",
+                "resourcePath": "objects\\oPlayermodel\\oPlayermodel.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -471,6 +487,14 @@
             }
         },
         {
+            "Key": "7868a2a7-9a7d-4a04-84bc-cca647dc9d93",
+            "Value": {
+                "id": "0dc66608-9b57-4268-b1d2-961c5d3b4207",
+                "resourcePath": "sprites\\map_room\\map_room.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "797766fa-d7d7-47e2-9020-d2ef8c76fe43",
             "Value": {
                 "id": "7a97f261-1300-4bb2-a0bc-c9aa35efe3e2",
@@ -639,14 +663,6 @@
             }
         },
         {
-            "Key": "99cb86e3-8117-4755-8046-ffbed0d3eae4",
-            "Value": {
-                "id": "7d132a20-48bf-4355-b5c8-14cf47c33483",
-                "resourcePath": "objects\\oPlayermodel\\oPlayermodel.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "9bd8403a-7c59-49fb-ae62-e1c6255cfb8d",
             "Value": {
                 "id": "0c20fe4f-fc83-44cc-a1a3-0f91912d49e1",
@@ -803,6 +819,14 @@
             "Value": {
                 "id": "f650346e-9e61-4bc1-a353-461c8bdc931b",
                 "resourcePath": "objects\\oAttack\\oAttack.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b28c029f-bafb-4406-ac9e-e54e76e01aa7",
+            "Value": {
+                "id": "ff3bda88-b1f0-4285-a231-6727596cc712",
+                "resourcePath": "objects\\oPlayermodel1\\oPlayermodel1.yy",
                 "resourceType": "GMObject"
             }
         },
