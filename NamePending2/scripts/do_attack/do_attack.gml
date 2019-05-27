@@ -48,44 +48,108 @@ var charStats = charMap[? "stats"];
 var targTemp = global.enemies[global.enemyOrder[target.myID]]; //may not be needed
 var targStats = targTemp[? "stats"]; //may not be needed
 
-switch (charID) {
-case 0:
-	// Shouldn't be possible. Throw error?
-	break;
-	
-case 1:
-	// god gamer
-	switch (attackID) {
+if(charMap[? "type"] == "Party Member")
+{
+	switch (charID) {
 	case 0:
-		// Ban Hammer
-		targStats[@ 0] -= dmg_calc(charStats[8]/10.0,1,10); //just for debugging right now
-		show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+		// Shouldn't be possible. Throw error?
 		break;
-		
+	
 	case 1:
-		// Suck my Dick
-		break;
+		// god gamer
+		switch (attackID) {
+		case 0:
+			// Ban Hammer
+			var dmg = dmg_calc(charStats[8]/10.0,1,10);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		case 1:
+			// Suck my dick
+			var dmg = dmg_calc(charStats[8]/10.0,2,8);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
 		
+		case 2:
+			//shashaa
+			var dmg = dmg_calc(charStats[8]/10.0,3,5);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		}
+		break;
+	
 	case 2:
-		//etc
+		// moon2M :mega: TESLAAAAAAAAAAAAA
+		switch (attackID) {
+		case	 0:
+			// Run down
+			var dmg = dmg_calc(charStats[8]/10.0,1,10);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
 		
-	}
-	break;
-	
-case 2:
-	// Gaybriel
-	switch (attackID) {
-	case 0:
-		// RP Spew
+		case 1:
+			//etc
+			var dmg = dmg_calc(charStats[8]/10.0,1,10);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		}
 		break;
-		
-	case 1:
+	
+	case 3:
+	
 		//etc
-		
 	}
-	break;
+}
+else
+{
 	
-case 3:
-	
-	//etc
 }

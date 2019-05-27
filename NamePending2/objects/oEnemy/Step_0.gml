@@ -201,6 +201,12 @@ if (global.selected == id && global.newSelect == true)
 if (global.attackSelected != -1 && isTargetable == true && mouse && position_meeting(mouse_x, mouse_y, id)) {
 	global.attackSelected.doAttack = true;
 	global.attackSelected.target = id;
+	var tempStats = enemyMap[? "stats"];
+	if(tempStats[0] < 0)
+	{
+		targetDead = true;
+		show_debug_message(enemyMap[? "displayName"] + " is dead");
+	}
 }
 
 
