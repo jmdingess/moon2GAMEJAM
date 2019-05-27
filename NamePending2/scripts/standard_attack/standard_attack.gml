@@ -12,7 +12,7 @@ var target_luck = argument4;
 var target = argument5;
 
 // Check if hit
-if (hit_calc_2(acc, target_luck)) {
+if (hit_calc((acc - target_luck)/20.0)) {
 	// Hit
 	dmg = irandom_range(floor(off_stat_main*attackPower), ceil((off_stat_main+off_stat_sup)*attackPower));
 	target.current_hp -= dmg;
