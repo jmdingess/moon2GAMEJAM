@@ -1,5 +1,5 @@
 ///frostbyt#6969
-///hit_calc(ACC, LCK)
+///hit_calc(hit_chance)
 //
 //
 // Calculates whether an attack was successufl or not
@@ -15,11 +15,7 @@ var hit_chance, max_chance, hit_score;
 //make sure we use a new seed each time
 randomize()
 
-
-
-
-
-hit_chance = (random(argument0)) / random_range(1, argument1);
+hit_chance = argument0;
 max_chance = 1.0 / hit_chance;
 var rand = random(1.0)
 if(abs(rand - 0.5) <= 0.1)
