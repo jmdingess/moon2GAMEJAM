@@ -27,6 +27,7 @@ if (showAttack) {
 			else {
 				charMap[? "sprite"] = atkSprite;
 				global.selected.sprite_index = atkSprite;
+				show_debug_message("Changed attack sprite")
 			}
 		}
 	}

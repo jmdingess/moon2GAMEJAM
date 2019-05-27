@@ -95,7 +95,7 @@ ds_map_add(attacks[|0], "displayName", "Placeholder attack");
 ds_map_add(attacks[|0], "desc", "placeholder description");
 ds_map_add(attacks[|0], "charPosition", [0, 0, 0, 0]);
 ds_map_add(attacks[|0], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(attacks[|0], "atksprite", splaceholder_atk);
+ds_map_add(attacks[|0], "atksprite", sPlaceholder_atk);
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
@@ -113,7 +113,7 @@ ds_map_add(attacks[|3], "type", targetting.TARGET);
 ds_map_add(attacks[|3], "displayName", "Placeholder attack");
 ds_map_add(global.characters[0], "attacks", attacks);
 ds_map_add(global.characters[0], "stats", [0, 0, 0, 0, 0, 0, 0, 0, 0]);
-ds_map_add(global.characters[0], "hit", "splaceholder_hit");
+ds_map_add(global.characters[0], "hit", sPlaceholder_hit);
 //place to add turn order
 // Moon
 global.characters[1] = ds_map_create();
@@ -168,7 +168,7 @@ ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|4], "atksprite", sMoon_atk);
 ds_map_add(global.characters[1], "attacks", attacks);
 ds_map_add(global.characters[1], "stats", [31, 0, 0, 6, 4, 5, 8, 3, 4]);
-ds_map_add(global.characters[1], "hit", "sMoon_hit");
+ds_map_add(global.characters[1], "hit", sMoon_hit);
 
 // Tesla Model S
 global.characters[2] = ds_map_create();
@@ -218,7 +218,7 @@ ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 0]);
 ds_map_add(attacks[|4], "atksprite", sTesla_hit);
 ds_map_add(global.characters[2], "attacks", attacks);
 ds_map_add(global.characters[2], "stats", [27, 0, 0, 5, 8, 7, 2, 5, 3]);
-ds_map_add(global.characters[2], "hit", "sTesla_hit");
+ds_map_add(global.characters[2], "hit", sTesla_hit);
 
 // Suzuki Teriyaki
 global.characters[3] = ds_map_create();
@@ -505,7 +505,7 @@ ds_map_add(attacks[|0], "displayName", "Placeholder attack");
 ds_map_add(attacks[|0], "desc", "placeholder description");
 ds_map_add(attacks[|0], "charPosition", [0, 0, 0, 0]);
 ds_map_add(attacks[|0], "targetPosition", [0, 0, 0, 0]);
-ds_map_add(attacks[|0], "atksprite", splaceholder_atk);
+ds_map_add(attacks[|0], "atksprite", sPlaceholder_atk);
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", sPlaceholderAttack);
@@ -758,7 +758,7 @@ ds_map_add(global.enemies[9], "stats", [12, 0, 0, 1, 6, 4, 6, 7, 6]);
 global.enemies[10] = ds_map_create();
 ds_map_add(global.enemies[10], "type", "Mob");
 ds_map_add(global.enemies[10], "displayName", "Doar");
-ds_map_add(global.enemies[10], "sprite", sDoar);
+ds_map_add(global.enemies[10], "sprite", sPlaceholderChar);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -980,7 +980,7 @@ ds_map_add(global.enemies[15], "stats", [70, 0, 0, 9, 10, 8, 1, 1, 1]);
 global.enemies[16] = ds_map_create();
 ds_map_add(global.enemies[15], "type", "Boss");
 ds_map_add(global.enemies[15], "displayName", "Tentacle of the void");
-ds_map_add(global.enemies[15], "sprite", sTentacle);
+ds_map_add(global.enemies[15], "sprite", sRedTentacle);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -991,7 +991,7 @@ ds_map_add(attacks[|0], "desc", "Attack");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "weight", 1);
-ds_map_add(attacks[|0], "atksprite", sTentacle_atk);
+ds_map_add(attacks[|0], "atksprite", sRedTentacle_atk);
 ds_map_add(global.enemies[16], "attacks", attacks);
 ds_map_add(global.enemies[16], "stats", [7, 0, 0, 2, 2, 9, 4, 6, 5]);
 

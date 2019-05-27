@@ -192,7 +192,7 @@ if (global.selected == id && global.newSelect == true)
 	}
 	else {
 		gameManager.target = target;
-		gameManager.atkSprite = attackMap[? "atkSprite"];
+		gameManager.atkSprite = attackMap[? "atksprite"];
 		gameManager.showAttack = true;
 	}
 }

@@ -111,7 +111,7 @@ if (doAttack == true && global.attackSelected == id) {
 	}
 	else {
 		gameManager.target = target;
-		gameManager.atkSprite = attackMap[? "atkSprite"];
+		gameManager.atkSprite = attackMap[? "atksprite"];
 		gameManager.showAttack = true;
 	}
 }

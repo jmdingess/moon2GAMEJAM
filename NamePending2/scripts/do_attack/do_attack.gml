@@ -50,8 +50,20 @@ var charStats = charMap[? "stats"];
 
 //get the stats of the target
 //just for debuggin
-var targTemp = global.enemies[global.enemyOrder[target.myID]]; //may not be needed
-var targStats = targTemp[? "stats"]; //may not be needed
+// PG-13: Both enemies and characters use do_attack. This next statement forces target to be an enemy
+//var targTemp = global.enemies[global.enemyOrder[target.myID]]; //may not be needed
+// PG-13: You can get the targetMap like this:
+var targMap = -1;
+if (target.object_index == oEnemy) {
+	targMap = target.enemyMap; // where the maps for enemies are stored in oEnemy
+}
+else {
+	targMap = target.myCharacter; // where the maps for characters are stored in oCharacter
+}
+if (is_undefined(targMap) or targMap == -1) {
+	show_error("Target has no map", true);
+}
+var targStats = targMap[? "stats"];
 
 if(charMap[? "type"] == "Party Member")
 {
@@ -519,555 +531,538 @@ if(charMap[? "type"] == "Party Member")
 			break;
 		}
 		break;
-	
 	}
-	else
-	{
-		if(charMap[? "type"] == "mob")
-		{	
-			switch (charID) {
-			case 0:
-				// Shouldn't be possible. Throw error?
+}
+else { // ENEMIES
+	switch (charID) {
+	case 0:
+		// Shouldn't be possible. Throw error?
+		break;
+				
+	case 1:
+		// Moon2S
+		switch (attackID) {
+		case 0:
+			// Angry Lunge
+			//Needs to move forward
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
 				break;
-				
-			case 1:
-				// Moon2S
-				switch (attackID) {
-				case 0:
-					// Angry Lunge
-					//Needs to move forward
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				case 1:
-					// Smile Stomp
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
+			}
+			else
+			{
+				show_debug_message("Attack failed");
 				break;
-				
-			case 2:
-				// Prime Pleb
-				switch (attackID) {
-				case 0:
-					// Ask Dumb Question
-					//Needs to text box question, needs to stun
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				case 1:
-					// Shitpost
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
+			}
+			break;
+		case 1:
+			// Smile Stomp
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
 				break;
-				
-			case 3:
-				// NaM
-				switch (attackID) {
-				case 0:
-					// Explode
-					// Needs to die
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-					
-				}
+			}
+			else
+			{
+				show_debug_message("Attack failed");
 				break;
-				
-			case 4:
-				// moon2N
-				switch (attackID) {
-				case 0:
-					//Undecided
-					//Litterally nothing lmao
-					break;
-				case 1:
-					// True Neutral
-					// Needs to remove all buffs and debuffs, 100% chance
-					break;
-				
-				}
-				break;
-				
-			case 5:
-				// Weeb
-				switch (attackID) {
-				case 0:
-					// Protect sakurachan
-					// Needs to defense buff , and protect target
-					break;
-				case 1:
-					// Get out MOM REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
-				break;
-				
-			case 6:
-				// Troglodyte
-				switch (attackID) {
-				case 0:
-					// Normie Following 
-					//Needs to buff ally target
-					break;
-				case 1:
-					// IMO
-					// Needs to lower Speed
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				case 2:
-					// Witch Hunt
-					// Needs to lower attack and defense
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				}
-				break;
-				
-			case 7:
-				// Moon2VeryA
-				switch (attackID) {
-				case 0:
-					// Angry Lunge
-					// Needs to move forward
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				case 1:
-					// Angry Slap
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
-				break;
-				
-			case 8:
-				// poopsnail
-				switch (attackID) {
-				case 0:
-					// Poop Fling
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
-				break;
-				
-			case 9:
-				// Rabbit/Fox/Boar
-				switch (attackID) {
-				case 0:
-					// Attack
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
-				break;
-			
-			case 10:
-				// Rabbit/Fox/Boar
-				switch (attackID) {
-				case 0:
-					// Attack
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
-				break;
-				
-			case 11:
-				// Rabbit/Fox/Boar
-				switch (attackID) {
-				case 0:
-					// Attack
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
-				break;
+			}
+			break;
 				
 		}
-		else
-		{
-			if(charMap[? "type"] == "boss")
+		break;
+				
+	case 2:
+		// Prime Pleb
+		switch (attackID) {
+		case 0:
+			// Ask Dumb Question
+			//Needs to text box question, needs to stun
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
 			{
-				switch (charID) {
-				case 12:
-					// Corporate
-					switch (attackID) {
-					case 0:
-						// Pleb Defense Force
-						// Needs to spawn 2 prime plebs
-						break;
-					case 1:
-						// Soul for sponsorship
-						// Needs to Str/Luck Down
-						break;
-					
-					case 2:
-						//Under the corporate thumb
-						//needs to 100% stun
-						var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					
-					case 3:
-						//Early Access!
-						var dmg = dmg_calc(charStats[8]/10.0,3,4);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					
-					}
-					break;	
-					
-				case 13:
-					// Ricardo Milos
-					switch (attackID) {
-					case 0:
-						// The Flick
-						var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]-2);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					case 1:
-						// Coconut Bash
-						var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					
-					case 2:
-						//You Got That
-						//Needs to heal based on damage dealt
-						var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]-2);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					
-					case 3:
-						//Dance of demons
-						//needs to buff SPD/ATK/STR/DEX by 1, never falls off and can stack?
-						break;
-					
-					}
-					break;
-					
-				case 14:
-					// Old Moon
-					switch (attackID) {
-					case 0:
-						// The True Ban Hammer
-						var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					case 1:
-						// Howl into the Void
-						// Needs to lower SPD/Str
-						break;
-					
-					case 2:
-						//Cresent Moon
-						//Chance to apply AoE bleed
-						break;
-					
-					}
-					break;
-					
-				case 15:
-					// Old moon Phase 2
-					switch (attackID) {
-					case 0:
-						// Eye of the maw
-						var dmg = dmg_calc(charStats[8]/10.0,1,15);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					case 1:
-						// From the void it hungers
-						// Spawn A tentacle monster
-						break;
-					
-					case 2:
-						//Rend of the cosmic gods
-						var dmg = dmg_calc(charStats[8]/10.0,8,16);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					
-					case 3:
-						//The false gamer god
-						// Needs to lower dex
-						var dmg = dmg_calc(charStats[8]/10.0,2,4);
-						if(dmg > 0)
-						{
-							targStats[@ 0] -= dmg;
-							show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-							break;
-						}
-						else
-						{
-							show_debug_message("Attack failed");
-							break;
-						}
-						break;
-					
-					}
-					break;
-					
-				case 16:
-				// Tentacle monster
-				switch (attackID) {
-				case 0:
-					// Attack
-					var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
-					if(dmg > 0)
-					{
-						targStats[@ 0] -= dmg;
-						show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-						break;
-					}
-					else
-					{
-						show_debug_message("Attack failed");
-						break;
-					}
-					break;
-				
-				}
-				break;		
-				
-			//I don't know how to end this monkaS	
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
 			break;
+		case 1:
+			// Shitpost
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+				
+		}
+		break;
+				
+	case 3:
+		// NaM
+		switch (attackID) {
+		case 0:
+			// Explode
+			// Needs to die
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+					
+		}
+		break;
+				
+	case 4:
+		// moon2N
+		switch (attackID) {
+		case 0:
+			//Undecided
+			//Litterally nothing lmao
+			break;
+		case 1:
+			// True Neutral
+			// Needs to remove all buffs and debuffs, 100% chance
+			break;
+				
+		}
+		break;
+				
+	case 5:
+		// Weeb
+		switch (attackID) {
+		case 0:
+			// Protect sakurachan
+			// Needs to defense buff , and protect target
+			break;
+		case 1:
+			// Get out MOM REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+				
+		}
+		break;
+				
+	case 6:
+		// Troglodyte
+		switch (attackID) {
+		case 0:
+			// Normie Following 
+			//Needs to buff ally target
+			break;
+		case 1:
+			// IMO
+			// Needs to lower Speed
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		case 2:
+			// Witch Hunt
+			// Needs to lower attack and defense
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		}
+		break;
+				
+	case 7:
+		// Moon2VeryA
+		switch (attackID) {
+		case 0:
+			// Angry Lunge
+			// Needs to move forward
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		case 1:
+			// Angry Slap
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]+1);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+				
+		}
+		break;
+				
+	case 8:
+		// poopsnail
+		switch (attackID) {
+		case 0:
+			// Poop Fling
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+				
+		}
+		break;
+				
+	case 9:
+		// Rabbit/Fox/Boar
+		switch (attackID) {
+		case 0:
+			// Attack
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+				
+		}
+		break;
 			
-}
-else
-{
-	
+	case 10:
+		// Rabbit/Fox/Boar
+		switch (attackID) {
+		case 0:
+			// Attack
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+				
+		}
+		break;
+				
+	case 11:
+		// Rabbit/Fox/Boar
+		switch (attackID) {
+		case 0:
+			// Attack
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+				
+		}
+		break;
+		
+	case 12:
+		// Corporate
+		switch (attackID) {
+		case 0:
+			// Pleb Defense Force
+			// Needs to spawn 2 prime plebs
+			break;
+		case 1:
+			// Soul for sponsorship
+			// Needs to Str/Luck Down
+			break;
+					
+		case 2:
+			//Under the corporate thumb
+			//needs to 100% stun
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+					
+		case 3:
+			//Early Access!
+			var dmg = dmg_calc(charStats[8]/10.0,3,4);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+					
+		}
+		break;	
+					
+	case 13:
+		// Ricardo Milos
+		switch (attackID) {
+		case 0:
+			// The Flick
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]-2);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		case 1:
+			// Coconut Bash
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+					
+		case 2:
+			//You Got That
+			//Needs to heal based on damage dealt
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]-2);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+					
+		case 3:
+			//Dance of demons
+			//needs to buff SPD/ATK/STR/DEX by 1, never falls off and can stack?
+			break;
+					
+		}
+		break;
+					
+	case 14:
+		// Old Moon
+		switch (attackID) {
+		case 0:
+			// The True Ban Hammer
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		case 1:
+			// Howl into the Void
+			// Needs to lower SPD/Str
+			break;
+					
+		case 2:
+			//Cresent Moon
+			//Chance to apply AoE bleed
+			break;
+					
+		}
+		break;
+					
+	case 15:
+		// Old moon Phase 2
+		switch (attackID) {
+		case 0:
+			// Eye of the maw
+			var dmg = dmg_calc(charStats[8]/10.0,1,15);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		case 1:
+			// From the void it hungers
+			// Spawn A tentacle monster
+			break;
+					
+		case 2:
+			//Rend of the cosmic gods
+			var dmg = dmg_calc(charStats[8]/10.0,8,16);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+					
+		case 3:
+			//The false gamer god
+			// Needs to lower dex
+			var dmg = dmg_calc(charStats[8]/10.0,2,4);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+					
+		}
+		break;
+					
+	case 16:
+		// Tentacle monster
+		switch (attackID) {
+		case 0:
+			// Attack
+			var dmg = dmg_calc(charStats[8]/10.0,1,[3]+[4]);
+			if(dmg > 0)
+			{
+				targStats[@ 0] -= dmg;
+				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
+				break;
+			}
+			else
+			{
+				show_debug_message("Attack failed");
+				break;
+			}
+			break;
+		}
+		break;
+	}	
 }

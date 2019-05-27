@@ -82,7 +82,7 @@
             "Key": "0bb350e3-7844-4992-a28f-5577c2515035",
             "Value": {
                 "id": "e865d292-d4a7-4b3c-a115-e6ccd4d22235",
-                "resourcePath": "rooms\\room3\\room3.yy",
+                "resourcePath": "rooms\\menuRoom\\menuRoom.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -187,6 +187,14 @@
             "Value": {
                 "id": "3e8e3d61-6021-48f9-aa2d-32fa09ffe883",
                 "resourcePath": "sprites\\sBarwick_atk\\sBarwick_atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "24567b6a-4a16-4119-abd8-b0be01b848a1",
+            "Value": {
+                "id": "7df2b447-a71d-49b2-88c6-68157ba87b15",
+                "resourcePath": "sprites\\sPlaceholder_atk\\sPlaceholder_atk.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -639,6 +647,14 @@
             }
         },
         {
+            "Key": "8d524391-a8f0-4243-bd33-06583f2d5d58",
+            "Value": {
+                "id": "321f7c61-3452-4e7c-8945-f63b61912f51",
+                "resourcePath": "sprites\\sRedTentacle_atk\\sRedTentacle_atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8e717b5d-69d4-4f92-8330-787ff9cd095c",
             "Value": {
                 "id": "f44fc80a-0c7a-4b81-a0b6-330fd05a1442",
@@ -668,6 +684,14 @@
                 "id": "12f0ecb3-84d5-40ab-81d5-2c5af0de4982",
                 "resourcePath": "sprites\\sEsports_atk\\sEsports_atk.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "97988602-68e9-463f-a973-1dde11c9d24b",
+            "Value": {
+                "id": "63b158df-a3a0-4f1e-a1ad-6db9b68bf623",
+                "resourcePath": "objects\\oMenuItem\\oMenuItem.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -879,6 +903,14 @@
             }
         },
         {
+            "Key": "b56ad2e8-7058-47fb-b565-c43ae29558ba",
+            "Value": {
+                "id": "6c698f35-c37c-43af-bf48-f46f2a52956d",
+                "resourcePath": "sprites\\sMenu\\sMenu.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b8088a60-8218-40ab-90d9-e7924992c9cc",
             "Value": {
                 "id": "e804d6a7-ea97-4e30-9564-354cd1cccb8f",
@@ -1010,7 +1042,15 @@
             "Key": "d6855824-11e5-4112-9301-8bdc5d3b8cf7",
             "Value": {
                 "id": "49b91fc3-14ac-4252-aabe-c277341cfa7a",
-                "resourcePath": "sprites\\sprite86sEddie_buttonAtk\\sprite86sEddie_buttonAtk.yy",
+                "resourcePath": "sprites\\sEddie_buttonAtk\\sEddie_buttonAtk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d7a5edfc-c59e-4fa7-8b92-56ab6e6b8504",
+            "Value": {
+                "id": "665bbb6d-3bbc-4724-9916-423d5ac43654",
+                "resourcePath": "sprites\\sRedTentacle\\sRedTentacle.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1095,6 +1135,14 @@
             }
         },
         {
+            "Key": "f35ff321-6399-442c-b3b7-8f845b900a75",
+            "Value": {
+                "id": "60e80342-2793-4b0f-a69b-b8ec803d55ee",
+                "resourcePath": "sprites\\sOldMoon2_tentacles\\sOldMoon2_tentacles.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f7601908-22cf-4568-9847-4a71d3404df2",
             "Value": {
                 "id": "4df5f242-4c03-43d5-bd9e-bd1b41652056",
@@ -1108,6 +1156,14 @@
                 "id": "be183c5c-d840-457b-bf9a-59e7f0c733ab",
                 "resourcePath": "views\\f82fb31d-3e30-445a-945c-ac21315f4693.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f88eb69e-a20e-4c61-9709-33e87a21a407",
+            "Value": {
+                "id": "c0bcbaef-6874-4395-80e3-1dca2a41e2e2",
+                "resourcePath": "sprites\\sPlaceholder_hit\\sPlaceholder_hit.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
