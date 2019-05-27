@@ -6,6 +6,13 @@ for (i = 0; i < instance_number(oPossibleTarget); i++) {
 	possibleTargets[i] = instance_find(oPossibleTarget, i);
 }
 
+// For suicide attack
+charToKill = -1;
+
+// For moving characters AFTER attacks
+charToMove = -1;
+spaces = -1;
+
 // For showing attacks off
 oldSprite = -1;
 oldTargetSprite = -1;
@@ -43,22 +50,22 @@ for (i = 0; i < array_length_1d(global.order); i++) {
 	enemyInits[i] = turn_calc(enemyStats[7], enemyStats[6]);
 }
 
-turnOrderSize = 0;
+global.turnOrderSize = 0;
 global.turnOrder = [];
 
 highestInit = max(arr_max(characterInits), arr_max(enemyInits), -1);
 while highestInit >= 0 {
 	for (i=0; i < array_length_1d(characterInits); i++) {
 		if characterInits[i] == highestInit {
-			global.turnOrder[turnOrderSize] = instance_find(oCharacter, i);
-			turnOrderSize++;
+			global.turnOrder[global.turnOrderSize] = instance_find(oCharacter, i);
+			global.turnOrderSize++;
 			characterInits[i] = -1;
 		}
 	}
 	for (i=0; i < array_length_1d(enemyInits); i++) {
 		if enemyInits[i] == highestInit {
-			global.turnOrder[turnOrderSize] = instance_find(oEnemy, i);
-			turnOrderSize++;
+			global.turnOrder[global.turnOrderSize] = instance_find(oEnemy, i);
+			global.turnOrderSize++;
 			enemyInits[i] = -1;
 		}
 	}

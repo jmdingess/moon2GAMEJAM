@@ -52,6 +52,10 @@ stun = 0;
 charge = 0;
 current_hp = myStats[0];
 dead = false;
+riposte = 0;
+bleed = 0;
+shield = 0;
+statBoosts = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 // Drift up and down
 MAXDRIFT = 5;

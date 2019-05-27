@@ -67,3 +67,19 @@ inst2.current_hp = tmp;
 var tmp = inst1.charge;
 inst1.charge = inst2.charge;
 inst2.charge = tmp;
+
+var tmp = inst1.stun;
+inst1.stun = inst2.stun;
+inst2.stun = tmp;
+
+var tmp = inst1.riposte;
+inst1.riposte = inst2.riposte;
+inst2.riposte = tmp;
+
+var tmp = inst1.bleed;
+inst1.bleed = inst2.bleed;
+inst2.bleed = tmp;
+
+var tmp = inst1.shield;
+inst1.shield = inst2.shield;
+inst2.shield = tmp;

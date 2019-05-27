@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "3cd8c384-e981-426d-9103-4fc3433cd3ca",
+            "Value": {
+                "id": "77046257-5c82-4ad5-9b3b-68f207898262",
+                "resourcePath": "scripts\\deal_damage\\deal_damage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3ec6cd3a-af63-4d84-8100-429d0d57b275",
             "Value": {
                 "id": "adcd3e20-7e04-4985-80f0-a1cae535e411",
@@ -364,6 +372,14 @@
                 "id": "d4bd584c-288b-410f-a37c-a16dc58fe74b",
                 "resourcePath": "sprites\\sPrimePleb\\sPrimePleb.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "45b0e804-349d-485f-bedb-14e71dbbbb74",
+            "Value": {
+                "id": "684942be-5277-4b7a-baac-e4987d786be2",
+                "resourcePath": "scripts\\die\\die.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1159,6 +1175,14 @@
             }
         },
         {
+            "Key": "ce1a229c-220e-425f-aa77-3814ee5d1db1",
+            "Value": {
+                "id": "a7f474ec-3f88-4514-ba65-af756adb0cd9",
+                "resourcePath": "scripts\\get_character\\get_character.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ce444327-9c70-4e70-96ac-8f65e1f940d1",
             "Value": {
                 "id": "9871e65c-32da-4cc6-99df-8828d28d425e",
@@ -1228,6 +1252,14 @@
                 "id": "c60ebed4-beba-422c-ae95-451f15aa430f",
                 "resourcePath": "sprites\\sMap_trog\\sMap_trog.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "db382846-714d-4ffe-a371-411559d54bce",
+            "Value": {
+                "id": "df7cc7f7-83fa-4cec-9229-59e1c5c3a98b",
+                "resourcePath": "scripts\\get_char_luck\\get_char_luck.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1430,7 +1462,11 @@
         "53317671-dc90-409b-bb9d-e9f85d033e5a",
         "37927c46-57d1-4876-b6dc-9e09305ca14a",
         "36722c68-2e25-4058-b954-638b83fefcfe",
-        "ac55e7be-d7de-4dc6-9025-ddb0cc1a4273"
+        "ac55e7be-d7de-4dc6-9025-ddb0cc1a4273",
+        "3cd8c384-e981-426d-9103-4fc3433cd3ca",
+        "45b0e804-349d-485f-bedb-14e71dbbbb74",
+        "ce1a229c-220e-425f-aa77-3814ee5d1db1",
+        "db382846-714d-4ffe-a371-411559d54bce"
     ],
     "tutorial": ""
 }

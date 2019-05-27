@@ -5,7 +5,7 @@ if (sprite_index != -1) {
 }
 
 // Mouseover text
-if (invalid == false && position_meeting(mouse_x, mouse_y, id) && attackMap != -1) {
+if (position_meeting(mouse_x, mouse_y, id) && attackMap != -1) {
 	// Format description; really this should all be done once and saved instead of every tick but 
 	// it's like this for now
 	var MAXLINELENGTH = 26;
