@@ -167,7 +167,7 @@ ds_map_add(attacks[|4], "charPosition", [0, 1, 1, 0]);
 ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|4], "atksprite", sMoon_atk);
 ds_map_add(global.characters[1], "attacks", attacks);
-ds_map_add(global.characters[1], "stats", [31, 0, 0, 6, 4, 5, 8, 0, 4]);
+ds_map_add(global.characters[1], "stats", [31, 0, 0, 6, 4, 5, 8, 3, 4]);
 ds_map_add(global.characters[1], "hit", "sMoon_hit");
 
 // Tesla Model S
@@ -217,7 +217,7 @@ ds_map_add(attacks[|4], "charPosition", [0, 0, 1, 1]);
 ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 0]);
 ds_map_add(attacks[|4], "atksprite", sTesla_hit);
 ds_map_add(global.characters[2], "attacks", attacks);
-ds_map_add(global.characters[2], "stats", [27, 0, 0, 5, 8, 7, 2, 0, 3]);
+ds_map_add(global.characters[2], "stats", [27, 0, 0, 5, 8, 7, 2, 5, 3]);
 ds_map_add(global.characters[2], "hit", "sTesla_hit");
 
 // Suzuki Teriyaki
@@ -272,7 +272,7 @@ ds_map_add(attacks[|4], "charPosition", [0, 1, 0, 0]);
 ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|4], "atksprite", sSuzuki_atk);
 ds_map_add(global.characters[3], "attacks", attacks);
-ds_map_add(global.characters[3], "stats", [23, 0, 0, 4, 7, 2, 4, 0, 5]);
+ds_map_add(global.characters[3], "stats", [23, 0, 0, 4, 7, 2, 4, 8, 5]);
 
 // Purple Lady Face
 global.characters[4] = ds_map_create();
@@ -326,7 +326,7 @@ ds_map_add(attacks[|4], "charPosition", [0, 1, 1, 0]);
 ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|4], "atksprite", sPurpleLady_atk);
 ds_map_add(global.characters[4], "attacks", attacks);
-ds_map_add(global.characters[4], "stats", [19, 0, 0, 3, 5, 8, 8, 0, 3]);
+ds_map_add(global.characters[4], "stats", [19, 0, 0, 3, 5, 8, 8, 3, 3]);
 
 // Aniki (billy herrington) 
 global.characters[5] = ds_map_create();
@@ -380,7 +380,7 @@ ds_map_add(attacks[|4], "charPosition", [0, 0, 1, 1]);
 ds_map_add(attacks[|4], "targetPosition", [0, 0, 0, 0]);
 ds_map_add(attacks[|4], "atksprite", sAniki_atk);
 ds_map_add(global.characters[5], "attacks", attacks);
-ds_map_add(global.characters[5], "stats", [35, 0, 0, 9, 3, 4, 8, 0, 4]);
+ds_map_add(global.characters[5], "stats", [35, 0, 0, 9, 3, 4, 8, 2, 4]);
 
 // Eddie
 global.characters[6] = ds_map_create();
@@ -434,7 +434,7 @@ ds_map_add(attacks[|4], "charPosition", [0, 1, 1, 1]);
 ds_map_add(attacks[|4], "targetPosition", [1, 1, 0, 0]);
 ds_map_add(attacks[|4], "atksprite", sEddie_Atk);
 ds_map_add(global.characters[6], "attacks", attacks);
-ds_map_add(global.characters[6], "stats", [21, 0, 0, 3, 4, 6, 7, 0, 5]);
+ds_map_add(global.characters[6], "stats", [21, 0, 0, 3, 4, 6, 7, 5, 5]);
 
 // Lord Barwick
 global.characters[7] = ds_map_create();
@@ -488,7 +488,7 @@ ds_map_add(attacks[|4], "charPosition", [0, 0, 0, 1]);
 ds_map_add(attacks[|4], "targetPosition", [1, 1, 1, 0]);
 ds_map_add(attacks[|4], "atksprite", sBarwick_atk);
 ds_map_add(global.characters[7], "attacks", attacks);
-ds_map_add(global.characters[7], "stats", [25, 0, 0, 6, 4, 3, 2, 0, 8]);
+ds_map_add(global.characters[7], "stats", [25, 0, 0, 6, 4, 3, 2, 7, 8]);
 
 // Enemies
 // empty position; 
@@ -550,7 +550,7 @@ ds_map_add(attacks[|1], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|1], "weight", 2);
 ds_map_add(attacks[|1], "atksprite", sMoon2S_atk);
 ds_map_add(global.enemies[1], "attacks", attacks);
-ds_map_add(global.enemies[1], "stats", [15, 0, 0, 2, 6, 4, 4, 0, 4]);
+ds_map_add(global.enemies[1], "stats", [15, 0, 0, 2, 6, 4, 4, 10, 4]);
 
 // Prime Pleb
 global.enemies[2] = ds_map_create();
@@ -577,7 +577,7 @@ ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
 ds_map_add(attacks[|1], "weight", 1);
 ds_map_add(attacks[|1], "atksprite", sPrimePleb_atk);
 ds_map_add(global.enemies[2], "attacks", attacks);
-ds_map_add(global.enemies[2], "stats", [4, 0, 0, 1, 2, 7, 7, 0, 6]);
+ds_map_add(global.enemies[2], "stats", [4, 0, 0, 1, 2, 7, 7, 7, 6]);
 
 // NaM
 global.enemies[3] = ds_map_create();
@@ -595,7 +595,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "weight", 1);
 ds_map_add(attacks[|0], "atksprite", sExplosion_Atk);
 ds_map_add(global.enemies[3], "attacks", attacks);
-ds_map_add(global.enemies[3], "stats", [9, 0, 0, 1, 1, 1, 1, 0, 10]);
+ds_map_add(global.enemies[3], "stats", [9, 0, 0, 1, 1, 1, 1, 1, 10]);
 
 // moon2N
 global.enemies[4] = ds_map_create();
@@ -624,7 +624,7 @@ ds_map_add(attacks[|1], "targetAllyPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|1], "weight", 1);
 ds_map_add(attacks[|0], "atksprite", sMoon2N_Atk);
 ds_map_add(global.enemies[4], "attacks", attacks);
-ds_map_add(global.enemies[4], "stats", [15, 0, 0, 4, 4, 10, 4, 0, 2]);
+ds_map_add(global.enemies[4], "stats", [15, 0, 0, 4, 4, 10, 4, 6, 2]);
 
 // Weeb
 global.enemies[5] = ds_map_create();
@@ -652,7 +652,7 @@ ds_map_add(attacks[|1], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|1], "weight", 1);
 ds_map_add(attacks[|1], "atksprite", sWeeb_atk);
 ds_map_add(global.enemies[5], "attacks", attacks);
-ds_map_add(global.enemies[5], "stats", [15, 0, 0, 4, 6, 5, 4, 0, 5]);
+ds_map_add(global.enemies[5], "stats", [15, 0, 0, 4, 6, 5, 4, 6, 5]);
 
 //Troglodyte
 global.enemies[6] = ds_map_create();
@@ -688,7 +688,7 @@ ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|2], "weight", 1);
 ds_map_add(attacks[|2], "atksprite", sTrog_atk);
 ds_map_add(global.enemies[6], "attacks", attacks);
-ds_map_add(global.enemies[6], "stats", [19, 0, 0, 5, 6, 5, 3, 0, 3]);
+ds_map_add(global.enemies[6], "stats", [19, 0, 0, 5, 6, 5, 3, 8, 3]);
 
 // moon2VeryA
 global.enemies[7] = ds_map_create();
@@ -715,7 +715,7 @@ ds_map_add(attacks[|1], "targetPosition", [0, 0, 0, 0]);
 ds_map_add(attacks[|1], "weight", 2);
 ds_map_add(attacks[|1], "atksprite", sMoon2VeryA_atk);
 ds_map_add(global.enemies[7], "attacks", attacks);
-ds_map_add(global.enemies[7], "stats", [15, 0, 0, 10, 6, 4, 4, 0, 4]);
+ds_map_add(global.enemies[7], "stats", [15, 0, 0, 10, 6, 4, 4, 2, 4]);
 
 // poopsnail
 global.enemies[8] = ds_map_create();
@@ -734,7 +734,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]);
 ds_map_add(attacks[|0], "weight", 1);
 ds_map_add(attacks[|0], "atksprite", sMoon2S_atk);
 ds_map_add(global.enemies[8], "attacks", attacks);
-ds_map_add(global.enemies[8], "stats", [7, 0, 0, 2, 2, 9, 4, 0, 5]);
+ds_map_add(global.enemies[8], "stats", [7, 0, 0, 2, 2, 9, 4, 8, 5]);
 
 // Wabbit AKA clone spam
 global.enemies[9] = ds_map_create();
@@ -753,7 +753,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "weight", 1);
 ds_map_add(attacks[|0], "atksprite", sMoon2S_atk);
 ds_map_add(global.enemies[9], "attacks", attacks);
-ds_map_add(global.enemies[9], "stats", [12, 0, 0, 1, 6, 4, 6, 0, 6]);
+ds_map_add(global.enemies[9], "stats", [12, 0, 0, 1, 6, 4, 6, 7, 6]);
 
 global.enemies[10] = ds_map_create();
 ds_map_add(global.enemies[10], "type", "Mob");
@@ -771,7 +771,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "weight", 1);
 ds_map_add(attacks[|0], "atksprite", sMoon2S_atk);
 ds_map_add(global.enemies[10], "attacks", attacks);
-ds_map_add(global.enemies[10], "stats", [12, 0, 0, 1, 6, 4, 6, 0, 6]);
+ds_map_add(global.enemies[10], "stats", [12, 0, 0, 1, 6, 4, 6, 7, 6]);
 
 global.enemies[11] = ds_map_create();
 ds_map_add(global.enemies[11], "type", "Mob");
@@ -789,7 +789,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "weight", 1);
 ds_map_add(attacks[|0], "atksprite", sMoon2S_atk);
 ds_map_add(global.enemies[11], "attacks", attacks);
-ds_map_add(global.enemies[11], "stats", [12, 0, 0, 1, 6, 4, 6, 0, 6]);
+ds_map_add(global.enemies[11], "stats", [12, 0, 0, 1, 6, 4, 6, 7, 6]);
 
 //Corporate , boss 1
 global.enemies[12] = ds_map_create();
@@ -838,7 +838,7 @@ ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|3], "weight", 1);
 ds_map_add(attacks[|3], "atksprite", sEsports_atk);
 ds_map_add(global.enemies[12], "attacks", attacks);
-ds_map_add(global.enemies[12], "stats", [70, 0, 0, 9, 4, 9, 4, 0, 3]);
+ds_map_add(global.enemies[12], "stats", [70, 0, 0, 9, 4, 9, 4, 1, 3]);
 
 //Ricardo Milos, boss 2
 global.enemies[13] = ds_map_create();
@@ -887,7 +887,7 @@ ds_map_add(attacks[|3], "targetPosition", [0, 0, 0, 0]);
 ds_map_add(attacks[|3], "weight", 1);
 ds_map_add(attacks[|3], "atksprite", sRicardo_atk);
 ds_map_add(global.enemies[13], "attacks", attacks);
-ds_map_add(global.enemies[13], "stats", [66, 0, 0, 7, 7, 7, 2, 0, 1]);
+ds_map_add(global.enemies[13], "stats", [66, 0, 0, 7, 7, 7, 2, 6, 1]);
 
 //Old Moon, boss 3, Phase 1
 global.enemies[14] = ds_map_create();
@@ -925,7 +925,7 @@ ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|2], "weight", 1);
 ds_map_add(attacks[|2], "atksprite", sOldMoon_atk);
 ds_map_add(global.enemies[14], "attacks", attacks);
-ds_map_add(global.enemies[14], "stats", [42, 0, 0, 2, 10, 2, 6, 0, 2]);
+ds_map_add(global.enemies[14], "stats", [42, 0, 0, 2, 10, 2, 6, 8, 2]);
 
 //Pit lord,moon2H , boss 3, phase 2
 //This boss should take 2 turns every turn.
@@ -974,7 +974,7 @@ ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|3], "weight", 1);
 ds_map_add(attacks[|3], "atksprite", sOldMoon2_atk);
 ds_map_add(global.enemies[15], "attacks", attacks);
-ds_map_add(global.enemies[15], "stats", [70, 0, 0, 9, 10, 8, 1, 0, 1]);
+ds_map_add(global.enemies[15], "stats", [70, 0, 0, 9, 10, 8, 1, 1, 1]);
 
 //Tentacle Monster
 global.enemies[16] = ds_map_create();
@@ -993,7 +993,7 @@ ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "weight", 1);
 ds_map_add(attacks[|0], "atksprite", sTentacle_atk);
 ds_map_add(global.enemies[16], "attacks", attacks);
-ds_map_add(global.enemies[16], "stats", [7, 0, 0, 2, 2, 9, 4, 0, 5]);
+ds_map_add(global.enemies[16], "stats", [7, 0, 0, 2, 2, 9, 4, 6, 5]);
 
 var i;
 for (i=0; i < array_length_1d(global.characters); i++) {
