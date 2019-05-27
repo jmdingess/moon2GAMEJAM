@@ -104,11 +104,14 @@ if (doAttack == true && global.attackSelected == id) {
 	// do Attack
 	do_attack(character, target, attackID);
 	
-	// Pass turn
-	global.turn++;
-	if global.turn >= array_length_1d(global.turnOrder) {
-		global.turn = 0;
+	// show attack; will pass turn for us
+	var gameManager = instance_find(oGameplayTurnManagement, 0)
+	if (is_undefined(gameManager)) {
+		show_error("Could not get game manager", true);
 	}
-	global.selected = global.turnOrder[global.turn];
-	global.newSelect = true;
+	else {
+		gameManager.target = target;
+		gameManager.atkSprite = attackMap[? "atkSprite"];
+		gameManager.showAttack = true;
+	}
 }

@@ -112,6 +112,11 @@ if (global.selected == id && global.newSelect == true)
 	
 	if (totalWeight == 0) {
 		show_debug_message("No legal attacks for " + enemyMap[? "displayName"]);
+		
+		// Needed to pass turn
+		var target = -1;
+		var attackMap = ds_map_create();
+		ds_map_add(attackMap, "displayName", "Pass");
 	}
 	else {
 		// Select attack
@@ -180,13 +185,16 @@ if (global.selected == id && global.newSelect == true)
 		show_debug_message(attackMap[? "displayName"]);
 	}
 	
-	// Pass turn
-	global.turn++;
-	if global.turn >= array_length_1d(global.turnOrder) {
-		global.turn = 0;
+	// show attack; will pass turn for us
+	var gameManager = instance_find(oGameplayTurnManagement, 0)
+	if (is_undefined(gameManager)) {
+		show_error("Could not get game manager", true);
 	}
-	global.selected = global.turnOrder[global.turn];
-	global.newSelect = true;
+	else {
+		gameManager.target = target;
+		gameManager.atkSprite = attackMap[? "atkSprite"];
+		gameManager.showAttack = true;
+	}
 }
 
 // If we get clicked on while we are a valid target for an attack; i.e. they attack us.

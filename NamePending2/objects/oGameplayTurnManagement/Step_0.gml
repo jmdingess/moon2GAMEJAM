@@ -4,6 +4,62 @@
 var mouse = mouse_check_button_pressed(mb_left);
 var esc = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_pause));
 
+// Code for showing attackAnimations
+if (showAttack) {
+	showAttack = false;
+	
+	if (!is_undefined(atkSprite) and atkSprite != -1) {
+		var charMap = -1;
+		if (global.selected.object_index = oCharacter) {
+			charMap = global.selected.myCharacter;
+		}
+		else {
+			charMap = global.selected.enemyMap;
+		}
+		if (is_undefined(charMap) or charMap == -1) {
+			show_debug_message("Couldn't fetch character map");
+		}
+		else {
+			oldSprite = charMap[? "sprite"]
+			if (is_undefined(oldSprite)) {
+				show_debug_message("Couldn't fetch sprite");
+			}
+			else {
+				charMap[? "sprite"] = atkSprite;
+				global.selected.sprite_index = atkSprite;
+			}
+		}
+	}
+	
+	targetMap = -1;
+	if (global.selected.object_index = oCharacter) {
+		targetMap = global.selected.myCharacter;
+	}
+	else {
+		targetMap = global.selected.enemyMap;
+	}
+	if (is_undefined(targetMap) or targetMap == -1) {
+		show_debug_message("Couldn't fetch target map");
+	}
+	else {
+		var hitSprite = targetMap[? "hit"];
+		if (!is_undefined(hitSprite)) {
+			oldTargetSprite = targetMap[? "sprite"];
+			targetMap[? "sprite"] = hitSprite;
+			target.sprite_index = hitSprite;
+		}
+		else {
+			oldTargetSprite = -1;
+		}
+	}
+	
+	// Display name of attack at top of screen; see draw code
+	drawTopText = true;
+	
+	// Wait 0.8 seconds; continue at alarm 0 code
+	alarm[0] = 0.8*room_speed;
+}
+
 // If they click on nothing, deselect attacks
 if (mouse && !position_meeting(mouse_x, mouse_y, oCharacter) && !position_meeting(mouse_x, mouse_y, oEnemy) && !position_meeting(mouse_x, mouse_y, oAttack)) {
 	show_debug_message("I'm deselecting!");
