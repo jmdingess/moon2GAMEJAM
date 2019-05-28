@@ -1002,8 +1002,8 @@ for (i=0; i < array_length_1d(global.enemies); i++) {
 	ds_map_add(global.enemies[i], "id", i);
 }
 
-global.order = [1, 3, 4, 5];
-global.enemyOrder = [1, 2, 3, 4];
+global.order = [1, 6, 0, 6];
+global.enemyOrder = [1, 4, 4, 1];
 global.selected = -1;
 global.attackSelected = -1;
 global.newSelect = false;

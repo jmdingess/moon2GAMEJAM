@@ -50,8 +50,6 @@ if (global.selected == id && global.newSelect == true)
 		}
 		global.selected = global.turnOrder[global.turn];
 		global.newSelect = true;
-		
-		var target = id;
 	}
 	else {
 		if (stun != 0) {
@@ -91,9 +89,6 @@ if (global.selected == id && global.newSelect == true)
 					type = targetting.TARGET;
 				}
 				if (type == targetting.SPECIAL) {
-					if attackMap[? "sprite"] {
-						
-					}
 					special = i;
 					continue;
 				}
