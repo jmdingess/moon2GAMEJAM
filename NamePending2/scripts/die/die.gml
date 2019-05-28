@@ -1,5 +1,6 @@
 // PG-13 Username
 // @desc die(character)
+show_debug_message("character died");
 
 var character = argument0;
 var i=global.turnOrderSize - 1;
@@ -13,6 +14,7 @@ if i != -1 {
 	i++;
 	while i < global.turnOrderSize {
 		global.turnOrder[i-1] = global.turnOrder[i];
+		i++;
 	}
 	global.turnOrderSize--;
 }
@@ -34,9 +36,9 @@ for (i=0; i < 4; i++) {
 
 if allCharactersDead {
 	// Restart battle
-	
+	show_debug_message("All characters died");
 }
 if allEnemiesDead {
 	// Go to next battle
-	
+	show_debug_message("All enemies died");
 }
