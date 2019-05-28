@@ -5,4 +5,4 @@
 // P(true) = (acc-target_luck)/20
 
 var hit_chance = (argument0-argument1)/20;
-return (random(1.0) <= hit_chance);
+return (hit_calc(hit_chance));

@@ -40,6 +40,11 @@ if (is_undefined(charID)) {
 	show_error("Couldn't get charID", true);
 }
 
+var gameManager = instance_find(oGameplayTurnManagement, 0);
+if is_undefined(gameManager){
+	show_error("Couldn't find game manager", true);
+}
+
 //get the attacks for this character
 var charAttacks = charMap[? "attacks"];
 if(is_undefined(charAttacks))
@@ -48,7 +53,7 @@ if(is_undefined(charAttacks))
 }
 
 //get this character's stats
-var charStats = charMap[? "stats"];
+var charStats = character.myStats;
 
 // for readability/sanity
 var max_hp = charStats[0];
@@ -77,7 +82,7 @@ else {
 if (is_undefined(targMap) or targMap == -1) {
 	show_error("Target has no map", true);
 }
-var targStats = targMap[? "stats"];
+var targStats = target.myStats;
 
 var target_luck = targStats[6];
 
@@ -93,15 +98,15 @@ if(charMap[? "type"] == "Party Member")
 		switch (attackID) {
 		case 0:
 			// Ban Hammer
-			return standard_attack(acc, str, dex, attackPower, target_luck, target);	
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);	
 			break;
 		case 1:
 			// Suck my dick
 			//Needs stun chance
-			var dmgDealt = standard_attack(acc, int, dex, attackPower, target_luck, target);
+			var dmgDealt = standard_attack(acc, int, dex, attackPower, target_luck, target, character);
 			if (dmgDealt != 0) {
 				// If we hit, 40% chance to stun
-				if (random(1.0) <= 0.4) {
+				if (hit_calc(0.4)) {
 					target.stun += 1;
 				}
 			}
@@ -111,51 +116,36 @@ if(charMap[? "type"] == "Party Member")
 		case 2:
 			//shashaa
 			//Needs Riposte
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			character.riposte += 1;
+			return standard_attack(acc, dex, str, attackPower, target_luck, target, character);
 			break;
 		
 		case 3:
 			//Blap Blap
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			var dmg = 0;
+			repeat(2) {
+				randEnemy = -1
+				while randEnemy == -1 { // Really bad
+					var randEnemy = get_character(target.object_index, irandom_range(1, 3));
+				}
+				// uses target luck not randEnemy luck, which is wrong
+				dmg += standard_attack(acc, dex, int, attackPower, target_luck, randEnemy, character);
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmg;
 			break;
 		
 		case 4:
 			//Variety Stream
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			// TODO: Random Debuff
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i);
+				if (enemy != -1) {
+					dmg += standard_attack(acc, int, dex, attackPower, get_char_luck(enemy), enemy, character);
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
-			break;
+			return dmg;
 		}
 		break;
 	
@@ -165,49 +155,57 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Hit N Run
 			// Needs Chance to bleed
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			var dmg = standard_attack(acc, dex, str, attackPower, target_luck, target, character);
+			if (dmg != 0) {
+				if (hit_calc(0.6)) { // 60% chance
+					target.bleed += 3;
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmg;
 			break;
 		case 1:
 			// Sentry Mode
 			// Needs Defend target and defense bonus
+			target.shield += 3;
+			character.shield += 3;
+			return 1;
 			break;
 		
 		case 2:
 			//Autopilot
 			//Needs team evasion buff
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					// Not sure if this works how I want it to
+					friend.myStats[6] += 4;
+					friend.statBoosts[6] += 4;
+				}
+			}
+			return 1;
 			break;
 		
 		case 3:
 			//Fully Retractable Sunroof
 			//Needs Team Accuracy Buff
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					// Not sure if this works how I want it to
+					friend.myStats[8] += 4;
+					friend.statBoosts[8] += 4;
+				}
+			}
+			return 1;
 			break;
 		
 		case 4:
 			//Overdrive
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
-			break;
+			return standard_attack(acc, int, dex, attackPower, target_luck, target, character);
 		}
 		break;
 	
@@ -217,72 +215,57 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Sword Slash
 			//Needs to move unit foward
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			gameManager.charToMove = character;
+			gameManager.spaces = 1;
+			return standard_attack(acc, dex, str, attackPower, target_luck, target, character);
 			break;
 		case 1:
 			// Gun shoot
 			// needs to move unit backwards
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			gameManager.charToMove = character;
+			gameManager.spaces = -1;
+			return standard_attack(acc, dex, int, attackPower, target_luck, target, character);
 			break;
 		
 		case 2:
 			//Body Pillow
 			//Needs Stun Chance
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			dmg = standard_attack(acc, str, dex, attackPower, target_luck, target, character);
+			if (dmg != 0) {
+				if (hit_calc(0.4)) { // 40% chance
+					target.stun += 1;
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmg;
 			break;
 		
 		case 3:
 			//AYAYA
 			//Needs AoE Debuff
+			var i;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i);
+				if (enemy != -1) {
+					if (hit_calc_2(acc, get_char_luck(enemy))) {
+						enemy.myStats[8] -= 3;
+						enemy.statBoosts[8] -= 3;
+					}
+				}
+			}
+			return 1;
 			break;
 		
 		case 4:
 			//Full On AYAYA
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex+5);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i);
+				if (enemy != -1) {
+					dmg += standard_attack(acc, dex, int, attackPower, get_char_luck(enemy), enemy, character);
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmg;
 			break;
 		}
 		break;
@@ -293,49 +276,66 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Smug Face
 			// Needs Int up
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
-			break;
+			character.statBoosts[5] += 4;
+			return standard_attack(acc, int, dex, attackPower, target_luck, target, character);
 		case 1:
 			// Toxic Spam
 			// Needs Bleed Chance
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			dmg = standard_attack(acc, dex, int, attackPower, target_luck, target, character);
+			if (dmg != 0) {
+				if (hit_calc(0.4)) { // 40% chance
+					target.bleed += 3;
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+			var enemy2 = get_character(target.object_index, target.myID-1);
+			if enemy2 != -1 {
+				var newdmg = standard_attack(acc, dex, int, attackPower, target_luck, target, character);
+				if (newdmg != 0) {
+					if (hit_calc(0.4)) { // 40% chance
+						target.bleed += 3;
+					}
+				}
 			}
+			return dmg;
 			break;
 		
 		case 2:
 			//Cheer Strimmer
 			//Needs Heal
+			target.current_hp += int*attackPower;
 			break;
 		
 		case 3:
 			//Go Team Go!
 			//Needs Team Heal
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					friend.current_hp += int*attackPower;
+				}
+			}
+			return 1;
 			break;
 		
 		case 4:
 			//Chat Spam
 			//Need Accuracy Debuff
+			var i;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i);
+				if (enemy != -1) {
+					if (hit_calc_2(acc, get_char_luck(enemy))) {
+						enemy.myStats[8] -= 3;
+						enemy.statBoosts[8] -= 3;
+						if (hit_calc(0.3)) {
+							enemy.bleed += 3;
+						}
+					}
+				}
+			}
+			return 1;
 			break;
 		}
 		break;
@@ -346,73 +346,55 @@ if(charMap[? "type"] == "Party Member")
 		case 0:
 			// Lashing
 			//Needs multiple attack generator
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,3);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			dmg = 0;
+			var text = "";
+			repeat(irandom_range(2, 5)) {
+				text += "AHN! "
+				dmg += standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			attack_message(text);
+			return dmg;
 			break;
 		case 1:
 			// Ass we can
 			//Needs Team Strength Buff
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					friend.myStats[3] += 4;
+					friend.statBoosts[3] += 4;
+				}
+			}
+			return 1;
 			break;
 		
 		case 2:
 			//Infernal Yukipo
 			//Needs chance to stun
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+			dmg = standard_attack(acc, str, dex, attackPower, target_luck, target, character);
+			if (dmg != 0) {
+				if (hit_calc(0.3)) { // 30% chance
+					target.bleed += 4;
+				}
 			}
 			break;
 		
 		case 3:
 			//Get your ass back here!
 			//Needs enemy movement force to front
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+			dmg = standard_attack(acc, str, dex, attackPower, target_luck, target, character);
+			if (dmg != 0) {
+				move(target, 4);
 			}
 			break;
 		
 		case 4:
 			//WOOP
 			//Needs lifesteal heal
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			dmg = standard_attack(acc, str, dex, attackPower, target_luck, target, character);
+			character.current_hp += dmg;
 			break;
 		}
 		break;
@@ -422,38 +404,42 @@ if(charMap[? "type"] == "Party Member")
 		switch (attackID) {
 		case 0:
 			// Claw Strike
-			return standard_attack(acc, dex, str, attackPower, target_luck, target);
+			gameManager.charToMove = character;
+			gameManager.spaces = 1;
+			return standard_attack(acc, dex, str, attackPower, target_luck, target, character);
 			break;
 		case 1:
 			// Happy Eddie soothes the pain.
 			// Needs AOE heal
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					friend.current_hp += dex*attackPower;
+				}
+			}
+			return 1;
 			break;
 		
 		case 2:
 			//Sharpen Claws
 			//Needs Attack up for self
+			character.myStats[4] += 4;
+			character.statBoosts[4] += 4;
 			break;
 		
 		case 3:
 			//Bite
-			return standard_attack(acc, str, dex, attackPower, target_luck, target);
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 			break;
 		
 		case 4:
 			//Scratching Post
 			//needs to move eddie 2 spaces back
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex+3);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			gameManager.charToMove = character;
+			gameManager.spaces = -2;
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 			break;
 		}
 		break;
@@ -463,50 +449,45 @@ if(charMap[? "type"] == "Party Member")
 		switch (attackID) {
 		case 0:
 			// Try Hard
-			// Needs to increase dex and lower int
+			character.myStats[4] += 4;
+			character.statBoosts[4] += 4;
+			character.myStats[3] += 4;
+			character.statBoosts[3] += 4;
+			character.myStats[6] -= 4;
+			character.myStats[6] -= 4;
 			break;
 		case 1:
 			// Adaptive Sandbagging
 			// Needs to add accuracy buff and riposte
+			character.riposte += 3;
+			character.myStats[6] += 4;
+			character.myStats[6] += 4;
 			break;
 		
 		case 2:
 			//100 to 0
-			//Needs ATK buff
+			character.stun += 1;
+			return standard_attack(acc, dex, str, attackPower, target_luck, target, character);
 			break;
 		
 		case 3:
 			//Rushdown
 			//Needs to move forward 2 spaces
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			gameManager.charToMove = character;
+			gameManager.spaces = 2;
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 			break;
 		
 		case 4:
 			//Spinning Top
 			//Needs to stun
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			dmg = standard_attack(acc, dex, str, attackPower, target_luck, target, character);
+			if dmg != 0 {
+				if (hit_calc(0.8)) { // 80% chance
+					target.stun += 1;
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmg;
 			break;
 		}
 		break;
@@ -524,12 +505,13 @@ else { // ENEMIES
 		case 0:
 			// Angry Lunge
 			//Needs to move forward
-			move(target, 1);
-			return standard_attack(acc, dex, str, attackPower, target_luck, target);
+			gameManager.charToMove = character;
+			gameManager.spaces = 1;
+			return standard_attack(acc, dex, str, attackPower, target_luck, target, character);
 			break;
 		case 1:
 			// Smile Stomp
-			return standard_attack(acc, str, dex, attackPower, target_luck, target);
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 		}
 		break;
 				
@@ -539,7 +521,7 @@ else { // ENEMIES
 		case 0:
 			// Ask Dumb Question
 			//Needs to text box question, needs to stun
-			attack_message("Dumb Question", character.x + 32, character.y+32);
+			attack_message("Dumb Question");
 			if (hit_calc_2(acc, target_luck)) {
 				target.stun += 1;
 				return 1; // we didn't actually do any damage but return nonzero so it knows to display hit
@@ -548,9 +530,9 @@ else { // ENEMIES
 			break;
 		case 1:
 			// Shitpost
-			return standard_attack(acc, int, dex, attackPower, target_luck, target);
+			return standard_attack(acc, int, dex, attackPower, target_luck, target, character);
 			break;
-				
+			
 		}
 		break;
 				
@@ -560,20 +542,11 @@ else { // ENEMIES
 		case 0:
 			// Explode
 			// Needs to die
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			gameManager.charToKill = character;
+			return standard_attack(acc, dex, int, attackPower, target_luck, target, character);
+			
 			break;
-					
+			
 		}
 		break;
 				
@@ -587,6 +560,35 @@ else { // ENEMIES
 		case 1:
 			// True Neutral
 			// Needs to remove all buffs and debuffs, 100% chance
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					friend.bleed = 0;
+					friend.shield = 0;
+					friend.riposte = 0;
+					friend.stun = 0;
+					var j;
+					for (j = 0; j < 9; j++) {
+						friend.myStats[i] -= friend.statBoosts[i];
+						friend.statBoosts[i] = 0;
+					}
+				}
+				var enemy = get_character(oCharacter, i);
+				if (enemy != -1) {
+					enemy.bleed = 0;
+					enemy.shield = 0;
+					enemy.riposte = 0;
+					enemy.stun = 0;
+					var j;
+					for (j = 0; j < 9; j++) {
+						enemy.myStats[i] -= enemy.statBoosts[i];
+						enemy.statBoosts[i] = 0;
+					}
+				}
+			}
+			return 1;
 			break;
 				
 		}
@@ -597,22 +599,13 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Protect sakurachan
-			// Needs to defense buff , and protect target
+			// Needs to defense buff, and protect target
+			target.shield += 5;
+			character.shield += 3;
 			break;
 		case 1:
 			// Get out MOM REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex+1);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, dex, str, attackPower, target_luck, target, character);
 			break;
 				
 		}
@@ -624,37 +617,32 @@ else { // ENEMIES
 		case 0:
 			// Normie Following 
 			//Needs to buff ally target
+			target.myStats[3] += 4;
+			target.myStats[4] += 4;
+			target.statBoosts[3] += 4;
+			target.statBoosts[4] += 4;
 			break;
 		case 1:
 			// IMO
-			// Needs to lower Speed
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+			// Needs to stun
+			var dmg = standard_attack(acc, str, int, attackPower, target_luck, target, character);
+			if (dmg != 0) {
+				if (hit_calc(0.2)) { // 20% chance
+					target.stun += 1;
+				}
 			}
 			break;
 		case 2:
 			// Witch Hunt
-			// Needs to lower attack and defense
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+			// Needs to lower attack and acc
+			var dmg = standard_attack(acc, str, int, attackPower, target_luck, target, character);
+			if (dmg != 0) {
+				if (hit_calc(0.8)) { // 80% chance
+					target.myStats[3] += 4;
+					target.myStats[6] += 4;
+					target.statBoosts[3] += 4;
+					target.statBoosts[6] += 4;
+				}
 			}
 			break;
 		}
@@ -666,33 +654,13 @@ else { // ENEMIES
 		case 0:
 			// Angry Lunge
 			// Needs to move forward
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			gameManager.charToMove = character;
+			gameManager.spaces = 1;
+			var dmg = standard_attack(acc, dex, str, attackPower, target_luck, target, character);
 			break;
 		case 1:
 			// Angry Slap
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex+1);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 			break;
 				
 		}
@@ -703,88 +671,25 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Poop Fling
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, str, int, attackPower, target_luck, target, character);
 			break;
 				
 		}
 		break;
 				
 	case 9:
-		// Rabbit/Fox/Boar
-		switch (attackID) {
-		case 0:
-			// Attack
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
-			break;
-				
-		}
-		break;
-			
 	case 10:
-		// Rabbit/Fox/Boar
-		switch (attackID) {
-		case 0:
-			// Attack
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
-			break;
-				
-		}
-		break;
-				
 	case 11:
 		// Rabbit/Fox/Boar
 		switch (attackID) {
 		case 0:
 			// Attack
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 			break;
 				
 		}
 		break;
+		
 		
 	case 12:
 		// Corporate
@@ -792,6 +697,29 @@ else { // ENEMIES
 		case 0:
 			// Pleb Defense Force
 			// Needs to spawn 2 prime plebs
+			var i;
+			var plebs = 2;
+			for (i = 0; i < 4; i++) {
+				friend = instance_find(oEnemy, i);
+				if (friend.dead and friend.occupiedBy == -1 and plebs > 0) {
+					friend.charMap = enemies[2];
+					friend.dead = false;
+					friend.myStats = friend.charMap[? "stats"]
+					friend.bleed = 0;
+					friend.stun = 0;
+					friend.riposte = 0;
+					friend.current_hp = friend.myStats[0];
+					friend.shield = 0;
+					// Insert into turn order right behind Corporate; they don't get an attack until next round
+					var j;
+					for (j = global.turnOrderSize; j > global.turn; j--) {
+						global.turnOrder[j] = global.turnOrder[j-1];
+					}
+					global.turnOrder[global.turn] = friend;
+					global.turn++;
+					plebs--;
+				}
+			}
 			break;
 		case 1:
 			// Soul for sponsorship
@@ -807,7 +735,7 @@ else { // ENEMIES
 					
 		case 3:
 			//Early Access!
-			var dmg = dmg_calc((acc - target_luck)/20.0,3,4);
+			var dmg = dmg_calc(charStats[8]/10.0,3,4);
 			if(dmg > 0)
 			{
 				targStats[@ 0] -= dmg;

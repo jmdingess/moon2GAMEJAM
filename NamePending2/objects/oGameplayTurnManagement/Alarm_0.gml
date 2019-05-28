@@ -27,10 +27,19 @@ if (oldTargetSprite != -1) {
 	oldTargetSprite = -1;
 }
 
+if charToMove != -1 {
+	move(charToMove, spaces);
+	charToMove = -1;
+}
+
+if charToKill != -1 {
+	charToKill.dead = true;
+	die(charToKill);
+}
 
 // Pass turn
 global.turn++;
-if global.turn >= array_length_1d(global.turnOrder) {
+if global.turn >= global.turnOrderSize {
 	global.turn = 0;
 }
 global.selected = global.turnOrder[global.turn];
