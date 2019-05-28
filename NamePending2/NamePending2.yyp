@@ -823,19 +823,11 @@
             }
         },
         {
-<<<<<<< HEAD
-            "Key": "90e24615-0ace-4f29-be5b-352594197a47",
-            "Value": {
-                "id": "8c3e981c-5253-402d-a4bf-4873f8219ddc",
-                "resourcePath": "scripts\\party_select\\party_select.yy",
-                "resourceType": "GMScript"
-=======
             "Key": "961f99d0-22b6-422b-bc9b-f33326e09732",
             "Value": {
                 "id": "d427fcad-0019-4e28-b3c6-f9f240a9f17c",
                 "resourcePath": "sounds\\soWorld3_fight\\soWorld3_fight.yy",
                 "resourceType": "GMSound"
->>>>>>> f687f431cd68117ddab0c7fcec54f75db92cd9a8
             }
         },
         {
@@ -1519,7 +1511,6 @@
         "37927c46-57d1-4876-b6dc-9e09305ca14a",
         "36722c68-2e25-4058-b954-638b83fefcfe",
         "ac55e7be-d7de-4dc6-9025-ddb0cc1a4273",
-        "90e24615-0ace-4f29-be5b-352594197a47",
         "3cd8c384-e981-426d-9103-4fc3433cd3ca",
         "45b0e804-349d-485f-bedb-14e71dbbbb74",
         "ce1a229c-220e-425f-aa77-3814ee5d1db1",
