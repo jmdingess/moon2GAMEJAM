@@ -5,3 +5,4 @@
 myStageOrder = [1, 0, 0, 0];
 background = sBackgroundCave;
 battleMusic = soWorld1_fight;
+ID = 0;

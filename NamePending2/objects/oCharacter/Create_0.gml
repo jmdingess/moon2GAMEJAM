@@ -25,6 +25,10 @@ bleed = 0;
 shield = 0;
 statBoosts = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+if (myCharacter[? "id"] == 0) {
+	dead = true;
+}
+
 // Create an array listing the attack buttons for use later
 var i = -1;
 var numButtons = 0;

@@ -1,9 +1,38 @@
 // Give each oMapEnemy its proper stage and stageEnemies
 
+// Define global.completed if not defined
+if (global.completed == -1) {
+	var i;
+	for (i=0; i < instance_number(oMapEnemy); i++) {
+		global.completed[i] = false;
+	}
+}
+
 var i;
 var stages;
 for (i=0; i < instance_number(oMapEnemy); i++) {
 	stages[i] = instance_find(oMapEnemy, i);
+	stages[i].ID = i;
+}
+
+// Reset global values needed for battles
+global.selected = -1;
+global.attackSelected = -1;
+global.newSelect = false;
+
+// If not defeated; set that stage to complete and spawn the character there.
+if (global.stage != -1 and !global.defeated) {
+	global.completed[global.stage] = true;
+	var player = instance_find(oPlayermodel, 0);
+	player.x = stages[global.stage].x;
+	player.y = stages[global.stage].y;
+}
+
+// Set all completed stages to invisible
+for (i=0; i < array_length_1d(stages); i++) {
+	if (global.completed[i]) {
+		stages[i].visible = false;
+	}
 }
 
 /*

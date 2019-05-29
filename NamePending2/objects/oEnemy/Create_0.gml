@@ -57,6 +57,10 @@ bleed = 0;
 shield = 0;
 statBoosts = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+if (enemyMap[? "id"] == 0) {
+	dead = true;
+}
+
 // Drift up and down
 MAXDRIFT = 5;
 origin = y;

@@ -1009,6 +1009,10 @@ global.selected = -1;
 global.attackSelected = -1;
 global.newSelect = false;
 
+global.completed = -1;
+global.stage = 0;
+global.defeated = true;
+
 draw_set_font(fRooters);
 
 // Set random seed

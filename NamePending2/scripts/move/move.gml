@@ -9,7 +9,7 @@ var charPos = character.myID;
 
 // Don't move forward if already in front; don't move back if already in back
 // Also, only move forward 1 if trying to move up 2 from position just before front, etc
-numSpaces = charPos - clamp(charPos-numSpaces, 0, 4)
+numSpaces = charPos - clamp(charPos-numSpaces, 0, 3)
 if (numSpaces == 0) {
 	return;
 }

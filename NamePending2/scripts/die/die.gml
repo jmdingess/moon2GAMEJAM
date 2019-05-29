@@ -37,8 +37,12 @@ for (i=0; i < 4; i++) {
 if allCharactersDead {
 	// Restart battle
 	show_debug_message("All characters died");
+	global.defeated = true;
+	room_goto_next();
 }
 if allEnemiesDead {
 	// Go to next battle
 	show_debug_message("All enemies died");
+	global.defeated = false;
+	room_goto_next();
 }

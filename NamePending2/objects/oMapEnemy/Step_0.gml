@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 if (visible and place_meeting(x, y, oPlayermodel)) {
-	visible = false;
+	global.stage = ID;
 	global.enemyOrder = myStageOrder;
 	global.battleBackground = background;
 	audio_stop_all();
