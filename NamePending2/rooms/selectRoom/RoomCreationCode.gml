@@ -1,3 +1,3 @@
 audio_play_sound(soMenu, 1, true);
 
-globalvar charList;
+global.charList = ds_list_create();
