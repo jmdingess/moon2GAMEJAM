@@ -43,7 +43,7 @@ if (position_meeting(mouse_x, mouse_y, id) && attackMap != -1) {
 		var off = 0;
 		for (i=0; i<4; i++) {
 			var sprite = sMarkerYellow;
-			if (charPosition[3-i] == 0) {
+			if (charPosition[i] == 0) {
 				sprite = sMarkerGray;
 			}
 			draw_sprite_ext(sprite, -1, pointMarkers[3].x+ off, pointMarkers[3].y, 0.125, 0.125, 0, c_white, 1);
@@ -51,9 +51,9 @@ if (position_meeting(mouse_x, mouse_y, id) && attackMap != -1) {
 		}
 		off += 80;
 		if (!is_undefined(targetAllyPosition)) {
-			for (i=0; i<4; i++) {
+			for (i=3; i>=0; i--) {
 				var sprite = sMarkerGreen;
-				if (charPosition[3-i] == 0) {
+				if (targetAllyPosition[i] == 0) {
 					sprite = sMarkerGray;
 				}
 				draw_sprite_ext(sprite, -1, pointMarkers[3].x+ off, pointMarkers[3].y, 0.125, 0.125, 0, c_white, 1);
@@ -64,13 +64,12 @@ if (position_meeting(mouse_x, mouse_y, id) && attackMap != -1) {
 		if (!is_undefined(targetPosition)) {
 			for (i=0; i<4; i++) {
 				var sprite = sMarkerRed;
-				if (charPosition[3-i] == 0) {
+				if (targetPosition[i] == 0) {
 					sprite = sMarkerGray;
 				}
 				draw_sprite_ext(sprite, -1, pointMarkers[3].x+ off, pointMarkers[3].y, 0.125, 0.125, 0, c_white, 1);
 				off += 40;
 			}
-			off += 80;
 		}
 		
 	}

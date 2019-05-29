@@ -225,7 +225,7 @@ if (global.selected == id && global.newSelect == true)
 				if (is_undefined(targetDead)) {
 					targetDead = false;
 				}
-				var possibleTargets; //no relation to oPossibleTarget
+				var possibleTargets = -1; //no relation to oPossibleTarget
 				var numTargets = 0;
 				for (i=0; i < 4; i++) {
 					if (targetPosition[i] == 1) {
@@ -238,6 +238,9 @@ if (global.selected == id && global.newSelect == true)
 						possibleTargets[numTargets] = 4+i;
 						numTargets++;
 					}
+				}
+				if (possibleTargets == -1) {
+					show_debug_message("No possible targets even though we checked for this...")
 				}
 				var targetNo = possibleTargets[irandom_range(0, numTargets-1)];
 				var target = -1;
