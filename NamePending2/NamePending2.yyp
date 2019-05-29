@@ -263,6 +263,14 @@
             }
         },
         {
+            "Key": "2b427c21-ee09-461e-9e18-aef78c705d66",
+            "Value": {
+                "id": "7883ec66-aba9-486b-a216-79c6e951b353",
+                "resourcePath": "sprites\\sConditionDazed\\sConditionDazed.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "35b38506-edff-4ee0-8704-ebf4728be630",
             "Value": {
                 "id": "bf0ed89e-9a50-4046-b7c7-7116ddf48663",
@@ -419,6 +427,30 @@
             "Value": {
                 "id": "9b52fcb1-6fc9-4f91-8e47-bdc2b99eb2fd",
                 "resourcePath": "sprites\\sOldMoon_atk\\sOldMoon_atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "514b6240-c825-4034-98d0-c2f768b58e8c",
+            "Value": {
+                "id": "012c28ff-b059-485a-9f8a-00daa0e75654",
+                "resourcePath": "sprites\\sMarkerGreen\\sMarkerGreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5202526b-28f3-463a-a8fd-f4f7c95a5760",
+            "Value": {
+                "id": "14147b24-192e-41cf-9004-48fb72849447",
+                "resourcePath": "sprites\\sMarkerYellow\\sMarkerYellow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5343bf39-b274-4c53-bd1c-16834470c654",
+            "Value": {
+                "id": "7e948438-6983-4ff3-b0aa-23e587cc9b48",
+                "resourcePath": "sprites\\sConditionRiposte\\sConditionRiposte.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -647,11 +679,27 @@
             }
         },
         {
+            "Key": "78bb7181-f692-404d-afc0-c8da6f1b0f3e",
+            "Value": {
+                "id": "b7c26904-c3fd-43e7-8b6c-7eeb5d753168",
+                "resourcePath": "sprites\\sConditionShield\\sConditionShield.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "797766fa-d7d7-47e2-9020-d2ef8c76fe43",
             "Value": {
                 "id": "7a97f261-1300-4bb2-a0bc-c9aa35efe3e2",
                 "resourcePath": "scripts\\arr_find\\arr_find.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7ab37a44-cb5c-48f9-bb03-645f1df2b594",
+            "Value": {
+                "id": "3729ae77-2c5f-4f75-a290-5764b8c5ea50",
+                "resourcePath": "sprites\\sMarkerRed\\sMarkerRed.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -756,6 +804,14 @@
                 "id": "24c05d53-2b94-4901-b9e0-82790c9a7ba8",
                 "resourcePath": "views\\8441b430-13e5-4aae-ab37-9683d2e3d0e3.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8498fb55-d025-4a93-b320-6b28979880d9",
+            "Value": {
+                "id": "2cb68b4a-51ee-4a80-8296-78e8ed45033d",
+                "resourcePath": "sprites\\sConditionBuff\\sConditionBuff.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -911,11 +967,27 @@
             }
         },
         {
+            "Key": "a0677127-8d36-4d28-a783-996d2adf441a",
+            "Value": {
+                "id": "53d4f922-5229-4f39-a370-09eee2b34e4f",
+                "resourcePath": "sprites\\sMarkerGray\\sMarkerGray.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
             "Value": {
                 "id": "bede987d-3661-4374-8062-900ecd78fd28",
                 "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
                 "resourceType": "GMAmazonFireOptions"
+            }
+        },
+        {
+            "Key": "a576d62e-66b2-4bb5-95af-3e4bf31ca366",
+            "Value": {
+                "id": "28e81dd4-82a0-4726-91af-e0540f178a00",
+                "resourcePath": "sprites\\sConditionDebuff\\sConditionDebuff.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1531,6 +1603,14 @@
             "Value": {
                 "id": "7282c679-f951-4d7b-97c9-fbbd584a8efb",
                 "resourcePath": "sprites\\sMoon2VeryA\\sMoon2VeryA.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fae54adf-a9a6-4e7a-9fe9-88b79dce92aa",
+            "Value": {
+                "id": "e98ca173-ac33-48da-8b91-502b887b03a9",
+                "resourcePath": "sprites\\sConditionBleed\\sConditionBleed.yy",
                 "resourceType": "GMSprite"
             }
         },

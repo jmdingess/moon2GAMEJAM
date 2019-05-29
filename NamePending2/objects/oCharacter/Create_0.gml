@@ -16,6 +16,7 @@ ds_map_copy(myCharacter, global.characters[global.order[myID]])
 myStats = myCharacter[? "stats"]
 
 // attributes
+max_hp = myStats[0];
 stun = 0;
 charge = 0;
 current_hp = myStats[0];

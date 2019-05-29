@@ -831,6 +831,7 @@ ds_map_add(attacks[|2], "atkSprite", sEsports_atk);
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sEsports_atk);
+ds_map_add(attacks[|1], "type", targetting.TARGETALL);
 ds_map_add(attacks[|3], "displayName", "Early Access!");
 ds_map_add(attacks[|3], "desc", "Attack all enemies for minor damage, increases team DEX");
 ds_map_add(attacks[|3], "charPosition", [1, 1, 1, 1]);

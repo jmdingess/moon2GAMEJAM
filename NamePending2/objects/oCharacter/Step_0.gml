@@ -5,6 +5,11 @@
 var mouse;
 mouse = mouse_check_button_pressed(mb_left);
 
+// Reset current_hp if it's too much
+if (current_hp > max_hp) {
+	current_hp = max_hp;
+}
+
 //if we are in party selection room
 //add us to global.order
 if(mouse && room == selectRoom && position_meeting(mouse_x, mouse_y, self.id))
@@ -34,14 +39,14 @@ if (global.selected = id && global.newSelect == true)
 		}
 	}
 	
-	if (riposte >= 0) {
+	if (riposte > 0) {
 		riposte -= 1;
 	}
-	if (shield >= 0) {
+	if (shield > 0) {
 		shield -= 1;
 	}
 	
-	if (bleed >= 0) {
+	if (bleed > 0) {
 		current_hp -= bleed;
 		bleed -= 1;
 	}

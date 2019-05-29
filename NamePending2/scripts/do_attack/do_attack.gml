@@ -412,7 +412,6 @@ if(charMap[? "type"] == "Party Member")
 			// Happy Eddie soothes the pain.
 			// Needs AOE heal
 			var i;
-			var dmg = 0;
 			for (i = 0; i < 4; i++) {
 				var friend = get_character(character.object_index, i);
 				if (friend != -1) {
@@ -724,29 +723,44 @@ else { // ENEMIES
 		case 1:
 			// Soul for sponsorship
 			// Needs to Str/Luck Down
+			var i;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i);
+				if (enemy != -1) {
+					if (hit_calc(0.6)) { // 60% chance
+						enemy.myStats[3] -= 4;
+						enemy.statBoosts[3] -= 4;
+						enemy.myStats[6] -= 4;
+						enemy.statBoosts[6] -= 4;
+					}
+				}
+			}
+			return 1;
 			break;
 					
 		case 2:
 			//Under the corporate thumb
 			// stuns for two turns
 			target.stun += 2;
-			
+			return 1;
 			break;
 					
 		case 3:
 			//Early Access!
-			var dmg = dmg_calc(charStats[8]/10.0,3,4);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i);
+				if (enemy != -1) {
+					dmg += standard_attack(acc, int, dex, attackPower, target_luck, target, character);
+				}
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					friend.myStats[4] += 4;
+					friend.statBoosts[4] += 4;
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmg;
 			break;
 					
 		}
@@ -756,56 +770,39 @@ else { // ENEMIES
 		// Ricardo Milos
 		switch (attackID) {
 		case 0:
-			// The Flick
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex-2);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
+			var i;
+			var dmg;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i);
+				if (enemy != -1) {
+					dmg += standard_attack(acc, dex, str, attackPower, target_luck, target, character);
+				}
 			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return dmg;
 			break;
 		case 1:
 			// Coconut Bash
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			return standard_attack(acc, str, dex, attackPower, target_luck, target, character);
 			break;
 					
 		case 2:
 			//You Got That
 			//Needs to heal based on damage dealt
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex-2);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			var dmg = standard_attack(acc, int, dex, attackPower, target_luck, target, character);
+			current_hp += dmg;
+			return dmg;
 			break;
 					
 		case 3:
 			//Dance of demons
-			//needs to buff SPD/ATK/STR/DEX by 1, never falls off and can stack?
+			//needs to buff SPD/ATK/STR/DEX by 2, never falls off and can stack?
+			
+			// Buff STR/DEX/ACC by 2. If we don't set statBoost for them then they won't decay
+			// But we also want the buff icon to show up, so we statBoost the useless stat SP.
+			myStats[3] += 2;
+			myStats[4] += 2;
+			myStats[8] += 2;
+			statBoosts[1] += 99;
 			break;
 					
 		}

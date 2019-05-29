@@ -48,6 +48,7 @@ else {
 myStats = enemyMap[? "stats"];
 
 // Attributes
+max_hp = myStats[0];
 stun = 0;
 charge = 0;
 current_hp = myStats[0];
