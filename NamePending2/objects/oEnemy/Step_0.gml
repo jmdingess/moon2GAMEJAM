@@ -76,8 +76,6 @@ if (global.selected == id && global.newSelect == true)
 			var special = -1;
 			var i;
 			for (i = 0; i < numAttacks; i++) {
-				show_debug_message("attack " + string(i));
-		
 				var attackMap = possibleAttacks[|i];
 				var weight = attackMap[? "weight"];
 				if (is_undefined(weight)) {
@@ -170,7 +168,7 @@ if (global.selected == id && global.newSelect == true)
 					var attack = weightedAttacks[irandom_range(0, totalWeight-1)];
 				}
 				else {
-					// Always select special attack if there is one; needs to be changed later
+					// Always select special attack if there is one available
 					var attack = special;
 				}
 		
@@ -234,18 +232,18 @@ if (global.selected == id && global.newSelect == true)
 				show_debug_message(attackMap[? "displayName"]);
 			}
 		}
-	}
 
-	// show attack; will pass turn for us
-	var gameManager = instance_find(oGameplayTurnManagement, 0)
-	if (is_undefined(gameManager)) {
-		show_error("Could not get game manager", true);
-	}
-	else {
-		gameManager.target = target;
-		gameManager.atkSprite = attackMap[? "atksprite"];
-		gameManager.atkName = attackMap[? "displayName"];
-		gameManager.showAttack = true;
+		// show attack; will pass turn for us
+		var gameManager = instance_find(oGameplayTurnManagement, 0)
+		if (is_undefined(gameManager)) {
+			show_error("Could not get game manager", true);
+		}
+		else {
+			gameManager.target = target;
+			gameManager.atkSprite = attackMap[? "atkSprite"];
+			gameManager.atkName = attackMap[? "displayName"];
+			gameManager.showAttack = true;
+		}
 	}
 }
 
