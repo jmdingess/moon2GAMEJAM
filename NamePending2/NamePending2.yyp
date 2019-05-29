@@ -551,6 +551,14 @@
             }
         },
         {
+            "Key": "6eabd5b1-e3a1-4d65-97c2-a720f8a61348",
+            "Value": {
+                "id": "f9360fd3-433d-442b-9399-2570f4ae29f4",
+                "resourcePath": "sprites\\sPurpleLady_buttonGoTeamGo\\sPurpleLady_buttonGoTeamGo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "70968b72-2bab-4b6e-99cc-f5336f7d588f",
             "Value": {
                 "id": "b2815421-8834-4607-8c9c-0719ec452f7e",
@@ -1079,10 +1087,26 @@
             }
         },
         {
+            "Key": "b5720b80-f804-4d26-b84f-b59223d262d4",
+            "Value": {
+                "id": "a6c70d8c-22b4-427a-82a1-03101b99a1fe",
+                "resourcePath": "sprites\\sMoon_buttonSMD\\sMoon_buttonSMD.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b8088a60-8218-40ab-90d9-e7924992c9cc",
             "Value": {
                 "id": "e804d6a7-ea97-4e30-9564-354cd1cccb8f",
                 "resourcePath": "sprites\\sPrimePleb_atk\\sPrimePleb_atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b82cace2-8e1a-4a91-97c8-ee654ed7e7f9",
+            "Value": {
+                "id": "8e2ce2f7-0ca3-4ce3-89d9-b69269307572",
+                "resourcePath": "sprites\\sMoon_buttonBlap\\sMoon_buttonBlap.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1131,6 +1155,14 @@
             "Value": {
                 "id": "b266a0e8-a78e-4387-bb9a-64a7d98e6e9d",
                 "resourcePath": "sprites\\sFox\\sFox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c5996648-c4d6-4dd2-a447-dfeef713a68e",
+            "Value": {
+                "id": "8cb8de21-ea58-413a-9757-761a73125ae7",
+                "resourcePath": "sprites\\sMoon_buttonSha\\sMoon_buttonSha.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1359,6 +1391,14 @@
             }
         },
         {
+            "Key": "e42eb44f-d6d4-4c0d-ae8f-12eb97b91d42",
+            "Value": {
+                "id": "3e171f14-4335-4011-a5cb-fc624def1af8",
+                "resourcePath": "sprites\\sPurpleLady_buttonCheer\\sPurpleLady_buttonCheer.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e7e7cfe0-6354-43d6-a97f-1d10dd845ae2",
             "Value": {
                 "id": "bfec286d-ff03-4ab7-bdeb-3429eb693542",
@@ -1427,6 +1467,22 @@
             "Value": {
                 "id": "60e80342-2793-4b0f-a69b-b8ec803d55ee",
                 "resourcePath": "sprites\\sOldMoon2_tentacles\\sOldMoon2_tentacles.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f41856ff-1f73-4d65-be3c-3d7a55159c41",
+            "Value": {
+                "id": "eb47b838-19b4-4c66-b646-9f492861499d",
+                "resourcePath": "sprites\\sMoon_buttonVariety\\sMoon_buttonVariety.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f4223fe8-66ce-417f-a04b-67f0c421f0b1",
+            "Value": {
+                "id": "7b1c0aa8-6534-49df-85d7-cd8ddcb24da1",
+                "resourcePath": "sprites\\sMoon_buttonBan\\sMoon_buttonBan.yy",
                 "resourceType": "GMSprite"
             }
         },
