@@ -35,7 +35,7 @@ if (showAttack) {
 	
 	if (!is_undefined(atkSprite) and atkSprite != -1) {
 		var charMap = -1;
-		if (global.selected.object_index = oCharacter) {
+		if (global.selected.object_index == oCharacter) {
 			charMap = global.selected.myCharacter;
 		}
 		else {
@@ -58,11 +58,11 @@ if (showAttack) {
 	}
 	
 	targetMap = -1;
-	if (global.selected.object_index = oCharacter) {
-		targetMap = global.selected.myCharacter;
+	if (target.object_index == oCharacter) {
+		targetMap = target.myCharacter;
 	}
 	else {
-		targetMap = global.selected.enemyMap;
+		targetMap = target.enemyMap;
 	}
 	if (is_undefined(targetMap) or targetMap == -1) {
 		show_debug_message("Couldn't fetch target map");
