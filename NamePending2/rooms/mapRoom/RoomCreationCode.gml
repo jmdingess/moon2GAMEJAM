@@ -95,4 +95,25 @@ stages[2].background = sBackgroundForest;
 stages[2].battleMusic = soWorld1_fight;
 stages[2].sprite_index = sMap_trog; // Would be cool to get a one-use sMap_nam
 
+
+// Stage 3
+stages[3].myStageOrder = [6, 2, 2, 0] // PrimePleb, PrimePleb, Trog
+stages[3].background = sBackgroundKingsRow;
+stages[3].battleMusic = soWorld1_fight;
+stages[3].sprite_index = sMap_trog; 
+
+// Stage 4
+stages[4].myStageOrder = [12, 0, 0, 0] // PrimePleb, PrimePleb, Trog
+stages[4].background = sBackgroundKingsRow;
+stages[4].battleMusic = soWorld1_fight;
+stages[4].sprite_index = sMap_trog; 
+
+
+// Stage 5
+stages[5].myStageOrder = [5, 5, 2, 3] // Weebs, Weebs, Trog, NaM
+stages[5].background = sBackgroundVariety;
+stages[5].battleMusic = soWorld2_fight;
+stages[5].sprite_index = sMap_trog; 
+
+
 //etc

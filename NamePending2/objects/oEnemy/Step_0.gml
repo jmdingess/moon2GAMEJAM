@@ -5,11 +5,16 @@
 var mouse;
 mouse = mouse_check_button_pressed(mb_left);
 
+// Reset current_hp if it's too much
+if (current_hp > max_hp) {
+	current_hp = max_hp;
+}
+
 // On our turn
 if (global.selected == id && global.newSelect == true)
 {
 	global.newSelect = false;
-	
+
 	// Put the selection bar over us
 	var selectionBar;
 	selectionBar = instance_find(oSelectionBar, 0)
@@ -26,15 +31,19 @@ if (global.selected == id && global.newSelect == true)
 		}
 	}
 	
-	if (riposte >= 0) {
+	if (charge > 0) {
+		charge -= 1;
+	}
+	
+	if (riposte > 0) {
 		riposte -= 1;
 	}
 	
-	if (shield >= 0) {
+	if (shield > 0) {
 		shield -= 1;
 	}
 	
-	if (bleed >= 0) {
+	if (bleed > 0) {
 		current_hp -= bleed;
 		bleed -= 1;
 	}
@@ -87,7 +96,23 @@ if (global.selected == id && global.newSelect == true)
 					type = targetting.TARGET;
 				}
 				if (type == targetting.SPECIAL) {
-					special = i;
+					var enemyID = enemyMap[? "id"];
+					if (enemyID == 12) {
+						// Corporate
+						// Use every four turns
+						if (charge == 0) {
+							special = i;
+							charge = 3;
+						}
+					}
+					if (enemyID == 13) {
+						// Ricardo Milos
+						// Use every four turns
+						if (charge == 0) {
+							special = i;
+							charge = 3;
+						}
+					}
 					continue;
 				}
 				// Has to be a legal attack
@@ -200,7 +225,7 @@ if (global.selected == id && global.newSelect == true)
 				if (is_undefined(targetDead)) {
 					targetDead = false;
 				}
-				var possibleTargets; //no relation to oPossibleTarget
+				var possibleTargets = -1; //no relation to oPossibleTarget
 				var numTargets = 0;
 				for (i=0; i < 4; i++) {
 					if (targetPosition[i] == 1) {
@@ -213,6 +238,9 @@ if (global.selected == id && global.newSelect == true)
 						possibleTargets[numTargets] = 4+i;
 						numTargets++;
 					}
+				}
+				if (possibleTargets == -1) {
+					show_debug_message("No possible targets even though we checked for this...")
 				}
 				var targetNo = possibleTargets[irandom_range(0, numTargets-1)];
 				var target = -1;
