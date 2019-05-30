@@ -2,7 +2,7 @@
     "id": "15dfc908-9ad3-45a1-9c0b-a615e8ac9762",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "oSponsor",
+    "name": "sSponsor",
     "For3D": false,
     "HTile": false,
     "VTile": false,

@@ -103,17 +103,17 @@ stages[3].battleMusic = soWorld1_fight;
 stages[3].sprite_index = sMap_trog; 
 
 // Stage 4
-stages[4].myStageOrder = [12, 0, 0, 0] // PrimePleb, PrimePleb, Trog
+stages[4].myStageOrder = [12, 0, 0, 0] // Corporate
 stages[4].background = sBackgroundKingsRow;
 stages[4].battleMusic = soWorld1_fight;
-stages[4].sprite_index = sMap_trog; 
+stages[4].sprite_index = sSponsor; 
 
 
 // Stage 5
 stages[5].myStageOrder = [5, 5, 2, 3] // Weebs, Weebs, Trog, NaM
 stages[5].background = sBackgroundVariety;
 stages[5].battleMusic = soWorld2_fight;
-stages[5].sprite_index = sMap_trog; 
+stages[5].sprite_index = sMap_gums; 
 
 
 //etc
