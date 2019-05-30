@@ -170,7 +170,7 @@
             "Key": "15dfc908-9ad3-45a1-9c0b-a615e8ac9762",
             "Value": {
                 "id": "b96a307a-1da0-4051-82b9-211320eb136b",
-                "resourcePath": "sprites\\oSponsor\\oSponsor.yy",
+                "resourcePath": "sprites\\sMap_sponsor\\sMap_sponsor.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -491,6 +491,14 @@
             "Value": {
                 "id": "bb9f8366-4b7f-4811-85db-d9c5bf98e610",
                 "resourcePath": "sprites\\sPurpleLady_atk\\sPurpleLady_atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5eba8db3-23ed-43a1-9718-9d0043cf1415",
+            "Value": {
+                "id": "d7b80110-8371-45e0-acf3-d62fece5f6c4",
+                "resourcePath": "sprites\\sMap_Ricardo\\sMap_Ricardo.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -980,14 +988,6 @@
                 "id": "53d4f922-5229-4f39-a370-09eee2b34e4f",
                 "resourcePath": "sprites\\sMarkerGray\\sMarkerGray.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
-            "Value": {
-                "id": "bede987d-3661-4374-8062-900ecd78fd28",
-                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
-                "resourceType": "GMAmazonFireOptions"
             }
         },
         {
