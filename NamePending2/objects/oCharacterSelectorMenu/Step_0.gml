@@ -3,6 +3,12 @@
 var mov = 0;
 mov -= max(keyboard_check_pressed(vk_up),keyboard_check_pressed(ord("W")));
 mov += max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")));
+var esc = keyboard_check_pressed(vk_escape);
+
+if(esc)
+{
+	game_end();	
+}
 
 if(mov != 0)
 {
