@@ -1399,6 +1399,14 @@
             }
         },
         {
+            "Key": "edfb80b3-56df-411d-b364-cf44592ea08e",
+            "Value": {
+                "id": "12d3d4b2-57c3-42f7-a0c8-fdaa3ef6f830",
+                "resourcePath": "sprites\\sMenuArrow\\sMenuArrow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ef37d8f9-637b-413f-896f-73ff3a64f984",
             "Value": {
                 "id": "4b43229c-f519-4638-b3c8-09995119c920",
