@@ -221,6 +221,10 @@ if (global.selected == id && global.newSelect == true)
 						}
 					}
 				}
+				if(type == targetting.SPECIAL) // just for Ricardo rn
+				{
+					targetAllyPosition[3-myID] = 1;	
+				}
 				// TargetDead on a monster = MUST target dead. this is different from on characters (CAN target dead)
 				var possibleTargets = -1; //no relation to oPossibleTarget
 				var numTargets = 0;
@@ -239,22 +243,25 @@ if (global.selected == id && global.newSelect == true)
 				if (possibleTargets == -1) {
 					show_debug_message("No possible targets even though we checked for this...")
 				}
-				var targetNo = possibleTargets[irandom_range(0, numTargets-1)];
-				var target = -1;
-				if targetNo >= 4 {
-					target = enemies[targetNo-4];
-				}
-				else {
-					target = characters[targetNo];
-				}
-				var attackPower = attackMap[? "power"];
-				if (is_undefined(attackPower)) {
-					attackPower = 1;
-				}
+				else
+				{
+					var targetNo = possibleTargets[irandom_range(0, numTargets-1)];
+					var target = -1;
+					if targetNo >= 4 {
+						target = enemies[targetNo-4];
+					}
+					else {
+						target = characters[targetNo];
+					}
+					var attackPower = attackMap[? "power"];
+					if (is_undefined(attackPower)) {
+						attackPower = 1;
+					}
 	
-				//do attack
-				do_attack(enemyMap, target, attackMap[? "id"], attackPower);
-				show_debug_message(attackMap[? "displayName"]);
+					//do attack
+					do_attack(enemyMap, target, attackMap[? "id"], attackPower);
+					show_debug_message(attackMap[? "displayName"]);
+				}
 			}
 		}
 
