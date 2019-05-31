@@ -991,14 +991,6 @@
             }
         },
         {
-            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
-            "Value": {
-                "id": "12810226-c44b-47c5-94c7-af7d98beae0e",
-                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
-                "resourceType": "GMAmazonFireOptions"
-            }
-        },
-        {
             "Key": "a576d62e-66b2-4bb5-95af-3e4bf31ca366",
             "Value": {
                 "id": "28e81dd4-82a0-4726-91af-e0540f178a00",
@@ -1515,6 +1507,14 @@
             "Value": {
                 "id": "bfec286d-ff03-4ab7-bdeb-3429eb693542",
                 "resourcePath": "sprites\\sPause_menu_Final\\sPause_menu_Final.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ea1177c6-76fd-4a50-9bd5-3148c533948e",
+            "Value": {
+                "id": "28c9a86b-4a77-42ed-a0d4-a6ed39fa3b5b",
+                "resourcePath": "sprites\\sMap_moon2S\\sMap_moon2S.yy",
                 "resourceType": "GMSprite"
             }
         },
