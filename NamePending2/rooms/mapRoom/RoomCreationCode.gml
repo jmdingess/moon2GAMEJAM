@@ -103,17 +103,40 @@ stages[3].battleMusic = soWorld1_fight;
 stages[3].sprite_index = sMap_trog; 
 
 // Stage 4
-stages[4].myStageOrder = [12, 0, 0, 0] // PrimePleb, PrimePleb, Trog
+stages[4].myStageOrder = [12, 0, 0, 0] // Sponsor
 stages[4].background = sBackgroundKingsRow;
 stages[4].battleMusic = soWorld1_fight;
-stages[4].sprite_index = sMap_trog; 
+stages[4].sprite_index = sMap_sponsor; 
 
 
 // Stage 5
-stages[5].myStageOrder = [5, 5, 2, 3] // Weebs, Weebs, Trog, NaM
+stages[5].myStageOrder = [5, 5, 9, 3] // Weebs, Weebs, Trog, NaM
 stages[5].background = sBackgroundVariety;
 stages[5].battleMusic = soWorld2_fight;
-stages[5].sprite_index = sMap_trog; 
+stages[5].sprite_index = sMap_gums; 
 
+// Stage 6
+stages[6].myStageOrder = [5, 2, 6, 9] // Weebs, PrimePleb, Rabbit, Trog
+stages[6].background = sBackgroundVariety;
+stages[6].battleMusic = soWorld2_fight;
+stages[6].sprite_index = sMap_gums; 
+
+// Stage 7
+stages[7].myStageOrder = [11, 11, 8, 0] //Fox, Fox, PoopSnail
+stages[7].background = sBackgroundClub;
+stages[7].battleMusic = soWorld2_fight;
+stages[7].sprite_index = sMap_gums; 
+
+// Stage 8
+stages[8].myStageOrder = [11, 10, 10, 5] //Fox, Doar, Doar, Weebs
+stages[8].background = sBackgroundClub;
+stages[8].battleMusic = soWorld2_fight;
+stages[8].sprite_index = sMap_gums; 
+
+// Stage 9
+stages[9].myStageOrder = [13, 0, 0, 0] //Ricardo
+stages[9].background = sBackgroundClub;
+stages[9].battleMusic = soWorld2_fight; //need to add ricardo boss fight music
+stages[9].sprite_index = sMap_Ricardo; 
 
 //etc

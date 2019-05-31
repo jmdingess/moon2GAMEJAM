@@ -630,7 +630,7 @@ ds_map_add(global.enemies[4], "hit", sMoon2N_hit);
 global.enemies[5] = ds_map_create();
 ds_map_add(global.enemies[5], "type", "Mob");
 ds_map_add(global.enemies[5], "displayName", "Weeb");
-ds_map_add(global.enemies[5], "sprite", -1);
+ds_map_add(global.enemies[5], "sprite", sWeeb);
 attacks = ds_list_create();
 attacks[|0] = ds_map_create();
 ds_map_add(attacks[|0], "id", 0);
@@ -773,6 +773,7 @@ ds_map_add(attacks[|0], "weight", 1);
 ds_map_add(global.enemies[10], "attacks", attacks);
 ds_map_add(global.enemies[10], "stats", [12, 0, 0, 1, 6, 4, 6, 7, 6]);
 
+// Fox
 global.enemies[11] = ds_map_create();
 ds_map_add(global.enemies[11], "type", "Mob");
 ds_map_add(global.enemies[11], "displayName", "DEVox");
@@ -787,7 +788,7 @@ ds_map_add(attacks[|0], "desc", "Attack an enemy");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|0], "targetPosition", [1, 1, 1, 1]); 
 ds_map_add(attacks[|0], "weight", 1);
-ds_map_add(attacks[|0], "atkSprite", sMoon2S_atk);
+ds_map_add(attacks[|0], "atkSprite", sFox_Atk);
 ds_map_add(global.enemies[11], "attacks", attacks);
 ds_map_add(global.enemies[11], "stats", [12, 0, 0, 1, 6, 4, 6, 7, 6]);
 

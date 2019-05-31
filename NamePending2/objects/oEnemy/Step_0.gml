@@ -135,11 +135,11 @@ if (global.selected == id && global.newSelect == true)
 				if (is_undefined(targetAllyPosition)) {
 					targetAllyPosition = [0, 0, 0, 0];
 				}
-				if (type = targetting.TARGETSELF) {
+				if (type == targetting.TARGETSELF) {
 					targetAllyPosition[3-myID] = 1;
 				}
 				var j;
-				if (type = targetting.TARGETNEIGHBORS) {
+				if (type == targetting.TARGETNEIGHBORS) {
 					for (j = 0; j < 4; j++) {
 						if (j == (3-myID)+1 or j == (3-myID)-1) {
 							targetAllyPosition[j] = 1;
@@ -207,10 +207,11 @@ if (global.selected == id && global.newSelect == true)
 				if (is_undefined(targetAllyPosition)) {
 					targetAllyPosition = [0, 0, 0, 0];
 				}
-				if (type = targetting.TARGETSELF) {
+				var type = attackMap[? "type"];
+				if (type == targetting.TARGETSELF) {
 					targetAllyPosition[3-myID] = 1;
 				}
-				if (type = targetting.TARGETNEIGHBORS) {
+				if (type == targetting.TARGETNEIGHBORS) {
 					for (i = 0; i < 4; i++) {
 						if (i == (3-myID)+1 or i == (3-myID)-1) {
 							targetAllyPosition[i] = 1;
@@ -221,10 +222,6 @@ if (global.selected == id && global.newSelect == true)
 					}
 				}
 				// TargetDead on a monster = MUST target dead. this is different from on characters (CAN target dead)
-				var targetDead = attackMap[? "targetDead"];
-				if (is_undefined(targetDead)) {
-					targetDead = false;
-				}
 				var possibleTargets = -1; //no relation to oPossibleTarget
 				var numTargets = 0;
 				for (i=0; i < 4; i++) {
