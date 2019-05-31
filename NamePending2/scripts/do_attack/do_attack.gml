@@ -813,27 +813,47 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// The True Ban Hammer
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
+			var dmg = standard_attack(acc, str, dex, attackPower, target_luck, target, character);
+			if(dmg != 0)
 			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+				if(hit_calc(0.6)) //60% chance? idk
+				{
+					target.stun += 1;	
+					text += "Fuck you, cunt";
+				}
+				attack_message(text);
+				return dmg;
 			}
 			break;
 		case 1:
 			// Howl into the Void
 			// Needs to lower SPD/Str
+			var i;
+			for (i = 0; i < 4; i++) {
+				var enemy = get_character(target.object_index, i); //just for testing right now
+				if (enemy != -1) {
+					enemy.myStats[3] -= 2;
+					enemy.statBoosts[3] -= 2;
+					enemy.myStats[7] -= 2;
+					enemy.statBoosts[7] -= 2;
+				}
+			}
 			break;
 					
 		case 2:
 			//Cresent Moon
 			//Chance to apply AoE bleed
+			var succ = hit_calc(0.6); //60% chance of AoE bleed on all party members
+			if(succ)
+			{
+				var i;
+				for (i = 0; i < 4; i++) {
+					var enemy = get_character(target.object_index, i);
+					if (enemy != -1) {
+						enemy.bleed += 3; // just for testing right now
+					}
+				}
+			}
 			break;
 					
 		}
@@ -843,19 +863,16 @@ else { // ENEMIES
 		// Old moon Phase 2
 		switch (attackID) {
 		case 0:
-			// Eye of the maw
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,15);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+		// eye of the gaping maw
+		// -4 LCK for AoE
+			var i;
+				for (i = 0; i < 4; i++) {
+					var enemy = get_character(target.object_index, i);
+					if (enemy != -1) {
+						enemy.myStats[6] -= 4; // just for testing right now, lowers LCK
+						enemy.statBoosts[6] -= 4;
+					}
+				}
 			break;
 		case 1:
 			// From the void it hungers
@@ -864,34 +881,35 @@ else { // ENEMIES
 					
 		case 2:
 			//Rend of the cosmic gods
-			var dmg = dmg_calc((acc - target_luck)/20.0,8,16);
-			if(dmg > 0)
+			// heavy attack
+			// 1.5-2x ATK maybe?
+			var i;
+			for(i = 0; i < 4; i++)
 			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+				var enemy = get_character(target.object_index, i);
+				if(enemy != -1)
+				{
+					standard_attack(acc, str, dex, 1.5 * attackPower, get_char_luck(enemy), enemy, character);
+				}
 			}
 			break;
 					
 		case 3:
 			//The false gamer god
 			// Needs to lower dex
-			var dmg = dmg_calc((acc - target_luck)/20.0,2,4);
-			if(dmg > 0)
+			var i;
+			for(i = 0; i < 4; i++)
 			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
+				var enemy = get_character(target.object_index, i);
+				if(enemy != -1)
+				{
+					standard_attack(acc, str, dex, attackPower, get_char_luck(enemy), enemy, character);
+					if(hit_calc(0.5)) // should this be per party member or overall?
+					{
+						enemy.myStats[4] -= 4;
+						enemy.statBoosts[4] -= 4;
+					}
+				}
 			}
 			break;
 					
@@ -903,18 +921,8 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Attack
-			var dmg = dmg_calc((acc - target_luck)/20.0,1,str + dex);
-			if(dmg > 0)
-			{
-				targStats[@ 0] -= dmg;
-				show_debug_message("Did " + string(abs(targStats[0])) + " dmg");
-				break;
-			}
-			else
-			{
-				show_debug_message("Attack failed");
-				break;
-			}
+			var dmg = standard_attack(acc, str, dex, attackPower, target_luck, target, character);
+			return dmg;
 			break;
 		}
 		break;
