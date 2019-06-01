@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "02272f4a-b12e-4f64-99d1-ca3494627b33",
+            "Value": {
+                "id": "2de8d522-a1a8-4f7e-8234-be92a4d2607e",
+                "resourcePath": "sprites\\sBarwick_buttontryhard\\sBarwick_buttontryhard.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0263da1e-9dbf-4928-b0c7-3e5a913c4fed",
             "Value": {
                 "id": "7b93d17d-5eef-49bf-ac82-330b1d5e069a",
@@ -83,6 +91,14 @@
             "Value": {
                 "id": "9cebf21f-0bce-4390-b474-cccd9919597d",
                 "resourcePath": "sprites\\sWeeb_sakura\\sWeeb_sakura.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0808aafb-5e71-422c-bfed-43cab5b5ece0",
+            "Value": {
+                "id": "9228121a-f55b-4ad1-a736-a15732b75000",
+                "resourcePath": "sprites\\sBarwick_buttonrush\\sBarwick_buttonrush.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -991,6 +1007,14 @@
             }
         },
         {
+            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
+            "Value": {
+                "id": "3ebff989-89a0-4104-a97c-7b3e8cd97067",
+                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
+                "resourceType": "GMAmazonFireOptions"
+            }
+        },
+        {
             "Key": "a576d62e-66b2-4bb5-95af-3e4bf31ca366",
             "Value": {
                 "id": "28e81dd4-82a0-4726-91af-e0540f178a00",
@@ -1479,6 +1503,22 @@
             }
         },
         {
+            "Key": "dcd22759-ef28-4df7-9f32-6cc99676fa44",
+            "Value": {
+                "id": "edc2bde7-2b27-4cf9-b360-d59fa8602788",
+                "resourcePath": "sprites\\sBarwick_buttonsandbag\\sBarwick_buttonsandbag.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dd758df8-764b-42f5-b7fb-9e31f2c4c4c7",
+            "Value": {
+                "id": "2697d2a0-5c32-40da-bc80-604bf1d84de3",
+                "resourcePath": "sprites\\sBarwick_buttonspintop\\sBarwick_buttonspintop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e08d590f-cc21-456b-8efa-f3870a0867ee",
             "Value": {
                 "id": "60024ee0-3bdd-4309-a142-aa9659046672",
@@ -1531,6 +1571,14 @@
             "Value": {
                 "id": "5145915c-de58-4af5-9790-20d94e869f15",
                 "resourcePath": "sprites\\sMoon_atk\\sMoon_atk.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ed8f4b34-1479-42da-ada4-72213c589228",
+            "Value": {
+                "id": "7c3e819c-c65e-40e5-b3d0-06044517fabf",
+                "resourcePath": "sprites\\sBarwick_button100\\sBarwick_button100.yy",
                 "resourceType": "GMSprite"
             }
         },
