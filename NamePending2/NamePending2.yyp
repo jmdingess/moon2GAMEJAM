@@ -1223,6 +1223,14 @@
             }
         },
         {
+            "Key": "bbacdd35-f1e3-4940-bddd-91a2728ebff8",
+            "Value": {
+                "id": "e658e8c0-3d68-4748-8573-2f25064de4ac",
+                "resourcePath": "sprites\\sMap_OldMoon\\sMap_OldMoon.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bc004956-5a30-40b9-ab8f-5c1a2d62dfa3",
             "Value": {
                 "id": "e1f0161b-ffbe-4c0f-a72d-f9a0706bbc80",

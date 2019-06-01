@@ -152,9 +152,19 @@ stages[11].battleMusic = soWorld3_fight;
 stages[11].sprite_index = sMap_moon2S; 
 
 // Stage 12
-stages[12].myStageOrder = [1, 7, 4, 4] // moon2S, moon2A, moon2A, NaM 
+stages[12].myStageOrder = [1, 7, 4, 4] // moon2S, moon2A, moon2N, moon2N
 stages[12].background = sBackgroundSpace;
 stages[12].battleMusic = soWorld3_fight; 
 stages[12].sprite_index = sMap_moon2S; 
 
-//etc
+// Stage 13
+stages[13].myStageOrder = [1, 1, 7, 4] // moon2S, moon2S, moon2A, moon2N
+stages[13].background = sBackgroundSpace;
+stages[13].battleMusic = soWorld3_fight; 
+stages[13].sprite_index = sMap_moon2S; 
+
+// Stage 14
+stages[13].myStageOrder = [14, 0, 0, 0] // moon2S, moon2S, moon2A, moon2N
+stages[13].background = sBackgroundSpace;
+stages[13].battleMusic = soWorld3_boss1; 
+stages[13].sprite_index = sMap_OldMoon; 
