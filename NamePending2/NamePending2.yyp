@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "27af076e-c59e-4737-b237-63ff5953b01b",
+            "Value": {
+                "id": "8d39a453-d366-4772-8495-576b4bf04384",
+                "resourcePath": "sprites\\sEsports_puppet\\sEsports_puppet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "29ed24ad-1413-4861-92eb-c4af12b2388c",
             "Value": {
                 "id": "09d8553f-f8e1-4ff1-85cb-93886fe20856",
@@ -887,6 +895,14 @@
             }
         },
         {
+            "Key": "8c3ff9fe-c0ff-4f4d-8070-77c8ad9c7825",
+            "Value": {
+                "id": "1f739861-3cf1-4d1c-ba41-20102c6aee95",
+                "resourcePath": "sprites\\sOldMoon_hit\\sOldMoon_hit.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8d1746c5-6751-4231-aa25-ca3983d092eb",
             "Value": {
                 "id": "18692111-aed0-42a7-bb1a-a240794a43ca",
@@ -1459,6 +1475,14 @@
             "Value": {
                 "id": "665bbb6d-3bbc-4724-9916-423d5ac43654",
                 "resourcePath": "sprites\\sRedTentacle\\sRedTentacle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d7bb9b4d-cdb3-49fd-8b0b-e323e53dfa5b",
+            "Value": {
+                "id": "335cdade-aa51-420f-b8f1-20bfeb48cadd",
+                "resourcePath": "sprites\\sEsports_hit\\sEsports_hit.yy",
                 "resourceType": "GMSprite"
             }
         },
