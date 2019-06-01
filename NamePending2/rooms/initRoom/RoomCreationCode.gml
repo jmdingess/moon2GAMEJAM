@@ -726,7 +726,7 @@ ds_map_add(attacks[|0], "desc", "Attack an enemy, move forward.");
 ds_map_add(attacks[|0], "charPosition", [1, 1, 1, 0]);
 ds_map_add(attacks[|0], "targetPosition", [1, 1, 0, 0]); 
 ds_map_add(attacks[|0], "weight", 1);
-ds_map_add(attacks[|0], "atkSprite", sMoon2VeryA_atk);
+ds_map_add(attacks[|0], "atkSprite", sMoon2VeryA_lunge);
 attacks[|1] = ds_map_create();
 ds_map_add(attacks[|1], "id", 1);
 ds_map_add(attacks[|1], "sprite", -1);
