@@ -149,6 +149,9 @@ if (global.selected == id && global.newSelect == true)
 						}
 					}
 				}
+				if (type == targetting.SPECIAL) {
+					targetAllyPosition[3-myID] = 1;
+				}
 				// TargetDead on a monster = MUST target dead. this is different from on characters (CAN target dead)
 				var targetDead = attackMap[? "targetDead"];
 				if (is_undefined(targetDead)) {
