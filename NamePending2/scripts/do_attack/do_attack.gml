@@ -519,7 +519,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			// Ask Dumb Question
-			//Needs to text box question, needs to stun
+			//Needs to text box question, needs to lower dex now instead
 			attack_message("Dumb Question");
 			if (hit_calc_2(acc, target_luck)) {
 				target.stun += 1;
@@ -589,7 +589,9 @@ else { // ENEMIES
 			}
 			return 1;
 			break;
-				
+		case 3:
+			//Perfectly Balanced
+			//needs to set all characters health to 50%
 		}
 		break;
 				

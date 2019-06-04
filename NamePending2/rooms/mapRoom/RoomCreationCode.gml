@@ -139,4 +139,32 @@ stages[9].background = sBackgroundClub;
 stages[9].battleMusic = soWorld2_fight; //need to add ricardo boss fight music
 stages[9].sprite_index = sMap_Ricardo; 
 
-//etc
+// Stage 10
+stages[10].myStageOrder = [1, 1, 6, 0] // moon2S, moon2S, Trog
+stages[10].background = sBackgroundSpace;
+stages[10].battleMusic = soWorld3_fight; 
+stages[10].sprite_index = sMap_moon2S; 
+
+// Stage 11
+stages[11].myStageOrder = [1, 7, 7, 3] // moon2S, moon2A, moon2A, NaM 
+stages[11].background = sBackgroundSpace;
+stages[11].battleMusic = soWorld3_fight; 
+stages[11].sprite_index = sMap_moon2S; 
+
+// Stage 12
+stages[12].myStageOrder = [1, 7, 4, 4] // moon2S, moon2A, moon2N, moon2N
+stages[12].background = sBackgroundSpace;
+stages[12].battleMusic = soWorld3_fight; 
+stages[12].sprite_index = sMap_moon2S; 
+
+// Stage 13
+stages[13].myStageOrder = [1, 1, 7, 4] // moon2S, moon2S, moon2A, moon2N
+stages[13].background = sBackgroundSpace;
+stages[13].battleMusic = soWorld3_fight; 
+stages[13].sprite_index = sMap_moon2S; 
+
+// Stage 14
+stages[13].myStageOrder = [14, 0, 0, 0] // moon2S, moon2S, moon2A, moon2N
+stages[13].background = sBackgroundSpace;
+stages[13].battleMusic = soWorld3_boss1; 
+stages[13].sprite_index = sMap_OldMoon; 
