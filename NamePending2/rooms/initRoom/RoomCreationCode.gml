@@ -261,7 +261,7 @@ ds_map_add(attacks[|3], "displayName", "AYAYA");
 ds_map_add(attacks[|3], "desc", "Lets out an AYAYA, enemies get ACC debuff.");
 ds_map_add(attacks[|3], "charPosition", [1, 0, 1, 0]);
 ds_map_add(attacks[|3], "targetPosition", [1, 1, 1, 1]);
-ds_map_add(attacks[|3], "atkSprite", sSuzuki_atk);
+ds_map_add(attacks[|3], "atkSprite", sSuzuki_atkayaya);
 attacks[|4] = ds_map_create();
 ds_map_add(attacks[|4], "id", 4);
 ds_map_add(attacks[|4], "sprite", sSuzuki_buttonAYFull);
@@ -307,7 +307,7 @@ ds_map_add(attacks[|2], "displayName", "Cheer Strimmer");
 ds_map_add(attacks[|2], "desc", "Heal Target");
 ds_map_add(attacks[|2], "charPosition", [1, 1, 1, 0]);
 ds_map_add(attacks[|2], "targetAllyPosition", [0, 0, 1, 1]);
-ds_map_add(attacks[|2], "atkSprite", sPurpleLady_atk);
+ds_map_add(attacks[|2], "atkSprite", sPurpleLady_cheer);
 attacks[|3] = ds_map_create();
 ds_map_add(attacks[|3], "id", 3);
 ds_map_add(attacks[|3], "sprite", sPurpleLady_buttonGoTeamGo);
@@ -927,6 +927,7 @@ ds_map_add(attacks[|3], "weight", 1);
 ds_map_add(attacks[|3], "atkSprite", sRicardo_atk);
 ds_map_add(global.enemies[13], "attacks", attacks);
 ds_map_add(global.enemies[13], "stats", [66, 0, 0, 7, 7, 7, 2, 6, 1]);
+ds_map_add(global.enemies[13], "hit", sRicardo_Hit);
 
 //Old Moon, boss 3, Phase 1
 global.enemies[14] = ds_map_create();
