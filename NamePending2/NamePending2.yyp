@@ -311,6 +311,14 @@
             }
         },
         {
+            "Key": "2d4b5366-8710-44b9-9c99-c71e21e67ddc",
+            "Value": {
+                "id": "5a653b6a-f04b-4d7f-9566-ffd330790cde",
+                "resourcePath": "sprites\\sEddie_sharpen\\sEddie_sharpen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3302a095-3275-44e6-9c23-8682ec550808",
             "Value": {
                 "id": "560aa5c7-fc2c-4299-92c0-1fb46e5e2f66",
@@ -732,6 +740,14 @@
                 "id": "80e755e9-6094-459d-bbd9-cde94cb4119a",
                 "resourcePath": "views\\761b4d72-dd1d-439d-873d-e683eafc0c75.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7666fe5f-8630-4e00-bb27-5f278a4518fe",
+            "Value": {
+                "id": "87ffe4e6-318e-4016-9d76-d338d6911b47",
+                "resourcePath": "sprites\\sSuzuki_atkpillow\\sSuzuki_atkpillow.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1527,6 +1543,14 @@
             }
         },
         {
+            "Key": "cdf51cad-c723-4eaf-aaf1-a78fb3d52c67",
+            "Value": {
+                "id": "094e3699-487b-48da-83d0-d3977c345bf7",
+                "resourcePath": "sprites\\sSuzuki_atkayaya\\sSuzuki_atkayaya.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ce1a229c-220e-425f-aa77-3814ee5d1db1",
             "Value": {
                 "id": "a7f474ec-3f88-4514-ba65-af756adb0cd9",
@@ -1915,6 +1939,14 @@
             "Value": {
                 "id": "ffc941c4-3e3c-46ef-b533-9ae1dba5bf82",
                 "resourcePath": "sprites\\sTitle_screenAlt\\sTitle_screenAlt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ff3c59cd-07c0-4b0c-a2e3-6e01f36a9600",
+            "Value": {
+                "id": "d71104fa-0f7e-4c49-9ae2-46fa5be69500",
+                "resourcePath": "sprites\\sprite164\\sprite164.yy",
                 "resourceType": "GMSprite"
             }
         },
