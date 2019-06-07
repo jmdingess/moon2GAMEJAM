@@ -311,6 +311,14 @@
             }
         },
         {
+            "Key": "2d4b5366-8710-44b9-9c99-c71e21e67ddc",
+            "Value": {
+                "id": "5a653b6a-f04b-4d7f-9566-ffd330790cde",
+                "resourcePath": "sprites\\sEddie_Atkscratch\\sEddie_Atkscratch.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3302a095-3275-44e6-9c23-8682ec550808",
             "Value": {
                 "id": "560aa5c7-fc2c-4299-92c0-1fb46e5e2f66",
@@ -642,7 +650,7 @@
             "Key": "6c88c3e4-3cd8-487e-967f-024a5c908a54",
             "Value": {
                 "id": "9ccb90aa-2618-4795-a44b-518f82a984e1",
-                "resourcePath": "sprites\\sSuzuki_atk\\sSuzuki_atk.yy",
+                "resourcePath": "sprites\\sSuzuki_atkgun\\sSuzuki_atkgun.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -695,6 +703,22 @@
             }
         },
         {
+            "Key": "740c9626-92bb-438a-9ac4-e7020ee819b2",
+            "Value": {
+                "id": "c13db077-5eee-4b82-af07-a637f0e3ff1d",
+                "resourcePath": "sprites\\sRicardo_Hit\\sRicardo_Hit.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "743c11a0-7897-4582-b557-326df196f181",
+            "Value": {
+                "id": "a365e498-aed0-4487-b364-8475886979b3",
+                "resourcePath": "sprites\\sMoon_atkGun\\sMoon_atkGun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "750b0c54-65fa-4815-a6db-97b9e68a4afe",
             "Value": {
                 "id": "adad29dc-4949-443d-978b-2d1767680616",
@@ -716,6 +740,14 @@
                 "id": "80e755e9-6094-459d-bbd9-cde94cb4119a",
                 "resourcePath": "views\\761b4d72-dd1d-439d-873d-e683eafc0c75.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7666fe5f-8630-4e00-bb27-5f278a4518fe",
+            "Value": {
+                "id": "87ffe4e6-318e-4016-9d76-d338d6911b47",
+                "resourcePath": "sprites\\sSuzuki_atkpillow\\sSuzuki_atkpillow.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -911,6 +943,14 @@
             }
         },
         {
+            "Key": "860f0c01-c96d-41ec-9d03-b9e40e5122e7",
+            "Value": {
+                "id": "437077bb-3fef-484f-87dd-845e84dc60db",
+                "resourcePath": "sprites\\sPrimePleb_hit\\sPrimePleb_hit.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "87f1f785-93c2-49d3-8631-add4224ccf84",
             "Value": {
                 "id": "b4f6da18-4af3-4d38-80e8-14a47e5051a9",
@@ -1060,6 +1100,14 @@
                 "id": "f2db6bd2-aec7-4d4a-8ca1-7deb30a5b1c6",
                 "resourcePath": "scripts\\party_select\\party_select.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9d90af43-119f-4c01-a05f-b6125739e223",
+            "Value": {
+                "id": "0e249380-3c34-4056-859d-2e743c6e7565",
+                "resourcePath": "sprites\\sPurpleLady_cheer\\sPurpleLady_cheer.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1415,6 +1463,14 @@
             }
         },
         {
+            "Key": "c63d157f-d7dc-43d1-b2e3-31bd75c024f7",
+            "Value": {
+                "id": "370cbca6-2105-4292-ab58-f992ed073a00",
+                "resourcePath": "sprites\\sWeeb_hit\\sWeeb_hit.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c6f5ac21-e603-412c-8331-9ae77dc1438a",
             "Value": {
                 "id": "c538f799-c406-461d-838d-0477a398e32a",
@@ -1491,6 +1547,14 @@
             "Value": {
                 "id": "87fc8f5e-a231-4377-b4c3-ffc47609376d",
                 "resourcePath": "sprites\\sTitle_screenAlt_Final\\sTitle_screenAlt_Final.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cdf51cad-c723-4eaf-aaf1-a78fb3d52c67",
+            "Value": {
+                "id": "094e3699-487b-48da-83d0-d3977c345bf7",
+                "resourcePath": "sprites\\sSuzuki_atkayaya\\sSuzuki_atkayaya.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1643,6 +1707,14 @@
             "Value": {
                 "id": "2697d2a0-5c32-40da-bc80-604bf1d84de3",
                 "resourcePath": "sprites\\sBarwick_buttonspintop\\sBarwick_buttonspintop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e06c99c0-3f84-4eaa-86fd-312769b769ea",
+            "Value": {
+                "id": "08654561-2837-4575-9dc5-05596a31f320",
+                "resourcePath": "sprites\\sEddie_lick\\sEddie_lick.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1875,6 +1947,14 @@
             "Value": {
                 "id": "ffc941c4-3e3c-46ef-b533-9ae1dba5bf82",
                 "resourcePath": "sprites\\sTitle_screenAlt\\sTitle_screenAlt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ff3c59cd-07c0-4b0c-a2e3-6e01f36a9600",
+            "Value": {
+                "id": "d71104fa-0f7e-4c49-9ae2-46fa5be69500",
+                "resourcePath": "sprites\\sprite164\\sprite164.yy",
                 "resourceType": "GMSprite"
             }
         },
