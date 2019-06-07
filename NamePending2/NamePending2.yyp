@@ -1719,6 +1719,14 @@
             }
         },
         {
+            "Key": "d8c4f90d-58fb-453f-9cd5-ddfc1a46b2d7",
+            "Value": {
+                "id": "def5051d-c879-450c-8843-c5b6534f3d02",
+                "resourcePath": "sounds\\soWorld1_boss\\soWorld1_boss.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "d9c8e633-ada4-4b20-85a1-d954244b765e",
             "Value": {
                 "id": "2a8afeea-b339-454f-b765-8bbd8166bfbd",
