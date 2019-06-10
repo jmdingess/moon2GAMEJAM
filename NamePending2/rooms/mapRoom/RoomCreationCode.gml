@@ -1,5 +1,5 @@
 // Give each oMapEnemy its proper stage and stageEnemies
-
+audio_play_sound(soMenu,1,0);
 // Define global.completed if not defined
 if (global.completed == -1) {
 	var i;

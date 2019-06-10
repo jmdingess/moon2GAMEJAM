@@ -38,11 +38,13 @@ if allCharactersDead {
 	// Restart battle
 	show_debug_message("All characters died");
 	global.defeated = true;
+	audio_stop_all();
 	room_goto_next();
 }
 if allEnemiesDead {
 	// Go to next battle
 	show_debug_message("All enemies died");
 	global.defeated = false;
+	audio_stop_all();
 	room_goto_next();
 }
