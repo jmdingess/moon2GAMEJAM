@@ -703,21 +703,25 @@ else { // ENEMIES
 			for (i = 0; i < 4; i++) {
 				friend = instance_find(oEnemy, i);
 				if (friend.dead and friend.occupiedBy == -1 and plebs > 0) {
-					friend.charMap = enemies[2];
+					ds_map_copy(friend.enemyMap, global.enemies[2]);
 					friend.dead = false;
-					friend.myStats = friend.charMap[? "stats"]
+					friend.myStats = friend.enemyMap[? "stats"]
 					friend.bleed = 0;
 					friend.stun = 0;
 					friend.riposte = 0;
 					friend.current_hp = friend.myStats[0];
+					friend.max_hp = friend.myStats[0];
 					friend.shield = 0;
 					// Insert into turn order right behind Corporate; they don't get an attack until next round
 					var j;
 					for (j = global.turnOrderSize; j > global.turn; j--) {
 						global.turnOrder[j] = global.turnOrder[j-1];
 					}
+					global.turnOrderSize++;
 					global.turnOrder[global.turn] = friend;
 					global.turn++;
+					show_debug_message(global.turnOrder)
+					show_debug_message(global.turn);
 					plebs--;
 				}
 			}
@@ -753,10 +757,12 @@ else { // ENEMIES
 			var dmg = 0;
 			for (i = 0; i < 4; i++) {
 				var enemy = get_character(target.object_index, i);
+				var enemy = get_character(oCharacter, i);
 				if (enemy != -1) {
 					dmg += standard_attack(acc, int, dex, attackPower, target_luck, target, character);
 				}
 				var friend = get_character(character.object_index, i);
+				var friend = get_character(oEnemy, i);
 				if (friend != -1) {
 					friend.myStats[4] += 4;
 					friend.statBoosts[4] += 4;
@@ -766,7 +772,7 @@ else { // ENEMIES
 			break;
 					
 		}
-		break;	
+		break; 
 					
 	case 13:
 		// Ricardo Milos
