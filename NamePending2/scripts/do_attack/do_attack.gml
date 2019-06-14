@@ -779,7 +779,7 @@ else { // ENEMIES
 		switch (attackID) {
 		case 0:
 			var i;
-			var dmg;
+			var dmg = 0;
 			for (i = 0; i < 4; i++) {
 				var enemy = get_character(target.object_index, i);
 				if (enemy != -1) {
