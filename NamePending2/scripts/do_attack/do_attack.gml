@@ -589,9 +589,23 @@ else { // ENEMIES
 			}
 			return 1;
 			break;
-		case 3:
+		case 2:
 			//Perfectly Balanced
 			//needs to set all characters health to 50%
+			var i;
+			var dmg = 0;
+			for (i = 0; i < 4; i++) {
+				var friend = get_character(character.object_index, i);
+				if (friend != -1) {
+					friend.current_hp = floor(friend.current_hp/2);
+				}
+				var enemy = get_character(oCharacter, i);
+				if (enemy != -1) {
+					enemy.current_hp = floor(enemy.current_hp/2);
+				}
+			}
+			return 1;
+			break;
 		}
 		break;
 				
@@ -897,7 +911,7 @@ else { // ENEMIES
 				var enemy = get_character(target.object_index, i);
 				if(enemy != -1)
 				{
-					standard_attack(acc, str, dex, 1.5 * attackPower, get_char_luck(enemy), enemy, character);
+					standard_attack(acc, str, dex, attackPower, get_char_luck(enemy), enemy, character);
 				}
 			}
 			break;

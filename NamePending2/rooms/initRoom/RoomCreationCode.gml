@@ -1000,6 +1000,7 @@ ds_map_add(attacks[|2], "id", 2);
 ds_map_add(attacks[|2], "sprite", sOldMoon2_atk);
 ds_map_add(attacks[|2], "displayName", "Rend of the cosmic god");
 ds_map_add(attacks[|2], "desc", "Heavy Attack");
+ds_map_add(attacks[|2], "power", 1.5); // Multiply damage by 1.5
 ds_map_add(attacks[|2], "charPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|2], "targetPosition", [1, 1, 1, 1]);
 ds_map_add(attacks[|2], "weight", 1);
