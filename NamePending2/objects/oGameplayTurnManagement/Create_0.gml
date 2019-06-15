@@ -25,6 +25,7 @@ showAttack = false;
 attackMessage = "";
 attackMessage_x = -1;
 attackMessage_y = -1;
+dmg = 0;
 
 // This code was written at 2 AM and we're low on time so I can't rewrite it
 // It finds turn order

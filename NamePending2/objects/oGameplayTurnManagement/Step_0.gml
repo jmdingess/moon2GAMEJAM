@@ -69,7 +69,7 @@ if (showAttack) {
 	}
 	else {
 		var hitSprite = targetMap[? "hit"];
-		if (!is_undefined(hitSprite)) {
+		if (dmg != 0 and !is_undefined(hitSprite)) {
 			oldTargetSprite = targetMap[? "sprite"];
 			targetMap[? "sprite"] = hitSprite;
 			target.sprite_index = hitSprite;

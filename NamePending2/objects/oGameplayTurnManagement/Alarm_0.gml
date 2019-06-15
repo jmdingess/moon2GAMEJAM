@@ -1,6 +1,7 @@
 /// @description Handle AttackAnimation
 // You can write your code in this editor
 
+dmg = 0;
 drawText = false;
 atkName = "";
 attackMessage = "";

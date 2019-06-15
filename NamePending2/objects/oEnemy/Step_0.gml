@@ -61,6 +61,8 @@ if (global.selected == id && global.newSelect == true)
 		global.newSelect = true;
 	}
 	else {
+		var dmg = 0;
+		
 		if (stun != 0) {
 			// We are stunned
 			stun -= 1;
@@ -259,7 +261,7 @@ if (global.selected == id && global.newSelect == true)
 					}
 	
 					//do attack
-					do_attack(enemyMap, target, attackMap[? "id"], attackPower);
+					dmg = do_attack(enemyMap, target, attackMap[? "id"], attackPower);
 					show_debug_message(attackMap[? "displayName"]);
 				}
 			}
@@ -271,6 +273,7 @@ if (global.selected == id && global.newSelect == true)
 			show_error("Could not get game manager", true);
 		}
 		else {
+			gameManager.dmg = dmg;
 			gameManager.target = target;
 			gameManager.atkSprite = attackMap[? "atkSprite"];
 			gameManager.atkName = attackMap[? "displayName"];

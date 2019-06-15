@@ -107,7 +107,7 @@ if (doAttack == true && global.attackSelected == id) {
 	}
 	
 	// do Attack
-	do_attack(character, target, attackID, attackPower);
+	var dmg = do_attack(character, target, attackID, attackPower);
 	
 	// show attack; will pass turn for us
 	var gameManager = instance_find(oGameplayTurnManagement, 0)
@@ -115,6 +115,7 @@ if (doAttack == true && global.attackSelected == id) {
 		show_error("Could not get game manager", true);
 	}
 	else {
+		gameManager.dmg = dmg;
 		gameManager.target = target;
 		gameManager.atkSprite = attackMap[? "atkSprite"];
 		gameManager.atkName = attackMap[? "displayName"];

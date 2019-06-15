@@ -303,20 +303,20 @@ if(charMap[? "type"] == "Party Member")
 			//Cheer Strimmer
 			//Needs Heal
 			target.current_hp += int*attackPower;
+			return 0;
 			break;
 		
 		case 3:
 			//Go Team Go!
 			//Needs Team Heal
 			var i;
-			var dmg = 0;
 			for (i = 0; i < 4; i++) {
 				var friend = get_character(character.object_index, i);
 				if (friend != -1) {
 					friend.current_hp += int*attackPower;
 				}
 			}
-			return 1;
+			return 0;
 			break;
 		
 		case 4:
@@ -522,7 +522,10 @@ else { // ENEMIES
 			//Needs to text box question, needs to lower dex now instead
 			attack_message("Dumb Question");
 			if (hit_calc_2(acc, target_luck)) {
-				target.stun += 1;
+				target.myStats[4] -= 4;
+				target.statBoosts[4] -= 4;
+				target.myStats[5] -= 4;
+				target.statBoosts[5] -= 4;
 				return 1; // we didn't actually do any damage but return nonzero so it knows to display hit
 			}
 			return 0; // missed
@@ -712,6 +715,8 @@ else { // ENEMIES
 		case 0:
 			// Pleb Defense Force
 			// Needs to spawn 2 prime plebs
+			gameManager.charToMove = character;
+			gameManager.spaces = -2;
 			var i;
 			var plebs = 2;
 			for (i = 0; i < 4; i++) {
@@ -739,6 +744,7 @@ else { // ENEMIES
 					plebs--;
 				}
 			}
+			return 0;
 			break;
 		case 1:
 			// Soul for sponsorship

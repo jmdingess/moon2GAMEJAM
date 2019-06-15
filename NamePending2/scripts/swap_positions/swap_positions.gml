@@ -52,10 +52,20 @@ else {
 	ds_map_copy(tmp, inst1.enemyMap);
 	ds_map_copy(inst1.enemyMap, inst2.enemyMap);
 	ds_map_copy(inst2.enemyMap, tmp);
-	
 }
 
 // TODO: Swap any conditions (poisoned, etc) that we apply
+
+var tmp = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+array_copy(tmp, 0, inst1.myStats, 0, array_length_1d(inst1.myStats));
+array_copy(inst1.myStats, 0, inst2.myStats, 0, array_length_1d(inst1.myStats));
+array_copy(inst2.myStats, 0, tmp, 0, array_length_1d(inst1.myStats));
+
+var tmp = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+array_copy(tmp, 0, inst1.statBoosts, 0, array_length_1d(inst1.statBoosts));
+array_copy(inst1.statBoosts, 0, inst2.statBoosts, 0, array_length_1d(inst1.statBoosts));
+array_copy(inst2.statBoosts, 0, tmp, 0, array_length_1d(inst1.statBoosts));
+
 var tmp = inst1.dead;
 inst1.dead = inst2.dead;
 inst2.dead = tmp;
@@ -63,6 +73,10 @@ inst2.dead = tmp;
 var tmp = inst1.current_hp;
 inst1.current_hp = inst2.current_hp;
 inst2.current_hp = tmp;
+
+var tmp = inst1.max_hp;
+inst1.max_hp = inst2.max_hp;
+inst2.max_hp = tmp;
 
 var tmp = inst1.charge;
 inst1.charge = inst2.charge;
